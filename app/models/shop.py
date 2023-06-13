@@ -13,6 +13,7 @@ class Shop(db.model):
         add_prefix_for_prod("users.id")), nullable=False)
     name = db.Column(db.String(255), nullable=False)
     description = db.Column(db.Text, nullable=False)
+    shop_image = db.Column(db.String, nullable=False)
     created_at = db.Column(db.Date, nullable=False, default=date.today())
 
     product = db.relationship("Product", back_populates="shop", cascade="all, delete")

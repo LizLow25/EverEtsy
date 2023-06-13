@@ -10,10 +10,28 @@ def seed_users():
         username='marnie', email='marnie@aa.io', password='password')
     bobbie = User(
         username='bobbie', email='bobbie@aa.io', password='password')
+    user4 = User(
+        username = 'sophia',
+        firstname = 'Sophia',
+        lastname = 'Baker',
+        email = 'sophia@gmail.com',
+        user_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/user4.png',
+        password = 'password'
+    )
+    user5 = User(
+        username = 'emily',
+        firstname = 'Emily',
+        lastname = 'Scott',
+        email = 'emily@gmail.com',
+        user_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/user5.png',
+        password = 'password'
+    )
 
     db.session.add(demo)
     db.session.add(marnie)
     db.session.add(bobbie)
+    db.session.add(user4)
+    db.session.add(user5)
     db.session.commit()
 
 
@@ -28,5 +46,5 @@ def undo_users():
         db.session.execute(f"TRUNCATE table {SCHEMA}.users RESTART IDENTITY CASCADE;")
     else:
         db.session.execute(text("DELETE FROM users"))
-        
+
     db.session.commit()
