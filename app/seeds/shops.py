@@ -23,11 +23,11 @@ def seed_shops():
         name = 'TeddyandWool',
         shop_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/shop4.png',
         description = 'High Quality Contemporary Fiber Art.')
-    shop5 = Shop(
-        shop_owner = '',
-        name = '',
-        shop_image = '',
-        description = '')
+    # shop5 = Shop(
+    #     shop_owner = '',
+    #     name = '',
+    #     shop_image = '',
+    #     description = '')
 
     shops = [shop1, shop2, shop3, shop4]
     [db.session.add(shop) for shop in shops]

@@ -312,138 +312,154 @@ def seed_products():
         main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product16.png',
         category = 'Art & Collectibles'
     )
-    product17 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product18 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product19 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product20 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product21 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product22 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product23 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product24 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product25 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product26 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product27 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product28 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product29 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product30 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product31 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
-    product1 = Product(
-        name = '',
-        shop_id = '',
-        details = '',
-        price = '',
-        main_image = '',
-        category = '',
-    )
+    # product17 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product18 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product19 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product20 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product21 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product22 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product23 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product24 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product25 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product26 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product27 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product28 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product29 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product30 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product31 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
+    # product1 = Product(
+    #     name = '',
+    #     shop_id = '',
+    #     details = '',
+    #     price = '',
+    #     main_image = '',
+    #     category = ''
+    # )
 
 
 
-    db.session.add()
+    products = [product1,
+                product2,
+                product3,
+                product4,
+                product5,
+                product6,
+                product7,
+                product8,
+                product9,
+                product10,
+                product11,
+                product12,
+                product13,
+                product14,
+                product15,
+                product16]
+    [db.session.add(product) for product in products]
     db.session.commit()
 
 
