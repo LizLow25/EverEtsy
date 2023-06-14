@@ -6,7 +6,7 @@ const normalizeObj = (arr) => {
 
 // TYPE VARIABLES
 
-const GET_ALL_SHOPS = 'shops/GET_ALL_SHOPS'
+const GET_ALL_SHOPS = 'shop/GET_ALL_SHOPS'
 
 
 
