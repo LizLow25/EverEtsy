@@ -6,6 +6,7 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import LandingPage from "./components/LandingPage";
+import ProductDetails from "./components/ProductDetails";
 
 function App() {
   const dispatch = useDispatch();
@@ -30,6 +31,9 @@ function App() {
       <Switch>
       <Route exact path="/">
           <LandingPage />
+        </Route>
+        <Route exact path="/products/:productId">
+          <ProductDetails />
         </Route>
       </Switch>
     </>
