@@ -25,4 +25,5 @@ class Shop(db.Model):
             'shop_owner': self.shop_owner,
             'name': self.name,
             'description': self.description,
+            'shop_image': self.shop_image
         }
