@@ -7,7 +7,6 @@ def seed_products():
         shop_id = 1,
         details =
         """This is an adorable vintage style jar lantern with your choice of florals. This is a beautiful accent piece, and the florals are removable so this piece can be used throughout the year. Lights with timer are included. See info about lights below. This piece measures approximately 12" tall with most florals.
-
         Jar by itself dimensions:
         Full Diameter: 6 1/4
         Opening Diameter: 3 1/8
