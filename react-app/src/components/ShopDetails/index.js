@@ -2,9 +2,8 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { getSingleShopThunk } from '../../store/shop'
-import ManageShop from '../ManageShop'
 import OpenModalButton from "../OpenModalButton";
-import NewShopFormModal from '../NewShopFormModal';
+import DeleteShopModal from '../DeleteShopModal'
 
 const ShopDetails = () => {
     const dispatch = useDispatch()
@@ -32,7 +31,10 @@ const ShopDetails = () => {
                     <p>{singleShop.description}</p>
 
                 </div>
-                {sessionUser ? sessionUser.shop[0].id == singleShop.id ? <button>Delete your shop</button> : null : null}
+                {sessionUser ? sessionUser.shop[0].id == singleShop.id ? <OpenModalButton
+                        buttonText="Delete your shop"
+                        modalComponent={<DeleteShopModal id={singleShop.id}/>}
+                    /> : null : null}
             </div>
 
 
