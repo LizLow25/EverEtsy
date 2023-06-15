@@ -1,7 +1,4 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom'
-import { getSingleShopThunk } from '../../store/shop'
 import OpenModalButton from "../OpenModalButton";
 import NewShopFormModal from '../NewShopFormModal';
 

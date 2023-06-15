@@ -10,6 +10,7 @@ const ShopDetails = () => {
     const dispatch = useDispatch()
 
     const singleShop = useSelector(state => state.shops.singleShop)
+    const sessionUser = useSelector(state => state.session.user);
     const { shopId } = useParams()
     console.log('single shop', singleShop)
 
@@ -19,20 +20,6 @@ const ShopDetails = () => {
 
     if (!singleShop) return <h1>Shop loading...</h1>
 
-    if (shopId == ':shopId') {
-        return (
-            <>
-
-                <OpenModalButton
-                    buttonText="Open a shop"
-                    modalComponent={<NewShopFormModal />}
-                />
-
-
-            </>
-        )
-
-    }
 
     return (
         <>
@@ -45,6 +32,7 @@ const ShopDetails = () => {
                     <p>{singleShop.description}</p>
 
                 </div>
+                {sessionUser ? sessionUser.shop[0].id == singleShop.id ? <button>Delete your shop</button> : null : null}
             </div>
 
 
