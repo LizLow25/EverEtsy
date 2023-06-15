@@ -7,7 +7,8 @@ const normalizeObj = (arr) => {
 // TYPE VARIABLES
 
 const GET_ALL_SHOPS = 'shop/GET_ALL_SHOPS'
-const GET_SINGLE_SHOP = 'product/GET_SINGLE_SHOP'
+const GET_SINGLE_SHOP = 'shop/GET_SINGLE_SHOP'
+const CREATE_NEW_SHOP = 'shop/CREATE_NEW_SHOP'
 
 
 // ACTION CREATORS
@@ -26,6 +27,12 @@ const getSingleShop = (shop) => {
 
 }
 
+const createNewShop = (shop) => {
+    return {
+        type: CREATE_NEW_SHOP,
+        shop
+    }
+}
 
 // THUNKS
 
@@ -41,7 +48,7 @@ export const getAllShopsThunk = () => async (dispatch) => {
 }
 
 export const getSingleShopThunk = (id) => async (dispatch) => {
-    console.log('inside single product thunk', id)
+    // console.log('inside single product thunk', id)
     const res = await fetch(`/api/shops/${id}`)
 
     if (res.ok) {
@@ -53,6 +60,23 @@ export const getSingleShopThunk = (id) => async (dispatch) => {
     }
 }
 
+export const newShopThunk = (shop) => async (dispatch) => {
+    const res = await fetch('/api/shops/new', {
+        method: "POST",
+        body: shop
+      })
+
+    if (res.ok) {
+        const { shop } = await res.json()
+        dispatch(createNewShop(shop))
+        return
+    } else {
+        console.log("Problem with creating a new shop")
+    }
+
+
+}
+
 // --------- INITIAL STATE -------------
 const initialState = { allShops: {}, singleShop: {} }
 // ---------- REDUCER ----------
@@ -62,6 +86,8 @@ const shopReducer = (state = initialState, action) => {
         case GET_ALL_SHOPS:
             return { ...state, allShops: { ...normalizeObj(action.shops) } }
         case GET_SINGLE_SHOP:
+            return { ...state, singleShop: { ...action.shop } }
+        case CREATE_NEW_SHOP:
             return { ...state, singleShop: { ...action.shop } }
         default:
             return state
