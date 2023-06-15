@@ -18,9 +18,7 @@ function Navigation({ isLoaded }) {
 					<ProfileButton user={sessionUser} />
 				</li>
 			)}
-			<li>
-				<NavLink exact to="/shops/:shopId"><i class="fas fa-store"></i></NavLink>
-			</li>
+			{ sessionUser.shop ? <li><NavLink exact to=`/shops/${sessionUser.shop[0].id}`><i class="fas fa-store"></i></NavLink></li> : null }
 		</ul>
 	);
 }

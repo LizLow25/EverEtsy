@@ -24,6 +24,7 @@ def get_single_shop(id):
 @shop_routes.route("/new", methods=['POST'])
 @login_required
 def post_new_shop():
+    print('creating a shop backend')
     form = ShopForm()
     form["csrf_token"].data = request.cookies["csrf_token"]
 
@@ -46,10 +47,10 @@ def post_new_shop():
             shop_owner=current_user.id,
             name=data["name"],
             description=data["description"],
-            project_image=upload["url"]
+            shop_image=upload["url"]
         )
         db.session.add(new_shop)
-        db.commit()
+        db.session.commit()
         return (
             {"shop": new_shop.to_dict()},
             200,

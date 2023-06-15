@@ -69,9 +69,9 @@ export const newShopThunk = (shop) => async (dispatch) => {
     if (res.ok) {
         const { shop } = await res.json()
         dispatch(createNewShop(shop))
-        return
+        return shop
     } else {
-        console.log("Problem with creating a new shop")
+        console.log("Problem with creating a new shop", res)
     }
 
 

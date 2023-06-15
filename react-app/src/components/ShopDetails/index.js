@@ -3,7 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
 import { getSingleShopThunk } from '../../store/shop'
 import ManageShop from '../ManageShop'
-
+import OpenModalButton from "../OpenModalButton";
+import NewShopFormModal from '../NewShopFormModal';
 
 const ShopDetails = () => {
     const dispatch = useDispatch()
@@ -18,13 +19,26 @@ const ShopDetails = () => {
 
     if (!singleShop) return <h1>Shop loading...</h1>
 
-    if ( shopId == ':shopId' ) return <ManageShop />
+    if (shopId == ':shopId') {
+        return (
+            <>
+
+                <OpenModalButton
+                    buttonText="Open a shop"
+                    modalComponent={<NewShopFormModal />}
+                />
+
+
+            </>
+        )
+
+    }
 
     return (
         <>
             <div className='shopDetailsContainer'>
                 <div className='shopContainerDetails'>
-                    <img src={singleShop.shop_image} alt='' className='imgShopDetails'/>
+                    <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
                 </div>
                 <div className='textShopContainerDetails'>
                     <p>{singleShop.name}</p>

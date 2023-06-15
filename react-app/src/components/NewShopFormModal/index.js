@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useModal } from "../../context/Modal";
+import { newShopThunk } from '../../store/shop';
+import { getSingleShopThunk } from '../../store/shop';
 
 
 function NewShopFormModal() {
     const dispatch = useDispatch()
-
+    const { closeModal } = useModal();
 
 
     //slices of state to use for form entries
@@ -25,7 +28,19 @@ function NewShopFormModal() {
         formData.append("shop_image", image)
 
         //post the data to the backend
-        //const newShop = await dispatch(newShopThunk(formData))
+        const newShop = await dispatch(newShopThunk(formData))
+
+        if (newShop) {
+            setName('')
+            setDescription('')
+            setImage('')
+
+            await dispatch(getSingleShopThunk(newShop.id))
+
+            return closeModal()
+        }
+
+
 
 
     }
