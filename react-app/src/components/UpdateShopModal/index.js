@@ -22,6 +22,18 @@ function UpdateShopModal({ singleShop }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const newErrors = {};
+        setErrors(newErrors)
+        // validate data on the frontend here
+        if (name.length < 3 || name.length > 50) newErrors['name'] = "Shop name must be between 3 and 50 characters"
+        if (description.length < 5 || description.length > 100) newErrors['description'] = "Shop description must be between 5 and 100 characters"
+
+
+        setErrors(newErrors);
+
+        // If we have errors, bail out
+        if (Object.keys(newErrors).length) return;
+
 
         //create a FormData class to send to the backend
         const formData = new FormData()
@@ -54,6 +66,7 @@ function UpdateShopModal({ singleShop }) {
         <div>
             <form onSubmit={handleSubmit} encType="multipart/form-data">
                 <label>
+                    <span className='errors'>{errors.name}</span>
                     <input
                         type='text'
                         value={name}
@@ -62,6 +75,7 @@ function UpdateShopModal({ singleShop }) {
                     />
                 </label>
                 <label>
+                    <span className='errors'>{errors.description}</span>
                     <input
                         type='text'
                         value={description}

@@ -12,6 +12,7 @@ function NewShopFormModal() {
     const { closeModal } = useModal();
 
 
+
     //slices of state to use for form entries
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
@@ -23,6 +24,7 @@ function NewShopFormModal() {
         e.preventDefault();
 
         const newErrors = {};
+        setErrors(newErrors)
         // validate data on the frontend here
         if (name.length < 3 || name.length > 50) newErrors['name'] = "Shop name must be between 3 and 50 characters"
         if (description.length < 5 || description.length > 100) newErrors['description'] = "Shop description must be between 5 and 100 characters"
