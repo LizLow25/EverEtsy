@@ -1,12 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { useModal } from "../../context/Modal";
-import { newShopThunk } from '../../store/shop';
-import { getSingleShopThunk } from '../../store/shop';
-
-
-function NewShopFormModal() {
+function UpdateShopModal() {
     const dispatch = useDispatch()
     const history = useHistory()
     const { closeModal } = useModal();
@@ -88,4 +80,4 @@ function NewShopFormModal() {
     );
 }
 
-export default NewShopFormModal;
+export default UpdateShopModal;

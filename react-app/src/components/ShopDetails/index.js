@@ -35,6 +35,10 @@ const ShopDetails = () => {
                         buttonText="Delete your shop"
                         modalComponent={<DeleteShopModal id={singleShop.id}/>}
                     /> : null : null}
+                {sessionUser ? sessionUser.shop[0]?.id == singleShop.id ? <OpenModalButton
+                        buttonText="Update your shop"
+                        modalComponent={<UpdateShopModal id={singleShop.id}/>}
+                    /> : null : null}
             </div>
 
 
