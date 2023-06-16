@@ -104,6 +104,7 @@ export const deleteShopThunk = (id) => async (dispatch) => {
 }
 
 export const updateShopThunk = (id, shop) => async (dispatch) => {
+    console.log('in the thunk', shop)
     const res = await fetch(`/api/shops/${id}/edit`, {
         method: "PUT",
         body: shop
@@ -112,6 +113,7 @@ export const updateShopThunk = (id, shop) => async (dispatch) => {
     if (res.ok) {
         const { shop } = await res.json()
         await dispatch(updateShop(id, shop))
+        console.log('res is ok', shop)
         return shop
     } else {
         console.log("Problem with updating the shop", res)
@@ -133,10 +135,8 @@ const shopReducer = (state = initialState, action) => {
             return { ...state, singleShop: { ...action.shop } }
         case DELETE_SHOP:
             return { ...state, singleShop: {} }
-
         case UPDATE_SHOP:
-
-
+            return {...state, singleShop: { ...action.shop}}
         default:
             return state
     }

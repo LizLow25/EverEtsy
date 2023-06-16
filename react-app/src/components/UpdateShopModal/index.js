@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { useHistory, useParams } from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
 import { useModal } from "../../context/Modal";
+import { updateShopThunk } from '../../store/shop';
+import { getSingleShopThunk } from '../../store/shop';
 
 function UpdateShopModal({ singleShop }) {
     const dispatch = useDispatch()
@@ -27,20 +29,21 @@ function UpdateShopModal({ singleShop }) {
         formData.append("description", description)
         formData.append("shop_image", image)
 
+
         //post the data to the backend
-        // const updatedShop = await dispatch(updateShopThunk(singleShop.id, formData))
+        const updatedShop = await dispatch(updateShopThunk(singleShop.id, formData))
 
-        // if (newShop) {
-        //     setName('')
-        //     setDescription('')
-        //     setImage('')
+        if (updatedShop) {
+            setName('')
+            setDescription('')
+            setImage('')
 
-        //     await dispatch(getSingleShopThunk(newShop.id))
+            await dispatch(getSingleShopThunk(updatedShop.id))
 
 
-        //     closeModal()
-        //     history.push(`/shops/${newShop.id}`)
-        // }
+            closeModal()
+            history.push(`/shops/${updatedShop.id}`)
+        }
 
 
 
@@ -78,7 +81,7 @@ function UpdateShopModal({ singleShop }) {
                     />
                 </label>
                 <div >
-                    <button type='submit'>Create your shop</button>
+                    <button type='submit'>Update your shop</button>
                 </div>
 
             </form>

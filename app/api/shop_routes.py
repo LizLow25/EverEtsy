@@ -63,32 +63,16 @@ def post_new_shop():
         return {"errors": form.errors}, 400, {"Content-Type": "application/json"}
 
 
-@shop_routes.route("/<int:id>", methods=['DELETE'])
-@login_required
-def delete_shop(id):
-
-    shop = Shop.query.get(id)
-
-    if shop is None:
-        return {"errors": "Shop does not exist"}, 404
-
-    #remove from aws if not part of seeder data
-    if shop.id not in range(1, 4):
-        remove_file_from_s3(shop.shop_image)
-
-    db.session.delete(shop)
-    db.session.commit()
-
-    return {"message": "Shop Succesfully Deleted"}
-
-
 @shop_routes.route("/<int:id>/edit", methods=['PUT'])
 @login_required
 def update_shop(id):
 
     edit_shop_form = EditShopForm()
-
+    edit_shop_form["csrf_token"].data = request.cookies["csrf_token"]
     updated_shop = Shop.query.get(id)
+
+    #save old image in a variable
+    prev_image = updated_shop.shop_image
 
     if updated_shop is None:
             return {"errors": "Shop does not exist"}, 404
@@ -107,9 +91,46 @@ def update_shop(id):
             shop_image.filename = get_unique_filename(shop_image.filename)
             upload = upload_file_to_s3(shop_image)
 
+            if "url" not in upload:
+                print("Errors Occured in the AWS Upload", upload["errors"])
+                return upload["errors"]
 
 
+            #if user uploads a new image, remove the old image from AWS, as long as it's not part of seeder data
+            if updated_shop.id not in range(1, 5):
+                remove_file_from_s3(prev_image)
 
+            #finally, set the image in the new shop to the url returned from aws upload
+            updated_shop.shop_image = upload["url"]
 
-    edit_form = EditShopForm()
-    edit_form["csrf_token"].data = request.cookies["csrf_token"]
+        #commit updates to database
+        db.session.commit()
+
+        #send updated shop back to frontend
+        return (
+            {"shop": updated_shop.to_dict()},
+            200,
+            {"Content-Type": "application/json"},
+        )
+
+    if edit_shop_form.errors:
+        print("There were some form errors", edit_shop_form.errors)
+        return {"errors": edit_shop_form.errors}, 400, {"Content-Type": "application/json"}
+
+@shop_routes.route("/<int:id>", methods=['DELETE'])
+@login_required
+def delete_shop(id):
+
+    shop = Shop.query.get(id)
+
+    if shop is None:
+        return {"errors": "Shop does not exist"}, 404
+
+    #remove from aws if not part of seeder data
+    if shop.id not in range(1, 5):
+        remove_file_from_s3(shop.shop_image)
+
+    db.session.delete(shop)
+    db.session.commit()
+
+    return {"message": "Shop Succesfully Deleted"}
