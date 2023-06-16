@@ -6,6 +6,7 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
+	const singleShop = useSelector(state => state.shops.singleShop)
 	console.log(sessionUser, sessionUser?.shop)
 
 	return (
@@ -18,7 +19,7 @@ function Navigation({ isLoaded }) {
 					<ProfileButton user={sessionUser} />
 				</li>
 			)}
-			{ sessionUser ? sessionUser.shop.length ? <li><NavLink exact to={`/shops/${sessionUser.shop[0].id}`}> <i class="fas fa-store"></i></NavLink></li> : <li><NavLink exact to='/shops/new'> <i class="fas fa-store"></i></NavLink></li> : null }
+			{ sessionUser ? sessionUser.id === singleShop?.shop_owner ? <li><NavLink exact to={`/shops/${singleShop.id}`}> <i class="fas fa-store"></i></NavLink></li> : <li><NavLink exact to='/shops/new'> <i class="fas fa-store"></i></NavLink></li> : null }
 		</ul>
 	);
 }
