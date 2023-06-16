@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getSingleShopThunk } from '../../store/shop'
 import OpenModalButton from "../OpenModalButton";
 import DeleteShopModal from '../DeleteShopModal'
+import UpdateShopModal from '../UpdateShopModal';
 
 const ShopDetails = () => {
     const dispatch = useDispatch()
