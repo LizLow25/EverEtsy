@@ -26,6 +26,8 @@ function NewShopFormModal() {
         // validate data on the frontend here
         if (name.length < 3 || name.length > 50) newErrors['name'] = "Shop name must be between 3 and 50 characters"
         if (description.length < 5 || description.length > 100) newErrors['description'] = "Shop description must be between 5 and 100 characters"
+        if (!image) newErrors['image'] = "Please upload an image for your shop"
+
 
         setErrors(newErrors);
 
@@ -81,6 +83,7 @@ function NewShopFormModal() {
                     />
                 </label>
                 <label>
+                    <span className='errors'>{errors.image}</span>
                     <input
                         type='file'
                         accept='image/*'
