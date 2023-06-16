@@ -38,7 +38,7 @@ const ShopDetails = () => {
                     /> : null : null}
                 {sessionUser ? sessionUser.shop[0]?.id == singleShop.id ? <OpenModalButton
                         buttonText="Update your shop"
-                        modalComponent={<UpdateShopModal id={singleShop.id}/>}
+                        modalComponent={<UpdateShopModal singleShop={singleShop}/>}
                     /> : null : null}
             </div>
 

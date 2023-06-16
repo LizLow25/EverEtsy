@@ -62,7 +62,7 @@ export const getSingleShopThunk = (id) => async (dispatch) => {
 
     if (res.ok) {
         const { shop } = await res.json()
-        dispatch(getSingleShop(shop))
+        await dispatch(getSingleShop(shop))
         return
     } else {
         console.log("Problem with loading single shops")
@@ -77,7 +77,7 @@ export const newShopThunk = (shop) => async (dispatch) => {
 
     if (res.ok) {
         const { shop } = await res.json()
-        dispatch(createNewShop(shop))
+        await dispatch(createNewShop(shop))
         return shop
     } else {
         console.log("Problem with creating a new shop", res)
@@ -108,7 +108,7 @@ const shopReducer = (state = initialState, action) => {
         case CREATE_NEW_SHOP:
             return { ...state, singleShop: { ...action.shop } }
         case DELETE_SHOP:
-            
+
         default:
             return state
     }
