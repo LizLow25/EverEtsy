@@ -2,7 +2,7 @@ from flask import Blueprint, request
 from app.models import Shop, db
 from ..forms.shop_form import ShopForm
 from flask_login import login_required, current_user
-from .AWS_helpers import upload_file_to_s3, get_unique_filename
+from .AWS_helpers import upload_file_to_s3, get_unique_filename, remove_file_from_s3
 
 shop_routes = Blueprint('shops', __name__)
 
@@ -60,3 +60,22 @@ def post_new_shop():
     if form.errors:
         print("There were some form errors", form.errors)
         return {"errors": form.errors}, 400, {"Content-Type": "application/json"}
+
+
+@shop_routes.route("/<int:id>", methods=['DELETE'])
+@login_required
+def delete_shop(id):
+
+    shop = Shop.query.get(id)
+
+    if shop is None:
+        return {"errors": "Shop does not exist"}, 404
+
+    #remove from aws if not part of seeder data
+    if shop.id not in range(1, 4):
+        remove_file_from_s3(shop.shop_image)
+
+    db.session.delete(shop)
+    db.session.commit()
+
+    return {"message": "Shop Succesfully Deleted"}

@@ -1,9 +1,12 @@
 import { useDispatch } from "react-redux";
+import { useHistory } from "react-router-dom";
 import { useModal } from "../../context/Modal";
+import { deleteShopThunk } from "../../store/shop";
 
 function DeleteShopModal({id}) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
+    const history = useHistory();
 
     const closeDelete = () => {
         return closeModal()
@@ -11,7 +14,8 @@ function DeleteShopModal({id}) {
 
     const deleteShop = async () => {
         console.log(id)
-        //await dispatch(deleteShopThunk(id))
+        await dispatch(deleteShopThunk(id))
+        history.push('/shops/new')
 
         return closeModal()
 

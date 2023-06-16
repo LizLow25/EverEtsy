@@ -37,7 +37,9 @@ function NewShopFormModal() {
             setDescription('')
             setImage('')
 
+            await dispatch(getSingleShopThunk(newShop.id))
             history.push(`/shops/${newShop.id}`)
+
             closeModal()
         }
 

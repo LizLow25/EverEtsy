@@ -9,6 +9,7 @@ const normalizeObj = (arr) => {
 const GET_ALL_SHOPS = 'shop/GET_ALL_SHOPS'
 const GET_SINGLE_SHOP = 'shop/GET_SINGLE_SHOP'
 const CREATE_NEW_SHOP = 'shop/CREATE_NEW_SHOP'
+const DELETE_SHOP = 'shop/DELETE_SHOP'
 
 
 // ACTION CREATORS
@@ -32,6 +33,14 @@ const createNewShop = (shop) => {
         type: CREATE_NEW_SHOP,
         shop
     }
+}
+
+const deleteShop = (id) => {
+    return {
+        type: DELETE_SHOP,
+        id
+    }
+
 }
 
 // THUNKS
@@ -73,6 +82,15 @@ export const newShopThunk = (shop) => async (dispatch) => {
     } else {
         console.log("Problem with creating a new shop", res)
     }
+}
+
+export const deleteShopThunk = (id) => async (dispatch) => {
+    const res = await fetch(`/api/shops/${id}`, {
+        method: "DELETE"
+      })
+      if (res.ok) {
+        dispatch(deleteShop(id))
+      }
 
 
 }
@@ -89,6 +107,8 @@ const shopReducer = (state = initialState, action) => {
             return { ...state, singleShop: { ...action.shop } }
         case CREATE_NEW_SHOP:
             return { ...state, singleShop: { ...action.shop } }
+        case DELETE_SHOP:
+            
         default:
             return state
     }

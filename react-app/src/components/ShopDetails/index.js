@@ -31,7 +31,7 @@ const ShopDetails = () => {
                     <p>{singleShop.description}</p>
 
                 </div>
-                {sessionUser ? sessionUser.shop[0].id == singleShop.id ? <OpenModalButton
+                {sessionUser ? sessionUser.shop[0]?.id == singleShop.id ? <OpenModalButton
                         buttonText="Delete your shop"
                         modalComponent={<DeleteShopModal id={singleShop.id}/>}
                     /> : null : null}
