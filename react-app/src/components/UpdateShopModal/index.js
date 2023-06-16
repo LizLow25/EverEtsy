@@ -28,7 +28,7 @@ function UpdateShopModal({ singleShop }) {
         formData.append("shop_image", image)
 
         //post the data to the backend
-        // const updatedShop = await dispatch(updateShopThunk(formData))
+        // const updatedShop = await dispatch(updateShopThunk(singleShop.id, formData))
 
         // if (newShop) {
         //     setName('')

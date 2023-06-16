@@ -1,6 +1,7 @@
 from flask import Blueprint, request
 from app.models import Shop, db
 from ..forms.shop_form import ShopForm
+from ..forms.edit_shop_form import EditShopForm
 from flask_login import login_required, current_user
 from .AWS_helpers import upload_file_to_s3, get_unique_filename, remove_file_from_s3
 
@@ -79,3 +80,36 @@ def delete_shop(id):
     db.session.commit()
 
     return {"message": "Shop Succesfully Deleted"}
+
+
+@shop_routes.route("/<int:id>/edit", methods=['PUT'])
+@login_required
+def update_shop(id):
+
+    edit_shop_form = EditShopForm()
+
+    updated_shop = Shop.query.get(id)
+
+    if updated_shop is None:
+            return {"errors": "Shop does not exist"}, 404
+
+    if edit_shop_form.validate_on_submit():
+        data = edit_shop_form.data
+
+        if data["name"]:
+            updated_shop.name = data["name"]
+        if data["description"]:
+            updated_shop.description = data["description"]
+        #if there is a new image uploaded, need to put it into AWS
+        if data["shop_image"]:
+
+            shop_image = data["shop_image"]
+            shop_image.filename = get_unique_filename(shop_image.filename)
+            upload = upload_file_to_s3(shop_image)
+
+
+
+
+
+    edit_form = EditShopForm()
+    edit_form["csrf_token"].data = request.cookies["csrf_token"]

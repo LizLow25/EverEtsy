@@ -1,17 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import OpenModalButton from "../OpenModalButton";
 import NewShopFormModal from '../NewShopFormModal';
 
 const ManageShop = () => {
     // const dispatch = useDispatch()
+    // const [isDeleted, setIsDeleted] = useState(false)
 
     // const singleShop = useSelector(state => state.shops.singleShop)
     // const { shopId } = useParams()
-    // console.log('single shop', singleShop)
+    // // console.log('single shop', singleShop)
 
     // useEffect(() => {
-    //     dispatch(getSingleShopThunk(shopId))
-    // }, [dispatch, shopId])
+    //      dispatch(getSingleShopThunk(shopId))
+    //  }, [dispatch, shopId])
 
     // if (!singleShop) return <h1>Shop loading...</h1>
 

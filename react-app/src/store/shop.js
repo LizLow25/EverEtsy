@@ -10,6 +10,7 @@ const GET_ALL_SHOPS = 'shop/GET_ALL_SHOPS'
 const GET_SINGLE_SHOP = 'shop/GET_SINGLE_SHOP'
 const CREATE_NEW_SHOP = 'shop/CREATE_NEW_SHOP'
 const DELETE_SHOP = 'shop/DELETE_SHOP'
+const UPDATE_SHOP = 'shop/UPDATE_SHOP'
 
 
 // ACTION CREATORS
@@ -41,6 +42,14 @@ const deleteShop = (id) => {
         id
     }
 
+}
+
+const updateShop = (id, shop) => {
+    return {
+        type: UPDATE_SHOP,
+        id,
+        shop
+    }
 }
 
 // THUNKS
@@ -92,6 +101,21 @@ export const deleteShopThunk = (id) => async (dispatch) => {
         dispatch(deleteShop(id))
       }
 
+}
+
+export const updateShopThunk = (id, shop) => async (dispatch) => {
+    const res = await fetch(`/api/shops/${id}/edit`, {
+        method: "PUT",
+        body: shop
+      })
+
+    if (res.ok) {
+        const { shop } = await res.json()
+        await dispatch(updateShop(id, shop))
+        return shop
+    } else {
+        console.log("Problem with updating the shop", res)
+    }
 
 }
 
@@ -108,6 +132,10 @@ const shopReducer = (state = initialState, action) => {
         case CREATE_NEW_SHOP:
             return { ...state, singleShop: { ...action.shop } }
         case DELETE_SHOP:
+            return { ...state, singleShop: {} }
+
+        case UPDATE_SHOP:
+
 
         default:
             return state

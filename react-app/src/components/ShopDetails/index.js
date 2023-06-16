@@ -32,11 +32,11 @@ const ShopDetails = () => {
                     <p>{singleShop.description}</p>
 
                 </div>
-                {sessionUser ? sessionUser.shop[0]?.id == singleShop.id ? <OpenModalButton
+                {sessionUser ? sessionUser.id == singleShop.shop_owner ? <OpenModalButton
                         buttonText="Delete your shop"
                         modalComponent={<DeleteShopModal id={singleShop.id}/>}
                     /> : null : null}
-                {sessionUser ? sessionUser.shop[0]?.id == singleShop.id ? <OpenModalButton
+                {sessionUser ? sessionUser.id == singleShop.shop_owner ? <OpenModalButton
                         buttonText="Update your shop"
                         modalComponent={<UpdateShopModal singleShop={singleShop}/>}
                     /> : null : null}
