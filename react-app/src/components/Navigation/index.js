@@ -10,17 +10,27 @@ function Navigation({ isLoaded }) {
 	console.log(sessionUser, sessionUser?.shop)
 
 	return (
-		<ul>
-			<li>
-				<NavLink exact to="/">Home</NavLink>
-			</li>
+		<div className='navbarcontainer'>
+			<div>
+				<NavLink className='everetsy' exact to="/">EverEtsy</NavLink>
+			</div>
+			<div className='search-bar-container'>
+				<input
+					type='search'
+					className='search-bar'
+					placeholder='Search for anything'
+				/>
+
+			</div>
+			{sessionUser ? sessionUser.id === singleShop?.shop_owner ? <div><NavLink exact to={`/shops/${singleShop.id}`}> <i className="fa-solid fa-store fa-xl"></i></NavLink></div> : <div><NavLink exact to='/shops/new'> <i class="fas fa-store fa-xl"></i></NavLink></div> : null}
+
 			{isLoaded && (
-				<li>
+				<div>
 					<ProfileButton user={sessionUser} />
-				</li>
+				</div>
 			)}
-			{ sessionUser ? sessionUser.id === singleShop?.shop_owner ? <li><NavLink exact to={`/shops/${singleShop.id}`}> <i class="fas fa-store"></i></NavLink></li> : <li><NavLink exact to='/shops/new'> <i class="fas fa-store"></i></NavLink></li> : null }
-		</ul>
+			<div><i class="fa-solid fa-cart-shopping fa-xl"></i></div>
+		</div>
 	);
 }
 
