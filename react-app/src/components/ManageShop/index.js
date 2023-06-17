@@ -60,7 +60,7 @@ const ManageShop = () => {
                     modalComponent={<CreateProductModal shop={shop} />} /> : null}
             </div>
 
-            {productArray.length ? <div className='productCardContainer'>
+            {shop.id ? productArray.length ? <div className='productCardContainer'>
                 {productArray?.map(product => (
                     <div key={product.id} className='productCard' onClick={(e) => {
                         history.push(`/products/${product.id}`)
@@ -83,7 +83,7 @@ const ManageShop = () => {
                     </div>
                 ))
                 }
-            </div> : null}
+            </div> : null : null}
 
 
 

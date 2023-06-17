@@ -157,6 +157,7 @@ def get_current_shop():
 @shop_routes.route("/current/products")
 def get_products_for_current_shop():
     id = current_user.id
+    
     shop = Shop.query.filter(Shop.shop_owner == id).first()
 
     if shop is None:
