@@ -37,7 +37,7 @@ function App() {
         <Route exact path="/products/:productId">
           <ProductDetails />
         </Route>
-        <Route exact path="/shops/new">
+        <Route exact path="/shops/manage">
           <ManageShop />
         </Route>
         <Route exact path="/shops/:shopId">

@@ -12,6 +12,8 @@ const GET_SINGLE_PRODUCT = 'product/GET_SINGLE_PRODUCT'
 
 const GET_SHOP_PRODUCTS = 'product/GET_SHOP_PRODUCTS'
 
+const GET_CURRENT_SHOP_PRODUCTS = 'products/GET_CURRENT_SHOP_PRODUCTS'
+
 
 // ACTION CREATORS
 
@@ -35,6 +37,13 @@ const getShopProducts = (products) => {
         products
     }
 
+}
+
+const getCurrentShopProducts = (products) => {
+    return {
+        type: GET_CURRENT_SHOP_PRODUCTS,
+        products
+    }
 }
 
 
@@ -71,7 +80,22 @@ export const getProductsForShopThunk = (id) => async (dispatch) => {
         dispatch(getShopProducts(products))
         return
     } else {
-        console.log("Problem with loading products for the shop")
+        console.log("HELLO Problem with loading products for the shop")
+        return null
+    }
+
+}
+
+export const getProductsForShopOwnerThunk = () => async (dispatch) => {
+    const res = await fetch('/api/shops/current/products')
+
+    if (res.ok) {
+        const { products } = await res.json()
+        dispatch(getCurrentShopProducts(products))
+        return
+    } else {
+        console.log("HELLO Problem with loading products for the shop")
+        return null
     }
 
 }
@@ -87,6 +111,8 @@ const productReducer = (state = initialState, action) => {
         case GET_SINGLE_PRODUCT:
             return { ...state, singleProduct: { ...action.product } }
         case GET_SHOP_PRODUCTS:
+            return { ...state, allProducts: { ...normalizeObj(action.products) } }
+        case GET_CURRENT_SHOP_PRODUCTS:
             return { ...state, allProducts: { ...normalizeObj(action.products) } }
         default:
             return state

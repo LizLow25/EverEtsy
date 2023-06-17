@@ -55,7 +55,7 @@ function NewShopFormModal() {
 
 
             closeModal()
-            history.push(`/shops/${newShop.id}`)
+            history.push('/shops/manage')
         }
 
 

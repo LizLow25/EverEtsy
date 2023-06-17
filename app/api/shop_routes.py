@@ -139,6 +139,29 @@ def delete_shop(id):
 @shop_routes.route("/<int:id>/products")
 def get_products_for_shop(id):
 
-    products = Product.query.filter(Product.shop_id == id)
+    products = Product.query.filter(Product.shop_id == id).all()
+
+    return {'products': [product.to_dict() for product in products]}
+
+@shop_routes.route("/current")
+def get_current_shop():
+
+    id = current_user.id
+    shop = Shop.query.filter(Shop.shop_owner == id).first()
+
+    if shop is None:
+        return {"errors": "Shop not Found"}, 404
+
+    return {"shop": shop.to_dict()}
+
+@shop_routes.route("/current/products")
+def get_products_for_current_shop():
+    id = current_user.id
+    shop = Shop.query.filter(Shop.shop_owner == id).first()
+
+    if shop is None:
+        return {"errors": "Shop not Found"}, 404
+
+    products = Product.query.filter(Product.shop_id == shop.id).all()
 
     return {'products': [product.to_dict() for product in products]}

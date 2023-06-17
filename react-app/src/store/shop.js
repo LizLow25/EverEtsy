@@ -11,6 +11,7 @@ const GET_SINGLE_SHOP = 'shop/GET_SINGLE_SHOP'
 const CREATE_NEW_SHOP = 'shop/CREATE_NEW_SHOP'
 const DELETE_SHOP = 'shop/DELETE_SHOP'
 const UPDATE_SHOP = 'shop/UPDATE_SHOP'
+const CURRENT_SHOP = 'shop/CURRENT_SHOP'
 
 
 // ACTION CREATORS
@@ -50,6 +51,14 @@ const updateShop = (id, shop) => {
         id,
         shop
     }
+}
+
+const getOwnerShop = (shop) => {
+    return {
+        type: CURRENT_SHOP,
+        shop
+    }
+
 }
 
 // THUNKS
@@ -121,6 +130,20 @@ export const updateShopThunk = (id, shop) => async (dispatch) => {
 
 }
 
+export const getShopByOwnerThunk = () => async (dispatch) => {
+    const res = await fetch('/api/shops/current')
+
+    if (res.ok) {
+        const { shop } = await res.json()
+        await dispatch(getOwnerShop(shop))
+        return
+    } else {
+        console.log("Problem with loading owners shop")
+        return null
+    }
+
+}
+
 // --------- INITIAL STATE -------------
 const initialState = { allShops: {}, singleShop: {} }
 // ---------- REDUCER ----------
@@ -137,6 +160,8 @@ const shopReducer = (state = initialState, action) => {
             return { ...state, singleShop: {} }
         case UPDATE_SHOP:
             return {...state, singleShop: { ...action.shop}}
+        case CURRENT_SHOP:
+            return {...state, singleShop: { ...action.shop }}
         default:
             return state
     }
