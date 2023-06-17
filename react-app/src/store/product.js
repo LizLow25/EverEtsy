@@ -12,8 +12,9 @@ const GET_SINGLE_PRODUCT = 'product/GET_SINGLE_PRODUCT'
 
 const GET_SHOP_PRODUCTS = 'product/GET_SHOP_PRODUCTS'
 
-const GET_CURRENT_SHOP_PRODUCTS = 'products/GET_CURRENT_SHOP_PRODUCTS'
+const GET_CURRENT_SHOP_PRODUCTS = 'product/GET_CURRENT_SHOP_PRODUCTS'
 
+const CREATE_PRODUCT = 'product/CREATE_PRODUCT'
 
 // ACTION CREATORS
 
@@ -43,6 +44,13 @@ const getCurrentShopProducts = (products) => {
     return {
         type: GET_CURRENT_SHOP_PRODUCTS,
         products
+    }
+}
+
+const createNewProduct = (product) => {
+    return {
+        type: CREATE_PRODUCT,
+        product
     }
 }
 
@@ -98,6 +106,21 @@ export const getProductsForShopOwnerThunk = () => async (dispatch) => {
         return null
     }
 
+}
+
+export const newProductThunk = (product) => async (dispatch) => {
+    const res = await fetch('/api/products/new', {
+        method: "POST",
+        body: product
+      })
+
+    if (res.ok) {
+        const { product } = await res.json()
+        await dispatch(createNewProduct(product))
+        return product
+    } else {
+        console.log("Problem with creating a new product", res)
+    }
 }
 
 // --------- INITIAL STATE -------------
