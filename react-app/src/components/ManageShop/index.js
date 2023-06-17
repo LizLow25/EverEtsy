@@ -7,6 +7,7 @@ import OpenModalButton from "../OpenModalButton";
 import NewShopFormModal from '../NewShopFormModal'
 import DeleteShopModal from '../DeleteShopModal';
 import UpdateShopModal from '../UpdateShopModal';
+import CreateProductModal from '../CreateProductModal';
 
 const ManageShop = () => {
     const dispatch = useDispatch()
