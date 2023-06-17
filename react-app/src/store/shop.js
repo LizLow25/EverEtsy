@@ -113,7 +113,7 @@ export const deleteShopThunk = (id) => async (dispatch) => {
 }
 
 export const updateShopThunk = (id, shop) => async (dispatch) => {
-    console.log('in the thunk', shop)
+
     const res = await fetch(`/api/shops/${id}/edit`, {
         method: "PUT",
         body: shop

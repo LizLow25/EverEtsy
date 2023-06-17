@@ -143,6 +143,22 @@ export const deleteProductThunk = (id) => async (dispatch) => {
 
 }
 
+export const updateProductThunk = (id, product) => async (dispatch) => {
+
+    const res = await fetch(`/api/products/${id}/edit`, {
+        method: "PUT",
+        body: product
+      })
+
+    if (res.ok) {
+        const { product } = await res.json()
+        return product
+    } else {
+        console.log("Problem with updating the shop", res)
+    }
+
+}
+
 // --------- INITIAL STATE -------------
 const initialState = { allProducts: {}, singleProduct: {} }
 // ---------- REDUCER ----------
