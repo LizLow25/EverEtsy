@@ -8,6 +8,7 @@ import NewShopFormModal from '../NewShopFormModal'
 import DeleteShopModal from '../DeleteShopModal';
 import UpdateShopModal from '../UpdateShopModal';
 import CreateProductModal from '../CreateProductModal';
+import DeleteProductModal from '../DeleteProductModal';
 
 const ManageShop = () => {
     const dispatch = useDispatch()
@@ -71,10 +72,17 @@ const ManageShop = () => {
                             <p>{product.name}</p>
                             <p>{product.price}</p>
                         </div>
+                        <OpenModalButton
+                            buttonText="Delete product"
+                            modalComponent={<DeleteProductModal id={product.id} />} />
+                        {/* <OpenModalButton
+                            buttonText="Update product"
+                            modalComponent={<UpdateProductModal id={product} />} /> */}
+
                     </div>
                 ))
                 }
-            </div> : null }
+            </div> : null}
 
 
 

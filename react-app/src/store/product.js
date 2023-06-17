@@ -16,6 +16,8 @@ const GET_CURRENT_SHOP_PRODUCTS = 'product/GET_CURRENT_SHOP_PRODUCTS'
 
 const CREATE_PRODUCT = 'product/CREATE_PRODUCT'
 
+const DELETE_PRODUCT = 'product/DELETE_PRODUCT'
+
 // ACTION CREATORS
 
 const getAllProducts = (products) => {
@@ -52,6 +54,14 @@ const createNewProduct = (product) => {
         type: CREATE_PRODUCT,
         product
     }
+}
+
+const deleteProduct = (id) => {
+    return {
+        type: DELETE_PRODUCT,
+        id
+    }
+
 }
 
 
@@ -121,6 +131,16 @@ export const newProductThunk = (product) => async (dispatch) => {
     } else {
         console.log("Problem with creating a new product", res)
     }
+}
+
+export const deleteProductThunk = (id) => async (dispatch) => {
+    const res = await fetch(`/api/products/${id}`, {
+        method: "DELETE"
+      })
+      if (res.ok) {
+        dispatch(deleteProduct(id))
+      }
+
 }
 
 // --------- INITIAL STATE -------------
