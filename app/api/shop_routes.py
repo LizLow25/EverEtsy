@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from app.models import Shop, db
+from app.models import Shop, db, Product
 from ..forms.shop_form import ShopForm
 from ..forms.edit_shop_form import EditShopForm
 from flask_login import login_required, current_user
@@ -134,3 +134,11 @@ def delete_shop(id):
     db.session.commit()
 
     return {"message": "Shop Succesfully Deleted"}
+
+
+@shop_routes.route("/<int:id>/products")
+def get_products_for_shop(id):
+
+    products = Product.query.filter(Product.shop_id == id)
+
+    return {'products': [product.to_dict() for product in products]}

@@ -10,6 +10,7 @@ const GET_ALL_PRODUCTS = 'product/GET_ALL_PRODUCTS'
 
 const GET_SINGLE_PRODUCT = 'product/GET_SINGLE_PRODUCT'
 
+const GET_SHOP_PRODUCTS = 'product/GET_SHOP_PRODUCTS'
 
 
 // ACTION CREATORS
@@ -28,6 +29,14 @@ const getSingleProduct = (product) => {
 
 }
 
+const getShopProducts = (products) => {
+    return {
+        type: GET_SHOP_PRODUCTS,
+        products
+    }
+
+}
+
 
 // THUNKS
 
@@ -38,12 +47,11 @@ export const getAllProductsThunk = () => async (dispatch) => {
         dispatch(getAllProducts(products))
         return
     } else {
-        console.log("Problem with loading all shops")
+        console.log("Problem with loading all products")
     }
 }
 
 export const getSingleProductThunk = (id) => async (dispatch) => {
-    console.log('inside single product thunk', id)
     const res = await fetch(`/api/products/${id}`)
 
     if (res.ok) {
@@ -51,8 +59,21 @@ export const getSingleProductThunk = (id) => async (dispatch) => {
         dispatch(getSingleProduct(product))
         return
     } else {
-        console.log("Problem with loading all shops")
+        console.log("Problem with loading the product")
     }
+}
+
+export const getProductsForShopThunk = (id) => async (dispatch) => {
+    const res = await fetch(`/api/shops/${id}/products`)
+
+    if (res.ok) {
+        const { products } = await res.json()
+        dispatch(getShopProducts(products))
+        return
+    } else {
+        console.log("Problem with loading products for the shop")
+    }
+
 }
 
 // --------- INITIAL STATE -------------
@@ -65,6 +86,8 @@ const productReducer = (state = initialState, action) => {
             return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_SINGLE_PRODUCT:
             return { ...state, singleProduct: { ...action.product } }
+        case GET_SHOP_PRODUCTS:
+            return { ...state, allProducts: { ...normalizeObj(action.products) } }
         default:
             return state
     }
