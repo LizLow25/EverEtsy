@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
+import { getProductsForShopOwnerThunk, newProductThunk } from '../../store/product';
 
 
 function CreateProductModal({ shop }) {
@@ -23,18 +24,20 @@ function CreateProductModal({ shop }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // const newErrors = {};
-        // setErrors(newErrors)
-        // // validate data on the frontend here
-        // if (name.length < 3 || name.length > 50) newErrors['name'] = "Shop name must be between 3 and 50 characters"
-        // if (description.length < 5 || description.length > 100) newErrors['description'] = "Shop description must be between 5 and 100 characters"
-        // if (!image) newErrors['image'] = "Please upload an image for your shop"
+        const newErrors = {};
+        setErrors(newErrors)
+        // validate data on the frontend here
+        if (name.length < 3 || name.length > 50) newErrors['name'] = "Product name must be between 3 and 50 characters"
+        if (details.length < 10 || details.length > 500) newErrors['details'] = "Product details must be between 10 and 500 characters"
+        if (!image) newErrors['image'] = "Please upload an image for your product"
+        if (price < 1) newErrors['price'] = "Please enter a valid price"
+        if (category == '') newErrors['category'] = "Please pick a category"
 
 
-        // setErrors(newErrors);
+        setErrors(newErrors);
 
-        // // If we have errors, bail out
-        // if (Object.keys(newErrors).length) return;
+        // If we have errors, bail out
+        if (Object.keys(newErrors).length) return;
 
 
         //create a FormData class to send to the backend
@@ -47,19 +50,21 @@ function CreateProductModal({ shop }) {
         formData.append("category", category)
 
         //post the data to the backend
-        //const newProduct = await dispatch(newProductThunk(formData))
+        const newProduct = await dispatch(newProductThunk(formData))
 
-        // if (newShop) {
-        //     setName('')
-        //     setDescription('')
-        //     setImage('')
+        if (newProduct) {
+            setName('')
+            setDetails('')
+            setPrice(0)
+            setImage('')
+            setCategory('')
 
-        //     //await dispatch(getSingleShopThunk(newShop.id))
+            await dispatch(getProductsForShopOwnerThunk())
 
 
-        //     closeModal()
-        //     history.push('/shops/manage')
-        // }
+            closeModal()
+            history.push('/shops/manage')
+        }
 
 
 
