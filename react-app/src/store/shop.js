@@ -132,6 +132,7 @@ export const updateShopThunk = (id, shop) => async (dispatch) => {
 
 export const getShopByOwnerThunk = () => async (dispatch) => {
     const res = await fetch('/api/shops/current')
+    console.log('inside current thunk')
 
     if (res.ok) {
         const { shop } = await res.json()
@@ -139,6 +140,7 @@ export const getShopByOwnerThunk = () => async (dispatch) => {
         return
     } else {
         console.log("Problem with loading owners shop")
+        await dispatch(getOwnerShop({}))
         return null
     }
 

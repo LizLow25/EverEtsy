@@ -17,6 +17,7 @@ const ManageShop = () => {
 
     const shop = useSelector(state => state.shops.singleShop)
     const products = useSelector(state => state.products.allProducts)
+    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(getShopByOwnerThunk())
@@ -25,18 +26,11 @@ const ManageShop = () => {
 
     let productArray = Object.values(products)
 
-
+    if (!shop.id) return <OpenModalButton buttonText="Open a shop" modalComponent={<NewShopFormModal />} />
 
 
     return (
         <>
-
-            {!shop.id ? <OpenModalButton
-                buttonText="Open a shop"
-                modalComponent={<NewShopFormModal />}
-            /> : null}
-
-
             <div className='shopDetailsContainer'>
                 <div className='shopContainerDetails'>
                     <img src={shop.shop_image} alt='' className='imgShopDetails' />
@@ -46,21 +40,21 @@ const ManageShop = () => {
                     <p>{shop.description}</p>
 
                 </div>
-                {shop.id ? <OpenModalButton
+                <OpenModalButton
                     buttonText="Delete your shop"
-                    modalComponent={<DeleteShopModal id={shop.id} />} /> : null}
+                    modalComponent={<DeleteShopModal id={shop.id} />} />
 
-                {shop.id ? <OpenModalButton
+                <OpenModalButton
                     buttonText="Update your shop"
-                    modalComponent={<UpdateShopModal singleShop={shop} />} /> : null}
+                    modalComponent={<UpdateShopModal singleShop={shop} />} />
 
 
-                {shop.id ? <OpenModalButton
+                <OpenModalButton
                     buttonText="Add products"
-                    modalComponent={<CreateProductModal shop={shop} />} /> : null}
+                    modalComponent={<CreateProductModal shop={shop} />} />
             </div>
 
-            {shop.id ? productArray.length ? <div className='productCardContainer'>
+            {shop.owner_id == sessionUser?.id ? productArray.length ? <div className='productCardContainer'>
                 {productArray?.map(product => (
                     <div key={product.id} className='productCard' onClick={(e) => {
                         history.push(`/products/${product.id}`)

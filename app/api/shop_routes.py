@@ -150,14 +150,14 @@ def get_current_shop():
     shop = Shop.query.filter(Shop.shop_owner == id).first()
 
     if shop is None:
-        return {"errors": "Shop not Found"}, 404
+         return {"errors": "Shop not Found"}, 404
 
     return {"shop": shop.to_dict()}
 
 @shop_routes.route("/current/products")
 def get_products_for_current_shop():
     id = current_user.id
-    
+
     shop = Shop.query.filter(Shop.shop_owner == id).first()
 
     if shop is None:
