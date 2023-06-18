@@ -22,7 +22,7 @@ const ManageShop = () => {
     useEffect(() => {
         dispatch(getShopByOwnerThunk())
         dispatch(getProductsForShopOwnerThunk())
-    }, [dispatch])
+    }, [dispatch, shop.id])
 
     let productArray = Object.values(products)
 
@@ -77,7 +77,7 @@ const ManageShop = () => {
                     </div>
                 ))
                 }
-            </div> : null : null}
+            </div> : null}
 
 
 
