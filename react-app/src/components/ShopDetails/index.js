@@ -11,7 +11,8 @@ const ShopDetails = () => {
 
     const singleShop = useSelector(state => state.shops.singleShop)
     const products = useSelector(state => state.products.allProducts)
-    const { shopId } = useParams()
+    let { shopId } = useParams()
+    shopId = parseInt(shopId)
 
 
     useEffect(() => {
