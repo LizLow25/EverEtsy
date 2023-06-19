@@ -16,7 +16,7 @@ const ManageShop = () => {
     const history = useHistory()
 
     const shop = useSelector(state => state.shops.singleShop)
-    const products = useSelector(state => state.products.allProducts)
+    const products = useSelector(state => state.products.shopProducts)
 
     useEffect(() => {
         dispatch(getShopByOwnerThunk())
@@ -53,10 +53,12 @@ const ManageShop = () => {
                     modalComponent={<CreateProductModal shop={shop} />} />
             </div>
 
-            { productArray.length ? <div className='productCardContainer'>
+             <div className='productCardContainer'>
                 {productArray?.map(product => (
                     <div key={product.id} className='productCard' >
-                        <div className='imageContainerCard' onClick={(e) => {
+                        <div className='imageContainerCard'
+
+                        onClick={(e) => {
                         history.push(`/products/${product.id}`)
                     }
                     }>
@@ -76,7 +78,7 @@ const ManageShop = () => {
                     </div>
                 ))
                 }
-            </div> : null}
+            </div>
 
 
 

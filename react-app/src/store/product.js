@@ -160,7 +160,7 @@ export const updateProductThunk = (id, product) => async (dispatch) => {
 }
 
 // --------- INITIAL STATE -------------
-const initialState = { allProducts: {}, singleProduct: {} }
+const initialState = { allProducts: {}, singleProduct: {}, shopProducts: {} }
 // ---------- REDUCER ----------
 const productReducer = (state = initialState, action) => {
 
@@ -169,10 +169,10 @@ const productReducer = (state = initialState, action) => {
             return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_SINGLE_PRODUCT:
             return { ...state, singleProduct: { ...action.product } }
-        case GET_SHOP_PRODUCTS:
-            return { ...state, allProducts: { ...normalizeObj(action.products) } }
+        // case GET_SHOP_PRODUCTS:
+        //     return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_CURRENT_SHOP_PRODUCTS:
-            return { ...state, allProducts: { ...normalizeObj(action.products) } }
+            return { ...state, shopProducts: { ...normalizeObj(action.products) } }
         default:
             return state
     }

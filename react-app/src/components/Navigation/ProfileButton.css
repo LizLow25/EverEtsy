@@ -1,0 +1,13 @@
+.profile-dropdown {
+    background-color: white;
+    border: red 2px solid;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: none;
+}
+
+.profile-dropdown-items {
+    padding: none;
+}
