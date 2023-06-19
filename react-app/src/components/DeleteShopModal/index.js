@@ -15,7 +15,7 @@ function DeleteShopModal({id}) {
     const deleteShop = async () => {
         console.log(id)
         await dispatch(deleteShopThunk(id))
-        history.push('/shops/manage')
+        
 
         return closeModal()
 
