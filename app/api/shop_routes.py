@@ -24,6 +24,7 @@ def get_single_shop(id):
 
 @shop_routes.route("/new", methods=['POST'])
 # @login_required
+# commented out to try and prevent redirect
 def post_new_shop():
     print('creating a shop backend')
     form = ShopForm()
