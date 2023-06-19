@@ -91,6 +91,7 @@ export const getSingleProductThunk = (id) => async (dispatch) => {
 }
 
 export const getProductsForShopThunk = (id) => async (dispatch) => {
+    console.log(id)
     const res = await fetch(`/api/shops/${id}/products`)
 
     if (res.ok) {
@@ -169,8 +170,8 @@ const productReducer = (state = initialState, action) => {
             return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_SINGLE_PRODUCT:
             return { ...state, singleProduct: { ...action.product } }
-        // case GET_SHOP_PRODUCTS:
-        //     return { ...state, allProducts: { ...normalizeObj(action.products) } }
+        case GET_SHOP_PRODUCTS:
+            return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_CURRENT_SHOP_PRODUCTS:
             return { ...state, shopProducts: { ...normalizeObj(action.products) } }
         default:

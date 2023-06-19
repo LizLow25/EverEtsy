@@ -15,7 +15,7 @@ const ManageShop = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const shop = useSelector(state => state.shops.singleShop)
+    const shop = useSelector(state => state.shops.currentShop)
     const products = useSelector(state => state.products.shopProducts)
 
     useEffect(() => {

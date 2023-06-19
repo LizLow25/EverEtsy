@@ -147,7 +147,7 @@ export const getShopByOwnerThunk = () => async (dispatch) => {
 }
 
 // --------- INITIAL STATE -------------
-const initialState = { allShops: {}, singleShop: {} }
+const initialState = { allShops: {}, singleShop: {}, currentShop: {} }
 // ---------- REDUCER ----------
 const shopReducer = (state = initialState, action) => {
 
@@ -157,13 +157,13 @@ const shopReducer = (state = initialState, action) => {
         case GET_SINGLE_SHOP:
             return { ...state, singleShop: { ...action.shop } }
         case CREATE_NEW_SHOP:
-            return { ...state, singleShop: { ...action.shop } }
+            return { ...state, currentShop: { ...action.shop } }
         case DELETE_SHOP:
-            return { ...state, singleShop: {} }
+            return { ...state, currentShop: {} }
         case UPDATE_SHOP:
-            return {...state, singleShop: { ...action.shop}}
+            return {...state, currentShop: { ...action.shop}}
         case CURRENT_SHOP:
-            return {...state, singleShop: { ...action.shop }}
+            return {...state, currentShop: { ...action.shop }}
         default:
             return state
     }
