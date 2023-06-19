@@ -56,11 +56,11 @@ const ManageShop = () => {
 
             { productArray.length ? <div className='productCardContainer'>
                 {productArray?.map(product => (
-                    <div key={product.id} className='productCard' onClick={(e) => {
+                    <div key={product.id} className='productCard' >
+                        <div className='imageContainerCard' onClick={(e) => {
                         history.push(`/products/${product.id}`)
                     }
                     }>
-                        <div className='imageContainerCard'>
                             <img src={product.main_image} alt='' className='cardImage' />
                         </div>
                         <div className='cardDetails'>
