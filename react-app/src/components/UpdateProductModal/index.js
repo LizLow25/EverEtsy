@@ -61,7 +61,7 @@ function UpdateProductModal({ product }) {
 
 
             closeModal()
-            history.push('/shops/manage')
+            
         }
 
 

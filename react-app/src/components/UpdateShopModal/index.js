@@ -54,7 +54,7 @@ function UpdateShopModal({ singleShop }) {
 
 
             closeModal()
-            history.push('/shops/manage')
+            
         }
 
 

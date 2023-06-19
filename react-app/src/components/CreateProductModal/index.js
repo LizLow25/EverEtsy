@@ -63,7 +63,7 @@ function CreateProductModal({ shop }) {
 
 
             closeModal()
-            history.push('/shops/manage')
+            
         }
 
 
