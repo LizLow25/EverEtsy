@@ -5,9 +5,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: none;
+    padding-left: none;
 }
 
 .profile-dropdown-items {
     padding: none;
+}
+
+.profileButton {
+    border-radius: 100%;
+    height: 50px;
+    border: none;
+    width: 50px;
 }

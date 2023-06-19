@@ -1,0 +1,37 @@
+.sign-up-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding-bottom: 20px;
+}
+
+.signupform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.signupform > label {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 300px;
+
+}
+
+.registerButton {
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+}
+
+.signuperror {
+    color: red;
+    list-style: none;
+}
