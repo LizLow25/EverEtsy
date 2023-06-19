@@ -17,7 +17,6 @@ const ManageShop = () => {
 
     const shop = useSelector(state => state.shops.singleShop)
     const products = useSelector(state => state.products.allProducts)
-    const sessionUser = useSelector(state => state.session.user);
 
     useEffect(() => {
         dispatch(getShopByOwnerThunk())

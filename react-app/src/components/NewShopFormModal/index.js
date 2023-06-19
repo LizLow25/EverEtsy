@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
 import { getShopByOwnerThunk, newShopThunk } from '../../store/shop';
-import { getSingleShopThunk } from '../../store/shop';
+// import { getSingleShopThunk } from '../../store/shop';
 
 
 function NewShopFormModal() {

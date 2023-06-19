@@ -23,7 +23,7 @@ def get_single_shop(id):
     return {"shop": shop.to_dict()}
 
 @shop_routes.route("/new", methods=['POST'])
-@login_required
+# @login_required
 def post_new_shop():
     print('creating a shop backend')
     form = ShopForm()
