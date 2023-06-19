@@ -8,15 +8,26 @@ function SignupFormModal() {
 	const dispatch = useDispatch();
 	const [email, setEmail] = useState("");
 	const [username, setUsername] = useState("");
+	const [firstname, setFirstname] = useState("");
+	const [lastname, setLastname] = useState("");
 	const [password, setPassword] = useState("");
 	const [confirmPassword, setConfirmPassword] = useState("");
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
 
+	const validateEmail = (email) => {
+		const res = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+		return res.test(String(email).toLowerCase());
+	  }
+
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		if(!validateEmail(email)) {
+			setErrors(["Invalid email format"])
+			return
+		}
 		if (password === confirmPassword) {
-			const data = await dispatch(signUp(username, email, password));
+			const data = await dispatch(signUp(username, email, firstname, lastname, password));
 			if (data) {
 				setErrors(data);
 			} else {
@@ -53,6 +64,24 @@ function SignupFormModal() {
 						type="text"
 						value={username}
 						onChange={(e) => setUsername(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					First name
+					<input
+						type="text"
+						value={firstname}
+						onChange={(e) => setFirstname(e.target.value)}
+						required
+					/>
+				</label>
+				<label>
+					Last name
+					<input
+						type="text"
+						value={lastname}
+						onChange={(e) => setLastname(e.target.value)}
 						required
 					/>
 				</label>
