@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
-import { newShopThunk } from '../../store/shop';
+import { getShopByOwnerThunk, newShopThunk } from '../../store/shop';
 import { getSingleShopThunk } from '../../store/shop';
 
 
@@ -51,11 +51,11 @@ function NewShopFormModal() {
             setDescription('')
             setImage('')
 
-            await dispatch(getSingleShopThunk(newShop.id))
+            await dispatch(getShopByOwnerThunk())
 
 
             closeModal()
-            
+
         }
 
 
