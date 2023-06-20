@@ -25,5 +25,6 @@ class Shop(db.Model):
             'shop_owner': self.shop_owner,
             'name': self.name,
             'description': self.description,
-            'shop_image': self.shop_image
+            'shop_image': self.shop_image,
+            'products': [pro.to_dict() for pro in self.product]
         }

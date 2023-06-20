@@ -28,6 +28,6 @@ class Product(db.Model):
             'price': self.price,
             'main_image': self.main_image,
             'category': self.category,
-            'shop': self.shop.to_dict()
+            # 'shop': self.shop.to_dict()
 
         }

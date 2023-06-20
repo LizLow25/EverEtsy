@@ -1,27 +1,31 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
-import { getSingleShopThunk } from '../../store/shop'
-import { getProductsForShopThunk } from '../../store/product'
+import { getAllShopsThunk } from '../../store/shop'
+// import { getSingleShopThunk } from '../../store/shop'
+// import { getProductsForShopThunk } from '../../store/product'
 
 
 const ShopDetails = () => {
     const dispatch = useDispatch()
     const history = useHistory()
 
-    const singleShop = useSelector(state => state.shops.singleShop)
-    const products = useSelector(state => state.products.allProducts)
+    // const singleShop = useSelector(state => state.shops.singleShop)
+    // const products = useSelector(state => state.products.allProducts)
+    const shop = useSelector(state => state.shops.allShops)
     let { shopId } = useParams()
     shopId = parseInt(shopId)
 
 
     useEffect(() => {
-        dispatch(getSingleShopThunk(shopId))
-        dispatch(getProductsForShopThunk(shopId))
+        dispatch(getAllShopsThunk())
+        // dispatch(getProductsForShopThunk(shopId))
     }, [dispatch, shopId])
 
+    let singleShop = shop[shopId]
+    let productArray = singleShop.products
     if (!singleShop) return <h1>Shop loading...</h1>
-    let productArray = Object.values(products)
+
 
 
     return (
