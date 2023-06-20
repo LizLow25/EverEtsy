@@ -49,7 +49,7 @@ const ManageShop = () => {
 
 
                 <OpenModalButton
-                    buttonText="Add products"
+                    buttonText="Stock your shop"
                     modalComponent={<CreateProductModal shop={shop} />} />
             </div>
 

@@ -1,0 +1,31 @@
+.new-product-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+}
+
+.new-product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-product-form > label {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 300px;
+
+}
+
+.errors {
+    color: red;
+}
+
+.productbutton {
+    
+}

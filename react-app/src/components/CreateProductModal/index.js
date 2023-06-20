@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
 import { getProductsForShopOwnerThunk, newProductThunk } from '../../store/product';
-
+import './CreateProductModal.css'
 
 function CreateProductModal({ shop }) {
     const dispatch = useDispatch()
@@ -74,8 +74,10 @@ function CreateProductModal({ shop }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className='new-product-modal'>
+            <h2>Create a listing!</h2>
+            <p>Consider adding several listings. This gives buyers more chances to find your shop.</p>
+            <form className='new-product-form' onSubmit={handleSubmit} encType="multipart/form-data">
                 <label>
                     <span className='errors'>{errors.name}</span>
                     <input
@@ -132,7 +134,7 @@ function CreateProductModal({ shop }) {
                     </select>
                 </label>
                 <div >
-                    <button type='submit'>Post your product</button>
+                    <button className='productbutton' type='submit'>Post your product</button>
                 </div>
 
             </form>
