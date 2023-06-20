@@ -1,6 +1,5 @@
 .profile-dropdown {
     background-color: white;
-    border: red 2px solid;
     list-style: none;
     display: flex;
     flex-direction: column;
@@ -17,4 +16,21 @@
     height: 50px;
     border: none;
     width: 50px;
+}
+
+.profileButtons {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: none;
+}
+
+.p-button {
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
 }

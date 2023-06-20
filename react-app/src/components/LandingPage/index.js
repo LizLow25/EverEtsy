@@ -22,14 +22,16 @@ const LandingPage = () => {
         <div className='productCardContainer' >
             {productArray?.map(product => (
                 <div key={product.id} className='productCard' onClick={(e) => {
-                    history.push(`/products/${product.id}`) }
+                    history.push(`/products/${product.id}`)
+                }
                 }>
                     <div className='imageContainerCard'>
-                        <img src={product.main_image} alt='' className='cardImage'/>
+                        <img src={product.main_image} alt='' className='cardImage' />
                     </div>
                     <div className='cardDetails'>
-                        <p>{product.name}</p>
-                        <p>{product.price}</p>
+                        <div className='productPrice'>${product.price.toFixed(2)}</div>
+                        {/* <p>{product.name}</p> */}
+
                     </div>
                 </div>
             ))

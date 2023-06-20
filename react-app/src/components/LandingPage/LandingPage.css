@@ -19,3 +19,18 @@
 
     object-fit: cover;
 }
+
+.productPrice {
+
+    position: relative;
+    bottom: 40px;
+    left: 10px;
+    background-color: white;
+    border-radius: 30px;
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+
+
+
+}
