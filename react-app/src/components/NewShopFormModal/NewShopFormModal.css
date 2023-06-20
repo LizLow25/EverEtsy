@@ -1,0 +1,38 @@
+.new-shop-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    padding-bottom: 20px;
+}
+
+.new-shop-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.new-shop-form > label {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 300px;
+
+}
+
+.errors {
+    color: red;
+}
+
+.shopbutton {
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+}

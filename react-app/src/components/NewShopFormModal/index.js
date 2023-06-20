@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
 import { getShopByOwnerThunk, newShopThunk } from '../../store/shop';
-// import { getSingleShopThunk } from '../../store/shop';
+import './NewShopFormModal.css'
 
 
 function NewShopFormModal() {
@@ -66,8 +66,10 @@ function NewShopFormModal() {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className='new-shop-modal'>
+            <form className='new-shop-form' onSubmit={handleSubmit} encType="multipart/form-data">
+                <h3>Shop preferences</h3>
+                <p>Let's get started! Tell us about your shop.</p>
                 <label>
                     <span className='errors'>{errors.name}</span>
                     <input
@@ -87,6 +89,7 @@ function NewShopFormModal() {
                     />
                 </label>
                 <label>
+                    Add an image to represent your shop.
                     <span className='errors'>{errors.image}</span>
                     <input
                         type='file'
@@ -99,7 +102,7 @@ function NewShopFormModal() {
                     />
                 </label>
                 <div >
-                    <button type='submit'>Create your shop</button>
+                    <button className='shopbutton' type='submit'>Create your shop</button>
                 </div>
 
             </form>
