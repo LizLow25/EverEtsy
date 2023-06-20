@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { useModal } from "../../context/Modal";
 import { updateShopThunk } from '../../store/shop';
 import { getSingleShopThunk } from '../../store/shop';
+import './UpdateShopModal.css'
 
 function UpdateShopModal({ singleShop }) {
     const dispatch = useDispatch()
@@ -54,7 +55,7 @@ function UpdateShopModal({ singleShop }) {
 
 
             closeModal()
-            
+
         }
 
 
@@ -63,9 +64,11 @@ function UpdateShopModal({ singleShop }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className='update-shop-modal'>
+            <form  className='update-shop-form' onSubmit={handleSubmit} encType="multipart/form-data">
+                <h3>Shop preferences</h3>
                 <label>
+                    <p>Would you like to update your shop name?</p>
                     <span className='errors'>{errors.name}</span>
                     <input
                         type='text'
@@ -75,6 +78,7 @@ function UpdateShopModal({ singleShop }) {
                     />
                 </label>
                 <label>
+                <p>Would you like to update your shop description?</p>
                     <span className='errors'>{errors.description}</span>
                     <input
                         type='text'
@@ -84,6 +88,7 @@ function UpdateShopModal({ singleShop }) {
                     />
                 </label>
                 <label>
+                <p>Would you like to update your shop image?</p>
                     <input
                         type='file'
                         accept='image/*'
@@ -95,7 +100,7 @@ function UpdateShopModal({ singleShop }) {
                     />
                 </label>
                 <div >
-                    <button type='submit'>Update your shop</button>
+                    <button className='updatebutton' type='submit'>Update your shop</button>
                 </div>
 
             </form>

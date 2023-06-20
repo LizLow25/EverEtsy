@@ -1,20 +1,21 @@
-.new-product-modal {
+.update-shop-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 500px;
     padding: 20px;
+
 }
 
-.new-product-form {
+.update-shop-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.new-product-form > label {
+.update-shop-form > label {
     display: flex;
     flex-direction: column;
     padding: 5px;
@@ -26,7 +27,7 @@
     color: red;
 }
 
-.productbutton {
+.updatebutton {
     border: none;
     border-radius: 30px;
     height: 40px;
