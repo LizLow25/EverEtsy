@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     padding-left: none;
+    position: relative;
+    right: 40px;
 }
 
 .profile-dropdown-items {
@@ -24,6 +26,7 @@
     flex-direction: column;
     align-items: center;
     padding-left: none;
+
 }
 
 .p-button {
@@ -33,4 +36,7 @@
     background-color: black;
     color: white;
     font-size: 15px;
+    margin: 5px;
+    padding: 0 20px;
+    text-align: center;
 }
