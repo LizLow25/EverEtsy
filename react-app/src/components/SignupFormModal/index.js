@@ -26,6 +26,11 @@ function SignupFormModal() {
 			setErrors(["Invalid email format"])
 			return
 		}
+		if(username[0] == ' ') setErrors(["Please enter non-whitespace characters for username"])
+		if(firstname[0] == ' ') setErrors(["Please enter non-whitespace characters for first name"])
+		if(lastname[0] == ' ') setErrors(["Please enter non-whitespace characters for last name"])
+		if(password[0] == ' ') setErrors(["Please enter non-whitespace characters for password"])
+
 		if (password === confirmPassword) {
 			const data = await dispatch(signUp(username, email, firstname, lastname, password));
 			if (data) {

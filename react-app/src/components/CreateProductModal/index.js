@@ -28,7 +28,9 @@ function CreateProductModal({ shop }) {
         setErrors(newErrors)
         // validate data on the frontend here
         if (name.length < 3 || name.length > 50) newErrors['name'] = "Product name must be between 3 and 50 characters"
+        if(name[0] == ' ') newErrors['name'] = "Please enter non-whitespace characters"
         if (details.length < 10 || details.length > 500) newErrors['details'] = "Product details must be between 10 and 500 characters"
+        if(details[0] == ' ') newErrors['name'] = "Please enter non-whitespace characters"
         if (!image) newErrors['image'] = "Please upload an image for your product"
         if (price < 1) newErrors['price'] = "Please enter a valid price"
         if (category == '') newErrors['category'] = "Please pick a category"
@@ -63,7 +65,7 @@ function CreateProductModal({ shop }) {
 
 
             closeModal()
-            
+
         }
 
 
