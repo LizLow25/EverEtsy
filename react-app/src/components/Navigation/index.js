@@ -24,7 +24,7 @@ function Navigation({ isLoaded }) {
 			{sessionUser ? <div><NavLink exact to={'/shops/manage'}> <i className="fa-solid fa-store fa-xl"></i></NavLink></div> : null}
 
 			{isLoaded && (
-				<div>
+				<div >
 					<ProfileButton user={sessionUser} />
 				</div>
 			)}

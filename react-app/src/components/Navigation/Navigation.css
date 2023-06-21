@@ -30,3 +30,7 @@
   text-decoration: none;
   font-size: 40px;
 }
+
+.fa-solid {
+  cursor: pointer;
+}
