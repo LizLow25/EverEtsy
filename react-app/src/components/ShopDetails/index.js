@@ -4,6 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getAllShopsThunk } from '../../store/shop'
 // import { getSingleShopThunk } from '../../store/shop'
 // import { getProductsForShopThunk } from '../../store/product'
+import './ShopDetails.css'
 
 
 const ShopDetails = () => {
@@ -31,17 +32,29 @@ const ShopDetails = () => {
     return (
         <>
             <div className='shopDetailsContainer'>
-                <div className='shopContainerDetails'>
+
+                <div className='shopimgcontainer'>
                     <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
                 </div>
                 <div className='textShopContainerDetails'>
-                    <p>{singleShop.name}</p>
+                    <h2>{singleShop.name}</h2>
                     <p>{singleShop.description}</p>
 
-                </div>
 
+                </div>
+                <div>
+                <i class="fa-solid fa-truck fa-lg"></i>
+                <p>Smooth shipping</p>
+                <p>Has a history of shipping on time with tracking.</p>
+                </div>
+                <div>
+                <i class="fa-brands fa-swift fa-rotate-270 fa-lg"></i>
+                <p>Swift replies</p>
+                <p>Has a history of replying to messages quickly.</p>
+                </div>
                 {/* {sessionUser ? sessionUser.id == singleShop.shop_owner ? !productArray.length ? <button>Add products</button> : null : null : null} */}
             </div>
+      
 
             <div className='productCardContainer'>
                 {productArray?.map(product => (

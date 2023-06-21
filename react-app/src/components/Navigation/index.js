@@ -21,7 +21,7 @@ function Navigation({ isLoaded }) {
 				/>
 
 			</div>
-			{sessionUser ? <div><NavLink exact to={'/shops/manage'}> <i className="fa-solid fa-store fa-xl"></i></NavLink></div> : null}
+			{sessionUser ? <div ><NavLink exact to={'/shops/manage'}> <i title={'Shop Manager'} className="fa-solid fa-store fa-xl"></i></NavLink></div> : null}
 
 			{isLoaded && (
 				<div >
