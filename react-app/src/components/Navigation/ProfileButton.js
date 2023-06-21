@@ -54,15 +54,15 @@ function ProfileButton({ user }) {
   return (
     <>
       <button className='profileButton' onClick={openMenu}>
-      <i class="fa-regular fa-user fa-xl"></i>
+        <i class="fa-regular fa-user fa-xl"></i>
       </button>
       <div className={ulClassName} ref={ulRef}>
         {user ? (
-          <div className="profile-dropdown-items">
-            <div>{user.username}</div>
-            <div>{user.email}</div>
+          <div className="loggedindropdown">
+            <div className="profile-dropdown-items">Hello, {user.username}</div>
+            {/* <div>{user.email}</div> */}
             <div>
-              <button onClick={handleLogout}>Log Out</button>
+              <button className='logoutbutton' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> Sign out</button>
             </div>
           </div>
         ) : (
