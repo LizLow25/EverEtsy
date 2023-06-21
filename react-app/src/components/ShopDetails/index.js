@@ -53,8 +53,7 @@ const ShopDetails = () => {
                             <img src={product.main_image} alt='' className='cardImage' />
                         </div>
                         <div className='cardDetails'>
-                            <p>{product.name}</p>
-                            <p>{product.price}</p>
+                            <div className='productPrice'>${product.price.toFixed(2)}</div>
                         </div>
                     </div>
                 ))

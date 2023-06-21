@@ -26,8 +26,10 @@
     background-color: black;
     color: white;
     font-size: 20px;
+    cursor: pointer;
 }
 
 .shopNameDetails {
     color: #eb6d20;
+    cursor: pointer;
 }
