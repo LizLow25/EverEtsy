@@ -23,7 +23,7 @@ const ShopDetails = () => {
     }, [dispatch, shopId])
 
     let singleShop = shop[shopId]
-    let productArray = singleShop.products
+    let productArray = singleShop?.products
     if (!singleShop) return <h1>Shop loading...</h1>
 
 
