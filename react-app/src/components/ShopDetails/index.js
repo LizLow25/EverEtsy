@@ -33,28 +33,35 @@ const ShopDetails = () => {
         <>
             <div className='shopDetailsContainer'>
 
-                <div className='shopimgcontainer'>
-                    <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
-                </div>
-                <div className='textShopContainerDetails'>
-                    <h2>{singleShop.name}</h2>
-                    <p>{singleShop.description}</p>
+                <div className='shopdetailsleft'>
+
+                    <div className='shopimgcontainer'>
+                        <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
+                    </div>
+                    <div className='textShopContainerDetails'>
+                        <h2>{singleShop.name}</h2>
+                        <p>{singleShop.description}</p>
 
 
+                    </div>
                 </div>
                 <div>
-                <i class="fa-solid fa-truck fa-lg"></i>
-                <p>Smooth shipping</p>
-                <p>Has a history of shipping on time with tracking.</p>
+                    <i class="fa-solid fa-truck fa-lg"></i>
+                    <div className='flaircontainer'>
+                        <p className='flairtitle'>Smooth shipping</p>
+                        <p>Has a history of shipping on time with tracking.</p>
+                    </div>
                 </div>
                 <div>
-                <i class="fa-brands fa-swift fa-rotate-270 fa-lg"></i>
-                <p>Swift replies</p>
-                <p>Has a history of replying to messages quickly.</p>
+                    <i class="fa-brands fa-swift fa-rotate-270 fa-xl"></i>
+                    <div className='flaircontainer'>
+                        <p className='flairtitle'>Swift replies</p>
+                        <p>Has a history of replying to messages quickly.</p>
+                    </div>
                 </div>
                 {/* {sessionUser ? sessionUser.id == singleShop.shop_owner ? !productArray.length ? <button>Add products</button> : null : null : null} */}
-            </div>
-      
+            </div >
+
 
             <div className='productCardContainer'>
                 {productArray?.map(product => (

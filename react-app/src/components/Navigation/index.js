@@ -17,7 +17,7 @@ function Navigation({ isLoaded }) {
 				<input
 					type='search'
 					className='search-bar'
-					placeholder='Search for anything'
+					placeholder='Search coming soon...'
 				/>
 
 			</div>

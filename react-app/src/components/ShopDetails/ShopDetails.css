@@ -1,6 +1,7 @@
 .imgShopDetails {
     max-width: 100px;
-    max-height: 100px;
+    max-height: 150px;
+    min-width: none;
 }
 
 .shopDetailsContainer {
@@ -8,9 +9,37 @@
     background-color: rgba(192, 190, 190, 0.10);
     padding: 20px;
     justify-content: space-around;
+    align-items: center;
 
 }
 
 body {
     margin: 0px;
+}
+
+.flaircontainer > p {
+    margin: 5px 5px 5px 0px;
+}
+
+.flaircontainer {
+    max-width: 250px;
+}
+
+.textShopContainerDetails {
+    max-width: 250px;
+    margin-left: 10px;
+}
+
+.textShopContainerDetails > h2 {
+    font-weight: normal;
+    font-size: 30px;
+}
+
+.flairtitle {
+    font-weight: bold;
+}
+
+.shopdetailsleft {
+    display: flex;
+    align-items: center;
 }
