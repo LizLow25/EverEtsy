@@ -38,7 +38,7 @@ const ProductDetails = () => {
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>
                     <h2>{singleProduct.name}</h2>
-                    <h3>{singleProduct.category}</h3>
+                    <h3 className='categoryproduct'>{singleProduct.category}</h3>
                     <p className='shopNameDetails' onClick={() => history.push(`/shops/${singleShop.id}`)} >{singleShop?.name}</p>
                     <button className='buttonDetails'>Add to cart</button>
                     <h2>Description</h2>

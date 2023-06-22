@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useModal } from "../../context/Modal";
 import { getProductsForShopOwnerThunk, updateProductThunk } from '../../store/product';
-
+import './UpdateProductModal.css'
 
 function UpdateProductModal({ product }) {
     const dispatch = useDispatch()
@@ -61,7 +61,7 @@ function UpdateProductModal({ product }) {
 
 
             closeModal()
-            
+
         }
 
 
@@ -70,8 +70,9 @@ function UpdateProductModal({ product }) {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} encType="multipart/form-data">
+        <div className='update-product-modal'>
+            <h3>Change your listing</h3>
+            <form className='update-product-form' onSubmit={handleSubmit} encType="multipart/form-data">
                 <label>
                     <span className='errors'>{errors.name}</span>
                     <input
@@ -128,7 +129,7 @@ function UpdateProductModal({ product }) {
                     </select>
                 </label>
                 <div >
-                    <button type='submit'>Update your product</button>
+                    <button className='updatebutton' type='submit'>Update your product</button>
                 </div>
 
             </form>

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useModal } from "../../context/Modal";
 import { deleteShopThunk } from "../../store/shop";
 
-function DeleteShopModal({id}) {
+function DeleteShopModal({ id }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
     const history = useHistory();
@@ -15,7 +15,7 @@ function DeleteShopModal({id}) {
     const deleteShop = async () => {
         console.log(id)
         await dispatch(deleteShopThunk(id))
-        
+
 
         return closeModal()
 
@@ -27,10 +27,14 @@ function DeleteShopModal({id}) {
             <div>
                 <h2>Confirm Delete</h2>
                 <h3>Are you sure you want to delete your shop?</h3>
-                <button
-                    onClick={deleteShop}>Yes</button>
-                <button
-                    onClick={closeDelete}>No</button>
+                <div className="deletebuttoncontainer">
+                    <button
+                        className="deletebutton"
+                        onClick={deleteShop}>Yes</button>
+                    <button
+                        className="deletebutton"
+                        onClick={closeDelete}>No</button>
+                </div>
             </div>
         </div>
     )

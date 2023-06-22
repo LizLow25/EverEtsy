@@ -26,3 +26,23 @@
     font-weight: lighter;
     font-size: 50px;
 }
+
+.manageproductbuttons {
+    display: flex;
+}
+
+.toppoduct {
+    display: flex;
+    justify-content: space-around;
+}
+
+.manageprodcat {
+    color: rgba(128, 128, 128, 0.8);
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+}
+
+.detailsprodman {
+    max-width: 400px;
+    margin-bottom: 10px;
+}

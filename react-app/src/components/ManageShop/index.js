@@ -81,16 +81,21 @@ const ManageShop = () => {
                             <img src={product.main_image} alt='' className='cardImage' />
                         </div>
                         <div className='cardDetails'>
-                            <p>{product.name}</p>
-                            <p>{product.price}</p>
+                            <div className='toppoduct'>
+                                <p>{product.name}</p>
+                                <p>${product.price.toFixed(2)}</p>
+                            </div>
+                            <p className='manageprodcat'>{product.category}</p>
+                            <div className='detailsprodman'>{product.details}</div>
                         </div>
-                        <OpenModalButton
-                            buttonText="Delete product"
-                            modalComponent={<DeleteProductModal id={product.id} />} />
-                        <OpenModalButton
-                            buttonText="Update product"
-                            modalComponent={<UpdateProductModal product={product} />} />
-
+                        <div className='manageproductbuttons'>
+                            <OpenModalButton
+                                buttonText="Delete product"
+                                modalComponent={<DeleteProductModal id={product.id} />} />
+                            <OpenModalButton
+                                buttonText="Update product"
+                                modalComponent={<UpdateProductModal product={product} />} />
+                        </div>
                     </div>
                 ))
                 }
