@@ -1,0 +1,28 @@
+.parentmanageshop {
+    height: 100%;
+}
+
+.manageshoptop {
+    height: 400px;
+    background-color: #f8ebe6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.manageshopbottom {
+    height: 400px;
+    /* background-color: blueviolet; */
+}
+
+.manageshopbuttoncontainer {
+    padding-top: 235px;
+
+
+}
+
+.managecopy {
+    font-weight: lighter;
+    font-size: 50px;
+}

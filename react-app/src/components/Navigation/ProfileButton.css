@@ -49,6 +49,7 @@
     margin: 5px;
     padding: 0 20px;
     text-align: center;
+    cursor: pointer;
 }
 
 .logoutbutton {

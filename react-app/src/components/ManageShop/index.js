@@ -10,6 +10,7 @@ import UpdateShopModal from '../UpdateShopModal';
 import CreateProductModal from '../CreateProductModal';
 import DeleteProductModal from '../DeleteProductModal';
 import UpdateProductModal from '../UpdateProductModal';
+import './ManageShop.css'
 
 const ManageShop = () => {
     const dispatch = useDispatch()
@@ -24,9 +25,24 @@ const ManageShop = () => {
     }, [dispatch, shop.id])
 
     let productArray = Object.values(products)
+    // <OpenModalButton buttonText="Open a shop" modalComponent={<NewShopFormModal />} />
 
-    if (!shop.id) return <OpenModalButton buttonText="Open a shop" modalComponent={<NewShopFormModal />} />
 
+    if (!shop.id) {
+        return (
+
+            <div className='parentmanageshop'>
+                <div className='manageshoptop'>
+                    <h2 className='managecopy'>Share your products with the world</h2>
+                    <div className='manageshopbuttoncontainer'>
+                        <OpenModalButton buttonText="Open a shop" modalComponent={<NewShopFormModal />} />
+                    </div>
+                </div>
+                <div className='manageshopbottom'>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <>
@@ -53,15 +69,15 @@ const ManageShop = () => {
                     modalComponent={<CreateProductModal shop={shop} />} />
             </div>
 
-             <div className='productCardContainer'>
+            <div className='productCardContainer'>
                 {productArray?.map(product => (
                     <div key={product.id} className='productCard' >
                         <div className='imageContainerCard'
 
-                        onClick={(e) => {
-                        history.push(`/products/${product.id}`)
-                    }
-                    }>
+                            onClick={(e) => {
+                                history.push(`/products/${product.id}`)
+                            }
+                            }>
                             <img src={product.main_image} alt='' className='cardImage' />
                         </div>
                         <div className='cardDetails'>

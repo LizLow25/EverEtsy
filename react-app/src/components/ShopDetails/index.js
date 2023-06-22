@@ -33,17 +33,17 @@ const ShopDetails = () => {
         <>
             <div className='shopDetailsContainer'>
 
-                <div className='shopdetailsleft'>
-
-                    <div className='shopimgcontainer'>
-                        <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
-                    </div>
-                    <div className='textShopContainerDetails'>
-                        <h2>{singleShop.name}</h2>
-                        <p>{singleShop.description}</p>
 
 
-                    </div>
+                <div className='shopimgcontainer'>
+                    <img src={singleShop.shop_image} alt='' className='imgShopDetails' />
+                </div>
+                <div className='textShopContainerDetails'>
+                    <h2>{singleShop.name}</h2>
+                    <p>{singleShop.description}</p>
+
+
+
                 </div>
                 <div>
                     <i class="fa-solid fa-truck fa-lg"></i>
