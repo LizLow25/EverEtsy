@@ -1,8 +1,9 @@
 import { useSelector } from 'react-redux';
+import CartItem from './CartItem';
 
 function Cart() {
   const cart = useSelector(state => state.cart)
-  const products = useSelector(state => state.products)
+  const products = useSelector(state => state.products.allProducts)
 
   const cartItems = Object.values(cart)
     .map(item => {
@@ -11,6 +12,8 @@ function Cart() {
         ...products[item.id]
       };
     });
+
+    console.log('cartItems', cartItems)
 
   if (!cartItems || !cartItems.length) return (
     <div className="cart">
@@ -29,7 +32,7 @@ function Cart() {
   return (
     <div className="cart">
       <ul>
-        {/* {cartItems.map(item => <CartItem key={item.id} item={item}/>)} */}
+        {cartItems.map(item => <CartItem key={item.id} item={item}/>)}
       </ul>
       <hr />
       <form onSubmit={onSubmit}>
