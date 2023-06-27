@@ -29,7 +29,7 @@ const ProductDetails = () => {
     if (!singleProduct) return <h1>Product loading...</h1>
 
     const onClick = () => {
-        console.log('hello')
+       
         dispatch(populateCartThunk(singleProduct.id))
 
       }
