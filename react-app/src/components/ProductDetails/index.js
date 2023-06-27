@@ -1,9 +1,10 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory, useParams } from 'react-router-dom'
-import { getAllProductsThunk, getSingleProductThunk } from "../../store/product"
+import { getAllProductsThunk } from "../../store/product"
 import './ProductDetails.css'
 import { getAllShopsThunk } from '../../store/shop'
+import { populateCart } from '../../store/cart'
 
 
 const ProductDetails = () => {
@@ -27,6 +28,11 @@ const ProductDetails = () => {
 
     if (!singleProduct) return <h1>Product loading...</h1>
 
+    const onClick = () => {
+        dispatch(populateCart(singleProduct.id))
+
+      }
+
 
 
     return (
@@ -40,7 +46,7 @@ const ProductDetails = () => {
                     <h2>{singleProduct.name}</h2>
                     <h3 className='categoryproduct'>{singleProduct.category}</h3>
                     <p className='shopNameDetails' onClick={() => history.push(`/shops/${singleShop.id}`)} >{singleShop?.name}</p>
-                    <button className='buttonDetails'>Add to cart</button>
+                    <button onClick={onClick} className='buttonDetails'>Add to cart</button>
                     <h2>Description</h2>
                     <p>{singleProduct.details}</p>
                 </div>
