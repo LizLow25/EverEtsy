@@ -9,6 +9,7 @@ import LandingPage from "./components/LandingPage";
 import ProductDetails from "./components/ProductDetails";
 import ShopDetails from "./components/ShopDetails";
 import ManageShop from "./components/ManageShop";
+import Cart from "./components/Cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route exact path="/shops/:shopId">
           <ShopDetails />
+        </Route>
+        <Route exact path="/cart">
+          <Cart />
         </Route>
       </Switch>
     </>

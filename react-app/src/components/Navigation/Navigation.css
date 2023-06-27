@@ -35,3 +35,9 @@
   cursor: pointer;
   color: black;
 }
+
+.cartbutton {
+  border: none;
+  background-color: white;
+ 
+}
