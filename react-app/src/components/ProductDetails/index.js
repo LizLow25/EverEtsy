@@ -4,7 +4,7 @@ import { useHistory, useParams } from 'react-router-dom'
 import { getAllProductsThunk } from "../../store/product"
 import './ProductDetails.css'
 import { getAllShopsThunk } from '../../store/shop'
-import { populateCart } from '../../store/cart'
+import { populateCartThunk } from '../../store/cart'
 
 
 const ProductDetails = () => {
@@ -29,7 +29,8 @@ const ProductDetails = () => {
     if (!singleProduct) return <h1>Product loading...</h1>
 
     const onClick = () => {
-        dispatch(populateCart(singleProduct.id))
+        console.log('hello')
+        dispatch(populateCartThunk(singleProduct.id))
 
       }
 

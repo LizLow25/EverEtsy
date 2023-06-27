@@ -26,6 +26,21 @@ export const reduceItem = (id) => {
 
 }
 
+export const populateCartThunk = (id) => async (dispatch) => {
+    console.log('inthethunk', id)
+    const res = await fetch('/api/cart/new', {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(id)
+      })
+
+      if (res.ok) {
+        dispatch(populateCart(id))
+      }
+
+    }
+
+
 
 export default function cartReducer(state = {}, action) {
     switch (action.type) {
