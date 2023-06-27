@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -6,7 +6,8 @@ import './Navigation.css';
 
 function Navigation({ isLoaded }) {
 	const sessionUser = useSelector(state => state.session.user);
-	console.log(sessionUser, sessionUser?.shop)
+
+
 
 	return (
 		<div className='navbarcontainer'>
@@ -28,8 +29,11 @@ function Navigation({ isLoaded }) {
 					<ProfileButton user={sessionUser} />
 				</div>
 			)}
-			<div><i class="fa-solid fa-cart-shopping fa-xl"></i></div>
+			{sessionUser ? <div ><NavLink exact to={'/cart'}> <i class="fa-solid fa-cart-shopping fa-xl"></i></NavLink></div> : null}
+
 		</div>
+
+
 	);
 }
 
