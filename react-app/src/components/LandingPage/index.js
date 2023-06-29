@@ -17,6 +17,7 @@ const LandingPage = () => {
     useEffect(() => {
         dispatch(getAllProductsThunk())
         dispatch(getAllShopsThunk())
+
     }, [dispatch])
 
     if (!products) return <h1>Products loading...</h1>
