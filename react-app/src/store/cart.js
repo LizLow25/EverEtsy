@@ -57,11 +57,24 @@ export const deleteCartItemsThunk = (id) => async (dispatch) => {
     const res = await fetch(`/api/cart/${id}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
-        
+
     })
 
     if (res.ok) {
-        dispatch(populateCart(id))
+        dispatch(removeItem(id))
+    }
+
+}
+
+export const reduceCartItemThunk = (id) => async (dispatch) => {
+    const res = await fetch(`/api/cart/reduce/${id}`, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+
+    })
+
+    if (res.ok) {
+        dispatch(reduceItem(id))
     }
 
 }
