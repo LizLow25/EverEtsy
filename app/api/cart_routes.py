@@ -32,4 +32,30 @@ def add_items_to_cart():
     db.session.add(item)
     db.session.commit()
 
-    return {"message": ["Item added"]}, 200
+    return {"message": "Item added"}, 200
+
+#reduce the number of cart items
+@cart_routes.route("reduce/<int:id>", methods=['DELETE'])
+@login_required
+def reduce_product_in_cart(id):
+    product = CartItem.query.filter(CartItem.product_id == id, CartItem.user_id == current_user.id).first()
+
+    if product:
+        db.session.delete(product)
+        db.session.commit()
+        return {"message": "Removed successfully"}, 200
+
+    return {"message": "Product not found"}, 404
+
+
+#remove all products regardless of amount
+@cart_routes.route("/<int:id>", methods=['DELETE'])
+@login_required
+def delete_product_from_cart(id):
+    products = CartItem.query.filter(CartItem.product_id == id, CartItem.user_id == current_user.id).all()
+
+    for product in products:
+        db.session.delete(product)
+
+    db.session.commit()
+    return {"message": "Removed successfully"}, 200

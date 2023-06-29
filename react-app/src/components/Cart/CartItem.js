@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { populateCart, reduceItem, removeItem } from '../../store/cart';
+import { deleteCartItemsThunk, populateCart, reduceCartItemThunk, reduceItem, removeItem } from '../../store/cart';
 
 function CartItem({ item }) {
   const [count, setCount] = useState(item.count);
@@ -13,7 +13,7 @@ function CartItem({ item }) {
   const id = item.id
 
   const removeFromCart= () => {
-    dispatch(removeItem(id))
+    dispatch(deleteCartItemsThunk(id))
 
   }
   const incrementClick = () => {
@@ -21,8 +21,8 @@ function CartItem({ item }) {
   }
 
   const reduceClick = () => {
-    if (count === 1) dispatch(removeItem(id))
-    dispatch(reduceItem(id))
+    if (count === 1) dispatch(deleteCartItemsThunk(id))
+    dispatch(reduceCartItemThunk(id))
 
   }
 
