@@ -18,6 +18,8 @@ class Product(db.Model):
     created_at = db.Column(db.Date, nullable=False, default=date.today())
 
     shop = db.relationship("Shop", back_populates="product")
+    in_cart = db.relationship("User", back_populates="shopping_cart", secondary=add_prefix_for_prod("cartitems"))
+
 
     def to_dict(self):
         return {

@@ -1,9 +1,20 @@
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './CartItem';
+import { fetchCartItemsThunk } from '../../store/cart';
+import { getAllProductsThunk } from '../../store/product';
 
 function Cart() {
+  const dispatch = useDispatch()
   const cart = useSelector(state => state.cart)
   const products = useSelector(state => state.products.allProducts)
+
+  useEffect(() => {
+    dispatch(fetchCartItemsThunk())
+    dispatch(getAllProductsThunk())
+  }, [dispatch])
+
+  console.log('cart', cart)
 
   const cartItems = Object.values(cart)
     .map(item => {
@@ -13,7 +24,7 @@ function Cart() {
       };
     });
 
-    console.log('cartItems', cartItems)
+  console.log('cartItems', cartItems)
 
   if (!cartItems || !cartItems.length) return (
     <div className="cart">
@@ -32,7 +43,7 @@ function Cart() {
   return (
     <div className="cart">
       <ul>
-        {cartItems.map(item => <CartItem key={item.id} item={item}/>)}
+        {cartItems.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
       <hr />
       <form onSubmit={onSubmit}>
