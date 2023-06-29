@@ -1,10 +1,10 @@
 const ADD_ITEM = 'cart/ADD_ITEM'
-
 const REMOVE_ITEM = 'cart/REMOVE_ITEM'
-
 const REDUCE_ITEM = 'cart/REDUCE_ITEM'
+const INCREASE_ITEM = 'cart/INCREASE_ITEM'
+const REFRESH_CART = 'cart/REFRESH_CART'
 
-export const populateCart = (id, count) => {
+const populateCart = (id, count) => {
     return {
         type: ADD_ITEM,
         id,
@@ -12,19 +12,34 @@ export const populateCart = (id, count) => {
     }
 }
 
-export const removeItem = (id) => {
+
+const removeItem = (id) => {
     return {
         type: REMOVE_ITEM,
         id
     }
 }
 
-export const reduceItem = (id) => {
+const reduceItem = (id) => {
     return {
         type: REDUCE_ITEM,
         id
     }
 
+}
+
+const increaseItem = (id) => {
+    return {
+        type: INCREASE_ITEM,
+        id
+    }
+}
+
+export const refreshCart = () => {
+    return {
+        type: REFRESH_CART,
+
+    }
 }
 
 export const populateCartThunk = (id) => async (dispatch) => {
@@ -79,6 +94,20 @@ export const reduceCartItemThunk = (id) => async (dispatch) => {
 
 }
 
+export const increaseCartItemThunk = (id) => async (dispatch) => {
+    const res = await fetch('/api/cart/new', {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(id)
+    })
+    if (res.ok) {
+        dispatch(increaseItem(id))
+    }
+
+}
+
+
+
 
 
 export default function cartReducer(state = {}, action) {
@@ -87,8 +116,9 @@ export default function cartReducer(state = {}, action) {
             const cart = {}
             let id = action.id
             let count = action.count
-            cart[action.id] = { id, count}
+            cart[action.id] = { id, count }
             return { ...state, ...cart };
+
 
 
         case REDUCE_ITEM:
@@ -102,9 +132,18 @@ export default function cartReducer(state = {}, action) {
 
         case REMOVE_ITEM:
             let newState = { ...state };
-            console.log(newState[action.id])
             delete newState[action.id]
             return newState;
+
+        case INCREASE_ITEM:
+            let newState2 = { ...state }
+            let obj = newState2[action.id]
+            obj.count++
+            return newState2
+
+        case REFRESH_CART:
+            return {}
+
 
 
 

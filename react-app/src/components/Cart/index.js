@@ -9,6 +9,8 @@ function Cart() {
   const cart = useSelector(state => state.cart)
   const products = useSelector(state => state.products.allProducts)
 
+
+
   useEffect(() => {
     dispatch(fetchCartItemsThunk())
     dispatch(getAllProductsThunk())
