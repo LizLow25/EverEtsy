@@ -1,5 +1,7 @@
 .profile-dropdown {
   position: absolute;
+  /* border: 1px solid red; */
+
 }
 
 .hidden {
@@ -11,10 +13,13 @@
   margin: 20px;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+  /* border: 1px solid blue; */
 }
 
 .search-bar-container {
   width: 60%;
+  /* border: 1px solid red; */
 }
 
 .search-bar {
@@ -23,21 +28,52 @@
   border-radius: 30px;
   padding: 20px;
   font-size: 15px;
+  /* border: 1px solid red; */
 }
 
 .everetsy {
   color: #eb6d20;
   text-decoration: none;
   font-size: 40px;
+  /* border: 1px solid red; */
 }
 
 .fa-solid {
   cursor: pointer;
   color: black;
+  /* border: 1px solid red; */
+}
+
+.fa-cart-shopping {
+  /* position: absolute; */
+  /* border: 1px solid red; */
 }
 
 .cartbutton {
   border: none;
   background-color: white;
- 
+  /* border: 1px solid red; */
+
+}
+
+.circleAmount {
+  border-radius: 50%;
+  background-color: #eb6d20;
+  color: white;
+  font-size: 12px;
+  /* font-weight: bold; */
+  width: 15px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  /* right: 20px; */
+  border: 2px solid #eb6d20;
+}
+
+.carticonparent {
+  display: flex;
+  /* border: 1px solid purple; */
 }
