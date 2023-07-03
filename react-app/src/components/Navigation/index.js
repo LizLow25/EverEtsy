@@ -50,8 +50,8 @@ function Navigation({ isLoaded }) {
 					<ProfileButton user={sessionUser} />
 				</div>
 			)}
-			{sessionUser ? <div>{cartAmount}</div> : ''}
-			{sessionUser ? <div ><NavLink exact to={'/cart'}> <i class="fa-solid fa-cart-shopping fa-xl"></i></NavLink></div> : null}
+			{/* {sessionUser ? <div className='circleAmount'>{cartAmount}</div> : ''} */}
+			{sessionUser ? <div className='carticonparent'><NavLink exact to={'/cart'}>  <i class="fa-solid fa-cart-shopping fa-xl"><div className='circleAmount'>{cartAmount}</div></i></NavLink></div> : null}
 
 		</div>
 
