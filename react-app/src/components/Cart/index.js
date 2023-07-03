@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartItem from './CartItem';
 import { fetchCartItemsThunk } from '../../store/cart';
 import { getAllProductsThunk } from '../../store/product';
+import './Cart.css'
+
 
 function Cart() {
   const dispatch = useDispatch()
@@ -34,23 +36,21 @@ function Cart() {
     </div>
   );
 
-  const onSubmit = (e) => {
-    e.preventDefault();
-    window.alert(
-      "Purchased the following:\n" +
-      `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
-    );
-  }
+  // const onSubmit = (e) => {
+  //   e.preventDefault();
+  //   window.alert(
+  //     "Purchased the following:\n" +
+  //     `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
+  //   );
+  // }
 
   return (
     <div className="cart">
       <ul>
         {cartItems.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
-      <hr />
-      <form onSubmit={onSubmit}>
-        <button type="submit">Purchase</button>
-      </form>
+
+      <button >Purchase</button>
     </div>
   )
 }

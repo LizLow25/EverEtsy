@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { deleteCartItemsThunk, fetchCartItemsThunk, increaseCartItemThunk, reduceCartItemThunk } from '../../store/cart';
+import './Cart.css'
 
 function CartItem({ item }) {
   const [count, setCount] = useState(item.count);
@@ -29,6 +30,10 @@ function CartItem({ item }) {
 
   return (
     <li className="cart-item">
+      <div className='cartImageContainer'>
+      <img className='cartImage' src={item.main_image}/>
+      </div>
+      <div>
       <div className="cart-item-header">{item.name}</div>
       <div className="cart-item-menu">
         <input
@@ -54,6 +59,8 @@ function CartItem({ item }) {
           Remove
         </button>
       </div>
+      </div>
+      <div>{item.price}</div>
     </li>
   );
 }
