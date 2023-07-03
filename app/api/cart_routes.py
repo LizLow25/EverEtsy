@@ -32,7 +32,11 @@ def add_items_to_cart():
     db.session.add(item)
     db.session.commit()
 
-    return {"message": "Item added"}, 200
+    newItem = {}
+    newItem['id'] = data
+    newItem['count'] = CartItem.query.filter(CartItem.user_id == current_user.id, CartItem.product_id == data).count()
+
+    return {'item': newItem}, 200
 
 #reduce the number of cart items
 @cart_routes.route("reduce/<int:id>", methods=['DELETE'])

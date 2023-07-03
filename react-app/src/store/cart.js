@@ -50,7 +50,8 @@ export const populateCartThunk = (id) => async (dispatch) => {
     })
 
     if (res.ok) {
-        dispatch(populateCart(id))
+        const {item} = await res.json()
+        dispatch(populateCart(item.id, item.count))
     }
 
 }
@@ -59,7 +60,7 @@ export const fetchCartItemsThunk = () => async (dispatch) => {
     const res = await fetch('/api/cart/')
     if (res.ok) {
         const { products } = await res.json()
-        console.log('products', products)
+        // console.log('products', products)
         for (let product of products) {
             dispatch(populateCart(product.id, product.count))
 

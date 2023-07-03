@@ -7,7 +7,7 @@ import OpenModalButton from "../OpenModalButton";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import './ProfileButton.css'
-import { refreshCart } from "../../store/cart";
+import { fetchCartItemsThunk, refreshCart } from "../../store/cart";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -46,6 +46,7 @@ function ProfileButton({ user }) {
     const email = 'demo@aa.io'
     const password = 'password'
     const data = await dispatch(login(email, password));
+    dispatch(fetchCartItemsThunk())
 
   };
 
