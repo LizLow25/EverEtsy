@@ -1,15 +1,22 @@
 import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { deleteCartItemsThunk, fetchCartItemsThunk, increaseCartItemThunk, reduceCartItemThunk } from '../../store/cart';
 import './Cart.css'
+import { getAllShopsThunk } from '../../store/shop';
 
 function CartItem({ item }) {
   const [count, setCount] = useState(item.count);
   const dispatch = useDispatch()
+  const shops = useSelector(state => state.shops.allShops)
+
+  const singleShop = shops[item?.shop_id]
+  console.log('single shop', singleShop)
+
 
   useEffect(() => {
     setCount(item.count);
     dispatch(fetchCartItemsThunk())
+    dispatch(getAllShopsThunk())
   }, [dispatch, item.count]);
 
   const id = item.id
@@ -35,6 +42,7 @@ function CartItem({ item }) {
       </div>
       <div>
       <div className="cart-item-header">{item.name}</div>
+      <div>from {singleShop.name}</div>
       <div className="cart-item-menu">
         <input
           type="number"
