@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { deleteCartItemsThunk, fetchCartItemsThunk, increaseCartItemThunk, reduceCartItemThunk } from '../../store/cart';
 import './Cart.css'
 import { getAllShopsThunk } from '../../store/shop';
 
 function CartItem({ item }) {
+  const history = useHistory()
   const [count, setCount] = useState(item.count);
   const dispatch = useDispatch()
   const shops = useSelector(state => state.shops.allShops)
@@ -42,7 +44,11 @@ function CartItem({ item }) {
       </div>
       <div>
       <div className="cart-item-header">{item.name}</div>
-      <div>from {singleShop.name}</div>
+      <div className='namesshops'>
+      <p>from  </p>
+      <div onClick={() => history.push(`/shops/${singleShop.id}`)} className='shopNameCart'>{singleShop?.name}</div>
+      </div>
+
       <div className="cart-item-menu">
         <input
           type="number"
@@ -68,7 +74,7 @@ function CartItem({ item }) {
         </button>
       </div>
       </div>
-      <div>{item.price}</div>
+      <div className='pricetotal'>${item.price?.toFixed(2)}</div>
     </li>
   );
 }

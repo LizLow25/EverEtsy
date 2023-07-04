@@ -2,15 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
 }
 
 .cart-item {
     display: flex;
+
 }
 
 .cartImageContainer {
     overflow: hidden;
     border-radius: 30px;
+    margin-right: 40px;
 }
 
 .cartImage {
@@ -21,4 +24,23 @@
     min-width: 100px;
 
 
+}
+
+.namesshops {
+    display: flex;
+    align-items: center;
+}
+
+.shopNameCart {
+    color: #eb6d20;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.pricetotal {
+    margin-left: 100px;
+}
+
+.cart-item {
+    margin-bottom: 40px;
 }
