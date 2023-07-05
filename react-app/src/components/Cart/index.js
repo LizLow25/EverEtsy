@@ -4,6 +4,8 @@ import CartItem from './CartItem';
 import { fetchCartItemsThunk } from '../../store/cart';
 import { getAllProductsThunk } from '../../store/product';
 import './Cart.css'
+import PurchaseCartModal from '../PurchaseCartModal';
+import OpenModalButton from "../OpenModalButton";
 
 
 function Cart() {
@@ -50,8 +52,9 @@ function Cart() {
         {cartItems.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
 
-      <button >Purchase</button>
-    </div>
+      <OpenModalButton
+        buttonText="Purchase"
+        modalComponent={<PurchaseCartModal cartItems={cartItems} />} />    </div>
   )
 }
 

@@ -107,6 +107,15 @@ export const increaseCartItemThunk = (id) => async (dispatch) => {
 
 }
 
+export const deleteCartForUserThunk = () => async (dispatch) => {
+    const res = await fetch('api/cart/user', {
+        method: "DELETE"
+    })
+    if (res.ok) {
+        dispatch(refreshCart())
+    }
+}
+
 
 
 
