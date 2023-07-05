@@ -63,3 +63,15 @@ def delete_product_from_cart(id):
 
     db.session.commit()
     return {"message": "Removed successfully"}, 200
+
+#'checkout' the cart by deleting all cart items associated with the current user in the database
+@cart_routes.route("user", methods=['DELETE'])
+@login_required
+def delete_cart_for_user():
+    products = CartItem.query.filter(CartItem.user_id == current_user.id).all()
+
+    for product in products:
+        db.session.delete(product)
+
+    db.session.commit()
+    return {"message": "Removed successfully"}, 200
