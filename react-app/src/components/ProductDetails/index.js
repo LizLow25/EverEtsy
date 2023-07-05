@@ -12,6 +12,7 @@ const ProductDetails = () => {
     const history = useHistory()
     const products = useSelector(state => state.products.allProducts)
     const shop = useSelector(state => state.shops.allShops)
+    const sessionUser = useSelector(state => state.session.user);
     const [purchaseItem, setPurchaseItem] = useState(false)
     let { productId } = useParams()
     productId = parseInt(productId)
@@ -54,10 +55,11 @@ const ProductDetails = () => {
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>
                     <h2>{singleProduct.name}</h2>
-                    <h3 className='categoryproduct'>{singleProduct.category}</h3>
                     <p className='shopNameDetails' onClick={() => history.push(`/shops/${singleShop.id}`)} >{singleShop?.name}</p>
-                    { purchaseItem ? <p>Added to cart!</p> : ''}
-                    <button onClick={onClick} className={'buttonDetails' + (purchaseItem ? " special" : "")}>Add to cart</button>
+
+                    <h3 className='categoryproduct'>{singleProduct.category}</h3>
+                    { purchaseItem ? <p className='cartadded'>Added to cart!</p> : ''}
+                    {sessionUser ? <button onClick={onClick} className={'buttonDetails' + (purchaseItem ? " special" : "")}>Add to cart</button> : '' }
                     <h2>Description</h2>
                     <p>{singleProduct.details}</p>
                 </div>
