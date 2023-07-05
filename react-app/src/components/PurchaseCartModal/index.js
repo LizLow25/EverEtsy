@@ -20,7 +20,7 @@ function PurchaseCartModal() {
 
 
     return (
-        <div>
+        <div className="purchaseModal">
             <h2>Complete Purchase?</h2>
             <form className="purchaseform">
                 <div className="radio">
@@ -43,7 +43,7 @@ function PurchaseCartModal() {
                 </div>
             </form>
 
-            <button onClick={onClick}>Complete</button>
+            <button className='deletebutton' onClick={onClick}>Complete</button>
 
 
         </div>
