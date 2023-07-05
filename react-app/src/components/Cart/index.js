@@ -32,19 +32,16 @@ function Cart() {
 
   console.log('cartItems', cartItems)
 
+  const prices = cartItems.map(item => item.price)
+  console.log('prices', prices)
+
   if (!cartItems || !cartItems.length) return (
     <div className="cart">
       No items in the cart. Start selecting items to purchase.
     </div>
   );
 
-  // const onSubmit = (e) => {
-  //   e.preventDefault();
-  //   window.alert(
-  //     "Purchased the following:\n" +
-  //     `${cartItems.map(item => `${item.count} of ${item.name}`).join('\n')}`
-  //   );
-  // }
+
 
   return (
     <div className="cart">
