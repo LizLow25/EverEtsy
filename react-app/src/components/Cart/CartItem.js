@@ -23,7 +23,7 @@ function CartItem({ item }) {
 
   const id = item.id
 
-  const removeFromCart= () => {
+  const removeFromCart = () => {
     dispatch(deleteCartItemsThunk(id))
 
   }
@@ -40,39 +40,40 @@ function CartItem({ item }) {
   return (
     <li className="cart-item">
       <div className='cartImageContainer'>
-      <img className='cartImage' src={item.main_image}/>
+        <img className='cartImage' src={item.main_image} />
       </div>
       <div>
-      <div className="cart-item-header">{item.name}</div>
-      <div className='namesshops'>
-      <p>from  </p>
-      <div onClick={() => history.push(`/shops/${singleShop.id}`)} className='shopNameCart'>{singleShop?.name}</div>
-      </div>
+        <div className="cart-item-header">{item.name}</div>
+        <div className='namesshops'>
+          <p>from  </p>
+          <div onClick={() => history.push(`/shops/${singleShop.id}`)} className='shopNameCart'>{singleShop?.name}</div>
+        </div>
 
-      <div className="cart-item-menu">
-        <input
-          type="number"
-          value={count}
-        />
-        <button
-          className="cart-item-button"
-          onClick = {incrementClick}
-        >
-          +
-        </button>
-        <button
-          className="cart-item-button"
-          onClick = {reduceClick}
-        >
-          -
-        </button>
-        <button
-          className="cart-item-button"
-          onClick={removeFromCart}
-        >
-          Remove
-        </button>
-      </div>
+        <div className="cart-item-menu">
+
+          <div className='countcontainer'>
+            <div className='countnum'>{count}</div>
+            <button
+              className="cart-item-button-inc"
+              onClick={incrementClick}
+            >
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <button
+              className="cart-item-button-inc"
+              onClick={reduceClick}
+            >
+              <i class="fa-solid fa-minus"></i>
+            </button>
+            <button
+              className="remove-cart-item-button"
+              onClick={removeFromCart}
+            >
+              <i class="fa-solid fa-xmark fa-xl"></i> Remove
+            </button>
+          </div>
+
+        </div>
       </div>
       <div className='pricetotal'>${item.price?.toFixed(2)}</div>
     </li>

@@ -20,7 +20,7 @@ function Cart() {
     dispatch(getAllProductsThunk())
   }, [dispatch])
 
-  console.log('cart', cart)
+  // console.log('cart', cart)
 
   const cartItems = Object.values(cart)
     .map(item => {
@@ -33,7 +33,13 @@ function Cart() {
   console.log('cartItems', cartItems)
 
   const prices = cartItems.map(item => item.price)
-  console.log('prices', prices)
+  // console.log('prices', prices)
+
+  let total = 0
+  let cartTotal = cartItems.map(item => total += (item.count * item.price))
+  console.log('total', total)
+  let tax = (total * (.0725))
+  let taxtotal = total + tax
 
   if (!cartItems || !cartItems.length) return (
     <div className="cart">
@@ -53,36 +59,37 @@ function Cart() {
         <form className="purchaseform">
           <div className="radio">
             <label>
-              <input type="radio" />
+              <input type="radio" name='card' />
               <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
             </label>
           </div>
-          <div className="radio">
+          <div className="radio" >
             <label>
-              <input type="radio" />
+              <input type="radio" name='card' />
               <i class="fa-brands fa-cc-amex fa-2xl"></i>
             </label>
           </div>
           <div className="radio">
             <label>
-              <input type="radio" />
+              <input type="radio" name='card' />
               <i class="fa-brands fa-cc-visa fa-2xl"></i>
             </label>
           </div>
         </form>
-        <p>
-          Item(s) total</p>
-          <p>Shipping</p>
-          <p>Total</p>
+        <div className='checkoutmenu'>
+          <div>Item(s) total</div> <div>${total.toFixed(2)}</div></div>
+        <div className='checkoutmenu'><div>Tax (7.25%) </div> <div>${tax.toFixed(2)}</div></div>
+        <div className='checkoutmenu'><div>Total</div> <div>${taxtotal.toFixed(2)}</div></div >
 
-        <OpenModalButton
-          buttonText="Purchase"
-          modalComponent={<PurchaseCartModal cartItems={cartItems} />} />
+          <OpenModalButton
+            buttonText="Purchase"
+            modalComponent={<PurchaseCartModal cartItems={cartItems} />} />
+        </div>
+
+
       </div>
-
-
-    </div>
-  )
+ 
+      )
 }
 
-export default Cart;
+      export default Cart;
