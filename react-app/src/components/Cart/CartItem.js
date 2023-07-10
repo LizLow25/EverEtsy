@@ -12,7 +12,6 @@ function CartItem({ item }) {
   const shops = useSelector(state => state.shops.allShops)
 
   const singleShop = shops[item?.shop_id]
-  console.log('single shop', singleShop)
 
 
   useEffect(() => {

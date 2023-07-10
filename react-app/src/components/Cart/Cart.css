@@ -114,3 +114,37 @@
 .radio {
     margin: 10px;
 }
+
+.emptycart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.emptycarttitle {
+    font-weight: normal;
+    padding-top: 10px;
+
+}
+
+.navcart {
+    color: grey;
+    text-decoration: none;
+}
+
+.purchaseprotect {
+    background-color: #d7e6f5;
+    padding: 10px 40px 10px 40px;
+    border-radius: 10px;
+}
+
+.cartContainer {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+}
+
+.cartprotect {
+    margin-left: 40px;
+    margin-right: 40px;
+}
