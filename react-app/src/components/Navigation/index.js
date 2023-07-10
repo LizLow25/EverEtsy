@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
@@ -9,6 +9,7 @@ function Navigation({ isLoaded }) {
 	const dispatch = useDispatch()
 	const sessionUser = useSelector(state => state.session.user);
 	const cart = useSelector(state => state.cart)
+	const [search, setSearch] = useState('')
 
 	//calculate the number of items in the cart
 	let cartItems = Object.values(cart)
@@ -24,9 +25,9 @@ function Navigation({ isLoaded }) {
 	}
 
 	useEffect(() => {
-        dispatch(fetchCartItemsThunk())
+		dispatch(fetchCartItemsThunk())
 
-    }, [dispatch])
+	}, [dispatch])
 
 
 
@@ -36,11 +37,28 @@ function Navigation({ isLoaded }) {
 				<NavLink className='everetsy' exact to="/">EverEtsy</NavLink>
 			</div>
 			<div className='search-bar-container'>
-				<input
-					type='search'
-					className='search-bar'
-					placeholder='Search coming soon...'
-				/>
+
+					<input
+						type='search'
+						className='search-bar'
+						placeholder='Search for anything'
+						onChange={async (e) => {
+							setSearch(e.target.value)
+						}}
+						onKeyDown={async (e) => {
+							if (e.key === 'Enter') {
+
+								// history.push("/projects/search")
+							}
+						}}
+
+					/>
+					<button className='search-button'
+						onClick={async (e) => {
+							// console.log("search query: ", search)
+							// await dispatch(searchAllProjectsThunk(search))
+							// history.push("/projects/search")
+						}}><i class="fa-solid fa-magnifying-glass fa-xl"></i></button>
 
 			</div>
 			{sessionUser ? <div ><NavLink exact to={'/shops/manage'}> <i title={'Shop Manager'} className="fa-solid fa-store fa-xl"></i></NavLink></div> : null}
