@@ -49,9 +49,39 @@ function Cart() {
         {cartItems.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
 
-      <OpenModalButton
-        buttonText="Purchase"
-        modalComponent={<PurchaseCartModal cartItems={cartItems} />} />    </div>
+      <div className='cartcheckout'>How you'll pay
+        <form className="purchaseform">
+          <div className="radio">
+            <label>
+              <input type="radio" />
+              <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" />
+              <i class="fa-brands fa-cc-amex fa-2xl"></i>
+            </label>
+          </div>
+          <div className="radio">
+            <label>
+              <input type="radio" />
+              <i class="fa-brands fa-cc-visa fa-2xl"></i>
+            </label>
+          </div>
+        </form>
+        <p>
+          Item(s) total</p>
+          <p>Shipping</p>
+          <p>Total</p>
+
+        <OpenModalButton
+          buttonText="Purchase"
+          modalComponent={<PurchaseCartModal cartItems={cartItems} />} />
+      </div>
+
+
+    </div>
   )
 }
 
