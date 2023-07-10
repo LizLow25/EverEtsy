@@ -129,7 +129,10 @@
 
 .navcart {
     color: grey;
-    text-decoration: none;
+    /* text-decoration: none; */
+}
+.navcart:hover {
+    color: #eb6d20;
 }
 
 .purchaseprotect {
