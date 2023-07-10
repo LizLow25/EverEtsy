@@ -7,11 +7,6 @@
     padding: 20px;
 }
 
-.purchaseform {
-    /* display: flex;
-    justify-content: space-around; */
-}
-
-.radio {
-    margin: 10px;
+.cartbutton {
+    width: 300px;
 }

@@ -17,33 +17,17 @@ function PurchaseCartModal() {
 
     }
 
+    const dontCheckout = () => {
+        return closeModal()
+    }
+
 
 
     return (
         <div className="purchaseModal">
             <h2>Complete Purchase?</h2>
-            <form className="purchaseform">
-                <div className="radio">
-                    <label>
-                        <input type="radio" />
-                        <i class="fa-brands fa-cc-mastercard fa-2xl"></i>
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input type="radio" />
-                        <i class="fa-brands fa-cc-amex fa-2xl"></i>
-                    </label>
-                </div>
-                <div className="radio">
-                    <label>
-                        <input type="radio" />
-                        <i class="fa-brands fa-cc-visa fa-2xl"></i>
-                    </label>
-                </div>
-            </form>
-
-            <button className='deletebutton' onClick={onClick}>Complete</button>
+            <button className='deletebutton cartbutton' onClick={dontCheckout}>Return to shopping</button>
+            <button className='deletebutton cartbutton' onClick={onClick}>Purchase cart</button>
 
 
         </div>

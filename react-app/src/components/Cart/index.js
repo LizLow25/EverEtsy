@@ -55,7 +55,8 @@ function Cart() {
         {cartItems.map(item => <CartItem key={item.id} item={item} />)}
       </ul>
 
-      <div className='cartcheckout'>How you'll pay
+      <div className='cartcheckout'>
+        <h3>How you'll pay</h3>
         <form className="purchaseform">
           <div className="radio">
             <label>
@@ -82,13 +83,13 @@ function Cart() {
         <div className='checkoutmenu'><div>Total</div> <div>${taxtotal.toFixed(2)}</div></div >
 
           <OpenModalButton
-            buttonText="Purchase"
+            buttonText="Proceed to checkout"
             modalComponent={<PurchaseCartModal cartItems={cartItems} />} />
         </div>
 
 
       </div>
- 
+
       )
 }
 

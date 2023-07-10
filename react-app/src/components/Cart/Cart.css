@@ -50,7 +50,7 @@
     display: flex;
     flex-direction: column;
     /* align-items: center; */
-    margin-top: 16px;
+    /* margin-top: 16px; */
     margin-right: 40px;
     margin-left: 10px;
 
@@ -101,6 +101,16 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
-    padding-bottom: 5px;
+    padding-bottom: 10px;
     border-bottom: rgba(128, 128, 128, 0.314) 1px solid;
+}
+
+.purchaseform {
+    /* display: flex;
+    justify-content: space-around; */
+    margin-bottom: 20px;
+}
+
+.radio {
+    margin: 10px;
 }
