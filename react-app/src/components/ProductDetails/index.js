@@ -7,6 +7,7 @@ import { getAllShopsThunk } from '../../store/shop'
 import { populateCartThunk } from '../../store/cart'
 import CreateReviewModal from '../CreateReviewModal'
 import OpenModalButton from "../OpenModalButton";
+import { getAllReviewsThunk } from '../../store/review'
 
 const ProductDetails = () => {
     const dispatch = useDispatch()
@@ -21,6 +22,7 @@ const ProductDetails = () => {
     useEffect(() => {
         dispatch(getAllProductsThunk())
         dispatch(getAllShopsThunk())
+        dispatch(getAllReviewsThunk())
     }, [dispatch])
 
     const singleProduct = products[productId]

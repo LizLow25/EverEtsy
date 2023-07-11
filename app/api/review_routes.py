@@ -4,14 +4,17 @@ from flask_login import login_required, current_user
 
 review_routes = Blueprint('reviews', __name__)
 
+@review_routes.route('/')
+def get_all_reviews():
+    reviews = Review.query.all()
+
+    return {'reviews': [review.to_dict() for review in reviews]}
+
 @review_routes.route('/new', methods=['POST'])
 @login_required
 def add_new_review():
-    print('inside back end review', request)
+
     data = request.get_json(force=True)
-    print('what is this data', data)
-
-
 
     review = Review(
         user=current_user.id,
