@@ -18,6 +18,8 @@ const CREATE_PRODUCT = 'product/CREATE_PRODUCT'
 
 const DELETE_PRODUCT = 'product/DELETE_PRODUCT'
 
+const SEARCH_PRODUCTS = 'product/SEARCH_PRODUCTS'
+
 // ACTION CREATORS
 
 const getAllProducts = (products) => {
@@ -60,6 +62,14 @@ const deleteProduct = (id) => {
     return {
         type: DELETE_PRODUCT,
         id
+    }
+
+}
+
+const searchProductsAction = (products) => {
+    return {
+        type: SEARCH_PRODUCTS,
+        products
     }
 
 }
@@ -160,8 +170,21 @@ export const updateProductThunk = (id, product) => async (dispatch) => {
 
 }
 
+export const searchProductThunk = (query) => async (dispatch) => {
+    const res = await fetch(`/api/search/?query=${query}`)
+    if (res.ok) {
+        const { products } = await res.json()
+        dispatch(searchProductsAction(products))
+
+        return
+      } else {
+        console.log("Problem with loading projects with query params")
+      }
+
+}
+
 // --------- INITIAL STATE -------------
-const initialState = { allProducts: {}, singleProduct: {}, shopProducts: {} }
+const initialState = { allProducts: {}, singleProduct: {}, shopProducts: {}, searchProducts: {} }
 // ---------- REDUCER ----------
 const productReducer = (state = initialState, action) => {
 
@@ -174,6 +197,8 @@ const productReducer = (state = initialState, action) => {
             return { ...state, allProducts: { ...normalizeObj(action.products) } }
         case GET_CURRENT_SHOP_PRODUCTS:
             return { ...state, shopProducts: { ...normalizeObj(action.products) } }
+        case SEARCH_PRODUCTS:
+            return {...state, searchProducts: { ...normalizeObj(action.products)}}
         default:
             return state
     }

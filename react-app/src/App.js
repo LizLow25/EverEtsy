@@ -10,6 +10,7 @@ import ProductDetails from "./components/ProductDetails";
 import ShopDetails from "./components/ShopDetails";
 import ManageShop from "./components/ManageShop";
 import Cart from "./components/Cart";
+import SearchResults from "./components/SearchResults";
 
 function App() {
   const dispatch = useDispatch();
@@ -37,6 +38,9 @@ function App() {
         </Route>
         <Route exact path="/products/:productId">
           <ProductDetails />
+        </Route>
+        <Route exact path="/products/search">
+          <SearchResults />
         </Route>
         <Route exact path="/shops/manage">
           <ManageShop />
