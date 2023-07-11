@@ -15,7 +15,7 @@ const LandingPage = () => {
     const history = useHistory()
     const products = useSelector(state => state.products.allProducts)
 
-    console.log('products', products)
+    // console.log('products', products)
 
 
 

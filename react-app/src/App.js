@@ -36,11 +36,11 @@ function App() {
       <Route exact path="/">
           <LandingPage />
         </Route>
-        <Route exact path="/products/:productId">
-          <ProductDetails />
-        </Route>
         <Route exact path="/products/search">
           <SearchResults />
+        </Route>
+        <Route exact path="/products/:productId">
+          <ProductDetails />
         </Route>
         <Route exact path="/shops/manage">
           <ManageShop />

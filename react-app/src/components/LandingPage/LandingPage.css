@@ -76,3 +76,10 @@
 .landingnav {
     text-decoration: none;
 }
+
+.noresults {
+    font-weight: normal;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.739);
+    padding-top: 20px;
+}
