@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useModal } from "../../context/Modal";
-import { createReviewThunk } from '../../store/review';
+import { createReviewThunk, getAllReviewsThunk } from '../../store/review';
 import './CreateReviewModal.css'
 
 function CreateReviewModal({ productId }) {
@@ -71,6 +71,7 @@ function CreateReviewModal({ productId }) {
         console.log('newreview', newReview)
 
         await dispatch(createReviewThunk(newReview))
+        await dispatch(getAllReviewsThunk())
 
 
         return closeModal()

@@ -35,6 +35,8 @@ const ProductDetails = () => {
     const reviewArray = Object.values(reviews)
     const productReviews = reviewArray.filter(review => review.product === productId)
 
+
+
     console.log('productreviews', productReviews)
 
 
@@ -68,12 +70,18 @@ const ProductDetails = () => {
                     {productReviews.map(review => {
                         return (
                             <div className='reviewContainer'>
-                                <p>{((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</p>
-                                <p>{review.content}</p>
-                                <p>{review.userDetails.username}</p>
-                                <p>Item quality {review.item_quality_rating}</p>
-                                <p>Shipping {review.shipping_rating}</p>
-                                <p>Customer service {review.customer_service_rating}</p>
+                                <div>
+                                    <p><i className="fas fa-star"> </i>  {((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</p>
+                                    <p>{review.content}</p>
+                                    <p>{review.userDetails.username}</p>
+                                </div>
+                                <div>
+                                    <p>Item quality {
+                                        [...Array(review.item_quality_rating).keys()].map(item=><i className="fas fa-star"></i>)
+                                        }</p>
+                                    <p>Shipping {[...Array(review.shipping_rating).keys()].map(item=><i className="fas fa-star"></i>)}</p>
+                                    <p>Customer service {[...Array(review.customer_service_rating).keys()].map(item=><i className="fas fa-star"></i>)}</p>
+                                </div>
                             </div>
                         )
                     })}

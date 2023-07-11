@@ -44,14 +44,23 @@
 
 .special {
     background-color: grey;
-    color:white;
-  }
+    color: white;
+}
 
 .cartadded {
     color: #eb6d20;
 
-  }
+}
 
-  .reviewbutton {
+.reviewbutton {
     background-color: #eb6d20;
-  }
+}
+
+.reviewContainer {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 4px 20px rgba(34,34,34,.15);
+    padding: 20px;
+    border-radius: 30px;
+    margin: 10px;
+}
