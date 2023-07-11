@@ -60,7 +60,7 @@ function CreateReviewModal({ spotId }) {
         e.preventDefault();
 
         const newReview = {
-            review,
+            content: review,
             itemRating,
             shipRating,
             serviceRating
@@ -69,7 +69,7 @@ function CreateReviewModal({ spotId }) {
 
         console.log('newreview', newReview)
 
-        // await dispatch(createReviewThunk(newReview))
+        await dispatch(createReviewThunk(newReview))
 
 
         return closeModal()
