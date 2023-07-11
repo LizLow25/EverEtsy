@@ -5,7 +5,8 @@ import { getAllProductsThunk } from "../../store/product"
 import './ProductDetails.css'
 import { getAllShopsThunk } from '../../store/shop'
 import { populateCartThunk } from '../../store/cart'
-
+import CreateReviewModal from '../CreateReviewModal'
+import OpenModalButton from "../OpenModalButton";
 
 const ProductDetails = () => {
     const dispatch = useDispatch()
@@ -43,7 +44,7 @@ const ProductDetails = () => {
     }
 
     const clickReview = () => {
-        
+
     }
 
 
@@ -57,7 +58,10 @@ const ProductDetails = () => {
                     <div className='imageContainerDetails'>
                         <img src={singleProduct?.main_image} alt='' className='imgDetails' />
                     </div>
-                    <button onClick={clickReview}><i class="fa-solid fa-feather"></i>  Leave a product review</button>
+                    {sessionUser ? <><i class="fa-solid fa-feather"></i><OpenModalButton
+                    buttonText='Leave a product review'
+                    className='reviewbutton'
+                    modalComponent={<CreateReviewModal />} /> </>: ''}
                 </div>
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>
