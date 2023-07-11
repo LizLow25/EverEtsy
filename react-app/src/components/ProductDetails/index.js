@@ -13,6 +13,7 @@ const ProductDetails = () => {
     const dispatch = useDispatch()
     const history = useHistory()
     const products = useSelector(state => state.products.allProducts)
+    const reviews = useSelector(state => state.reviews)
     const shop = useSelector(state => state.shops.allShops)
     const sessionUser = useSelector(state => state.session.user);
     const [purchaseItem, setPurchaseItem] = useState(false)
@@ -27,12 +28,13 @@ const ProductDetails = () => {
 
     const singleProduct = products[productId]
     const productShop = singleProduct?.shop_id
-    // console.log('singleproduct', singleProduct, productShop)
     const singleShop = shop[productShop]
-    // console.log('single shop', singleShop)
-
     if (!singleProduct) return <h1>Product loading...</h1>
 
+    //pull
+
+
+    //add product to cart function
     const onClick = () => {
 
         dispatch(populateCartThunk(singleProduct.id))
@@ -44,11 +46,6 @@ const ProductDetails = () => {
         }, 1000);
 
     }
-
-    const clickReview = () => {
-
-    }
-
 
 
 
@@ -63,7 +60,7 @@ const ProductDetails = () => {
                     {sessionUser ? <><i class="fa-solid fa-feather"></i><OpenModalButton
                     buttonText='Leave a product review'
                     className='reviewbutton'
-                    modalComponent={<CreateReviewModal />} /> </>: ''}
+                    modalComponent={<CreateReviewModal productId={singleProduct?.id}/>} /> </>: ''}
                 </div>
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>

@@ -10,6 +10,8 @@ class Review(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user = db.Column(db.Integer, db.ForeignKey(
         add_prefix_for_prod("users.id")), nullable=False)
+    product = db.Column(db.Integer, db.ForeignKey(
+        add_prefix_for_prod("products.id")), nullable=False)
     content = db.Column(db.Text, nullable=False)
     item_quality_rating = db.Column(db.Integer, nullable=False)
     shipping_rating = db.Column(db.Integer, nullable=False)
@@ -20,6 +22,7 @@ class Review(db.Model):
         return {
             'id': self.id,
             'user': self.user,
+            'product': self.product,
             'content': self.content,
             'item_quality_rating': self.item_quality_rating,
             'shipping_rating': self.shipping_rating,

@@ -18,6 +18,7 @@ def add_new_review():
 
     review = Review(
         user=current_user.id,
+        product=data['product'],
         content=data['content'],
         item_quality_rating=data['itemRating'],
         shipping_rating=data['shipRating'],

@@ -4,7 +4,7 @@ import { useModal } from "../../context/Modal";
 import { createReviewThunk } from '../../store/review';
 import './CreateReviewModal.css'
 
-function CreateReviewModal({ spotId }) {
+function CreateReviewModal({ productId }) {
     const { closeModal } = useModal();
     const dispatch = useDispatch();
 
@@ -60,6 +60,7 @@ function CreateReviewModal({ spotId }) {
         e.preventDefault();
 
         const newReview = {
+            product: productId,
             content: review,
             itemRating,
             shipRating,
