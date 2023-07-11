@@ -37,9 +37,13 @@ const ProductDetails = () => {
         setPurchaseItem(true)
 
         setTimeout(function () {
-           setPurchaseItem(false);
-        }, 2000);
+            setPurchaseItem(false);
+        }, 1000);
 
+    }
+
+    const clickReview = () => {
+        
     }
 
 
@@ -49,8 +53,11 @@ const ProductDetails = () => {
     return (
         <>
             <div className='projectDetailsContainer'>
-                <div className='imageContainerDetails'>
-                    <img src={singleProduct?.main_image} alt='' className='imgDetails' />
+                <div>
+                    <div className='imageContainerDetails'>
+                        <img src={singleProduct?.main_image} alt='' className='imgDetails' />
+                    </div>
+                    <button onClick={clickReview}><i class="fa-solid fa-feather"></i>  Leave a product review</button>
                 </div>
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>
@@ -58,12 +65,13 @@ const ProductDetails = () => {
                     <p className='shopNameDetails' onClick={() => history.push(`/shops/${singleShop.id}`)} >{singleShop?.name}</p>
 
                     <h3 className='categoryproduct'>{singleProduct.category}</h3>
-                    { purchaseItem ? <p className='cartadded'>Added to cart!</p> : ''}
-                    {sessionUser ? <button onClick={onClick} className={'buttonDetails' + (purchaseItem ? " special" : "")}>Add to cart</button> : '' }
+                    {purchaseItem ? <p className='cartadded'>Added to cart!</p> : ''}
+                    {sessionUser ? <button onClick={onClick} className={'buttonDetails' + (purchaseItem ? " special" : "")}>Add to cart</button> : ''}
                     <h2>Description</h2>
                     <p>{singleProduct.details}</p>
                 </div>
             </div>
+
 
 
         </>
