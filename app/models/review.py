@@ -18,6 +18,8 @@ class Review(db.Model):
     customer_service_rating = db.Column(db.Integer, nullable=False)
     created_at = db.Column(db.Date, nullable=False, default=date.today())
 
+    userDetails = db.relationship('User')
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -27,5 +29,6 @@ class Review(db.Model):
             'item_quality_rating': self.item_quality_rating,
             'shipping_rating': self.shipping_rating,
             'customer_service_rating': self.customer_service_rating,
-            'created_at': self.created_at
+            'created_at': self.created_at,
+            'userDetails': self.userDetails.to_dict()
         }

@@ -31,7 +31,11 @@ const ProductDetails = () => {
     const singleShop = shop[productShop]
     if (!singleProduct) return <h1>Product loading...</h1>
 
-    //pull
+    //pull review for this product
+    const reviewArray = Object.values(reviews)
+    const productReviews = reviewArray.filter(review => review.product === productId)
+
+    console.log('productreviews', productReviews)
 
 
     //add product to cart function
@@ -58,9 +62,21 @@ const ProductDetails = () => {
                         <img src={singleProduct?.main_image} alt='' className='imgDetails' />
                     </div>
                     {sessionUser ? <><i class="fa-solid fa-feather"></i><OpenModalButton
-                    buttonText='Leave a product review'
-                    className='reviewbutton'
-                    modalComponent={<CreateReviewModal productId={singleProduct?.id}/>} /> </>: ''}
+                        buttonText='Leave a product review'
+                        className='reviewbutton'
+                        modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </> : ''}
+                    {productReviews.map(review => {
+                        return (
+                            <div className='reviewContainer'>
+                                <p>{((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</p>
+                                <p>{review.content}</p>
+                                <p>{review.userDetails.username}</p>
+                                <p>Item quality {review.item_quality_rating}</p>
+                                <p>Shipping {review.shipping_rating}</p>
+                                <p>Customer service {review.customer_service_rating}</p>
+                            </div>
+                        )
+                    })}
                 </div>
                 <div className='textContainerDetails'>
                     <h2>${singleProduct.price?.toFixed(2)}</h2>
