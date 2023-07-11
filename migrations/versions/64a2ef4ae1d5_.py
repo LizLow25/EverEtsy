@@ -1,20 +1,16 @@
 """empty message
 
-Revision ID: 74977a55aa4f
-Revises:
-Create Date: 2023-06-27 17:04:28.595271
+Revision ID: 64a2ef4ae1d5
+Revises: 
+Create Date: 2023-07-11 12:09:58.386517
 
 """
 from alembic import op
 import sqlalchemy as sa
 
-import os
-environment = os.getenv("FLASK_ENV")
-SCHEMA = os.environ.get("SCHEMA")
-
 
 # revision identifiers, used by Alembic.
-revision = '74977a55aa4f'
+revision = '64a2ef4ae1d5'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -33,6 +29,14 @@ def upgrade():
     sa.PrimaryKeyConstraint('id'),
     sa.UniqueConstraint('email'),
     sa.UniqueConstraint('username')
+    )
+    op.create_table('reviews',
+    sa.Column('id', sa.Integer(), nullable=False),
+    sa.Column('user', sa.Integer(), nullable=False),
+    sa.Column('content', sa.Text(), nullable=False),
+    sa.Column('created_at', sa.Date(), nullable=False),
+    sa.ForeignKeyConstraint(['user'], ['users.id'], ),
+    sa.PrimaryKeyConstraint('id')
     )
     op.create_table('shops',
     sa.Column('id', sa.Integer(), nullable=False),
@@ -56,8 +60,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['shop_id'], ['shops.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    if environment == "production":
-        op.execute(f"ALTER TABLE products SET SCHEMA {SCHEMA};")
     op.create_table('cartitems',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('user_id', sa.Integer(), nullable=False),
@@ -66,8 +68,6 @@ def upgrade():
     sa.ForeignKeyConstraint(['user_id'], ['users.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    if environment == "production":
-        op.execute(f"ALTER TABLE cartitems SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
@@ -76,5 +76,6 @@ def downgrade():
     op.drop_table('cartitems')
     op.drop_table('products')
     op.drop_table('shops')
+    op.drop_table('reviews')
     op.drop_table('users')
     # ### end Alembic commands ###
