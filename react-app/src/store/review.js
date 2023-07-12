@@ -48,7 +48,7 @@ export const createReviewThunk = (review) => async (dispatch) => {
 
     if (res.ok) {
         const { review } = await res.json()
-        console.log('review?', review)
+
 
     } else {
         console.log("Problem with creating a new review", res)
@@ -64,6 +64,21 @@ export const deleteReviewThunk = (id) => async (dispatch) => {
       if (res.ok) {
        dispatch(deleteReview(id))
       }
+
+}
+
+export const updateReviewThunk = (id, review) => async (dispatch) => {
+    const res = await fetch(`/api/reviews/${id}/edit`, {
+        method: "PUT",
+        body: JSON.stringify(review)
+      })
+
+    if (res.ok) {
+        const { review } = await res.json()
+        return review
+    } else {
+        console.log("Problem with updating the shop", res)
+    }
 
 }
 

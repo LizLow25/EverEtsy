@@ -37,10 +37,31 @@ def delete_review(id):
     review = Review.query.get(id)
 
     if review is None:
-        return {"errors": "Product does not exist"}, 404
+        return {"errors": "Review does not exist"}, 404
 
 
     db.session.delete(review)
     db.session.commit()
 
-    return {"message": "Product Succesfully Deleted"}
+    return {"message": "Review Succesfully Deleted"}
+
+@review_routes.route("/<int:id>/edit", methods=['PUT'])
+@login_required
+def update_review(id):
+    updated_review = Review.query.get(id)
+
+    data = request.get_json(force=True)
+
+    if data["content"]:
+        updated_review.content = data["content"]
+    if data["itemRating"]:
+        updated_review.item_quality_rating = data["itemRating"]
+    if data["shipRating"]:
+        updated_review.shipping_rating = data["shipRating"]
+    if data["serviceRating"]:
+        updated_review.customer_service_rating = data["serviceRating"]
+
+    db.session.commit()
+
+    if update_review is None:
+        return {"errors": "Review does not exist"}, 404

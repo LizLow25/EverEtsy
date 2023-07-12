@@ -84,7 +84,7 @@ def delete_product(id):
 
 @product_routes.route("/<int:id>/edit", methods=['PUT'])
 @login_required
-def update_shop(id):
+def update_product(id):
 
     edit_product_form = EditProductForm()
     edit_product_form["csrf_token"].data = request.cookies["csrf_token"]

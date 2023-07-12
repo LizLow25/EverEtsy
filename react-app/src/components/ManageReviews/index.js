@@ -3,7 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import { getAllShopsThunk } from '../../store/shop'
 import { deleteReviewThunk, getAllReviewsThunk } from '../../store/review'
 import { getAllProductsThunk } from "../../store/product"
+import OpenModalButton from "../OpenModalButton";
 import './ManageReviews.css'
+import UpdateReviewModal from '../UpdateReviewModal'
 
 const ManageReviews = () => {
     const dispatch = useDispatch()
@@ -51,9 +53,9 @@ const ManageReviews = () => {
                             <div className='productinfo'>
 
                                 <div className='reviewimagecontainer'>
-                                    <img src={products[review.product].main_image} className='reviewimage' />
+                                    <img src={products[review.product]?.main_image} className='reviewimage' />
                                 </div>
-                                <div className='managereviewproducttitle'>{products[review.product].name}</div>
+                                <div className='managereviewproducttitle'>{products[review.product]?.name}</div>
                             </div>
 
                             <div className='manage_review_content'>
@@ -70,7 +72,9 @@ const ManageReviews = () => {
                             </div>
                         </div>
                         <div>
-                            <button>Update your review</button>
+                            <OpenModalButton
+                                buttonText="Update your review"
+                                modalComponent={<UpdateReviewModal oldReview={review}/>} />
                             <button onClick={() => deleteReview(review.id)}>Delete your review</button>
                         </div>
                     </div>
