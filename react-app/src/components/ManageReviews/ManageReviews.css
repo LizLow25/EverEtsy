@@ -46,3 +46,28 @@
 .rightratings {
     padding: 5px;
 }
+
+.deletereviewbutton {
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+    margin: 5px;
+    padding: 0 23px;
+
+    cursor: pointer;
+
+}
+
+.buttoncontainermanagereviews {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+}
+
+.managereviewspage {
+    margin: 30px;
+}

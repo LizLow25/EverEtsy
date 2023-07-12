@@ -38,13 +38,21 @@ const ManageReviews = () => {
 
     }
 
+    if (!userReviews.length) {
+        return (
+            <div className='landingbanner'>
+                <h2 className='bannertext'>No reviews yet!</h2>
+            </div>
+        )
+    }
+
 
 
 
 
 
     return (
-        <div >
+        <div className='managereviewspage'>
             {userReviews.map(review => {
                 return (
                     <div className='userreviewcontainer'>
@@ -71,11 +79,11 @@ const ManageReviews = () => {
                                 <p>Customer service {[...Array(review.customer_service_rating).keys()].map(item => <i className="fas fa-star"></i>)}</p>
                             </div>
                         </div>
-                        <div>
+                        <div className='buttoncontainermanagereviews'>
                             <OpenModalButton
                                 buttonText="Update your review"
                                 modalComponent={<UpdateReviewModal oldReview={review}/>} />
-                            <button onClick={() => deleteReview(review.id)}>Delete your review</button>
+                            <button className='deletereviewbutton' onClick={() => deleteReview(review.id)}>Delete your review</button>
                         </div>
                     </div>
                 )
