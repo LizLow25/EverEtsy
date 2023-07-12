@@ -28,7 +28,8 @@ function CreateReviewModal({ productId }) {
         }
     }
     const onItemChange = (number) => {
-        setItemRating(parseInt(number));
+        setItemRating(parseInt(number))
+
     };
 
     //shipping
@@ -104,35 +105,36 @@ function CreateReviewModal({ productId }) {
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseItem(1)}
-                            onClick={() => onItemChange(1)}
+                            onMouseLeave={() => onItemChange(1)}
+
                         ></i>
                     </div>
                     <div className={itemStars[1]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseItem(2)}
-                            onClick={() => onItemChange(2)}
+                            onMouseLeave={() => onItemChange(2)}
                         ></i>
                     </div>
                     <div className={itemStars[2]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseItem(3)}
-                            onClick={() => onItemChange(3)}
+                            onMouseLeave={() => onItemChange(3)}
                         ></i>
                     </div>
                     <div className={itemStars[3]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseItem(4)}
-                            onClick={() => onItemChange(4)}
+                            onMouseLeave={() => onItemChange(4)}
                         ></i>
                     </div>
                     <div className={itemStars[4]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseItem(5)}
-                            onClick={() => onItemChange(5)}
+                            onMouseLeave={() => onItemChange(5)}
                         ></i>
                     </div>
 
@@ -144,35 +146,35 @@ function CreateReviewModal({ productId }) {
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseShip(1)}
-                            onClick={() => onShipChange(1)}
+                            onMouseLeave={() => onShipChange(1)}
                         ></i>
                     </div>
                     <div className={shipStars[1]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseShip(2)}
-                            onClick={() => onShipChange(2)}
+                            onMouseLeave={() => onShipChange(2)}
                         ></i>
                     </div>
                     <div className={shipStars[2]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseShip(3)}
-                            onClick={() => onShipChange(3)}
+                            onMouseLeave={() => onShipChange(3)}
                         ></i>
                     </div>
                     <div className={shipStars[3]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseShip(4)}
-                            onClick={() => onShipChange(4)}
+                            onMouseLeave={() => onShipChange(4)}
                         ></i>
                     </div>
                     <div className={shipStars[4]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseShip(5)}
-                            onClick={() => onShipChange(5)}
+                            onMouseLeave={() => onShipChange(5)}
                         ></i>
                     </div>
 
@@ -184,35 +186,35 @@ function CreateReviewModal({ productId }) {
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseService(1)}
-                            onClick={() => onServiceChange(1)}
+                            onMouseLeave={() => onServiceChange(1)}
                         ></i>
                     </div>
                     <div className={serviceStars[1]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseService(2)}
-                            onClick={() => onServiceChange(2)}
+                            onMouseLeave={() => onServiceChange(2)}
                         ></i>
                     </div>
                     <div className={serviceStars[2]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseService(3)}
-                            onClick={() => onServiceChange(3)}
+                            onMouseLeave={() => onServiceChange(3)}
                         ></i>
                     </div>
                     <div className={serviceStars[3]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseService(4)}
-                            onClick={() => onServiceChange(4)}
+                            onMouseLeave={() => onServiceChange(4)}
                         ></i>
                     </div>
                     <div className={serviceStars[4]} >
                         <i
                             className="fa-regular fa-star"
                             onMouseEnter={() => mouseService(5)}
-                            onClick={() => onServiceChange(5)}
+                            onMouseLeave={() => onServiceChange(5)}
                         ></i>
                     </div>
 
