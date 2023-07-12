@@ -106,9 +106,11 @@
 }
 
 .purchaseform {
-    /* display: flex;
-    justify-content: space-around; */
+    display: flex;
+    justify-content: space-around;
     margin-bottom: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .radio {

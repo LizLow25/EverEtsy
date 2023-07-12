@@ -29,3 +29,18 @@ def add_new_review():
 
 
     return {"review": review.to_dict()}
+
+@review_routes.route("/<int:id>", methods=['DELETE'])
+@login_required
+def delete_review(id):
+
+    review = Review.query.get(id)
+
+    if review is None:
+        return {"errors": "Product does not exist"}, 404
+
+
+    db.session.delete(review)
+    db.session.commit()
+
+    return {"message": "Product Succesfully Deleted"}

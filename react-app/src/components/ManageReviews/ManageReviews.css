@@ -1,0 +1,48 @@
+.userreviewcontainer {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+
+
+}
+
+.reviewimage {
+    max-width: 90px;
+    min-width: 90px;
+    max-height: 90px;
+    min-height: 90px;
+    object-fit: cover;
+    border-radius: 30px;
+    margin: 5px;
+
+}
+
+.productinfo {
+    display: flex;
+    color: rgba(0, 0, 0, 0.739);
+    font-size: 15px;
+    /* align-items: center; */
+    padding: 3px;
+
+
+}
+
+.managereviewContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow: 0 4px 20px rgba(34,34,34,.15);
+    padding: 20px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+.managereviewproducttitle {
+    padding: 5px;
+}
+
+.manage_review_content {
+    padding: 5px;
+}
+
+.rightratings {
+    padding: 5px;
+}

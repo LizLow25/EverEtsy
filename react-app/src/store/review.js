@@ -5,7 +5,8 @@ const normalizeObj = (arr) => {
 }
 
 
-const GET_ALL_REVIEWS = 'product/GET_ALL_REVIEWS'
+const GET_ALL_REVIEWS = 'review/GET_ALL_REVIEWS'
+const DELETE_REVIEW = 'review/DELETE_REVIEW'
 
 const getAllReviews = (reviews) => {
     return {
@@ -13,6 +14,14 @@ const getAllReviews = (reviews) => {
         reviews
     }
 }
+
+const deleteReview = (id) => {
+    return {
+        type: DELETE_REVIEW,
+        id
+    }
+}
+
 
 
 //THUNKS
@@ -48,6 +57,16 @@ export const createReviewThunk = (review) => async (dispatch) => {
 
 }
 
+export const deleteReviewThunk = (id) => async (dispatch) => {
+    const res = await fetch(`/api/reviews/${id}`, {
+        method: "DELETE"
+      })
+      if (res.ok) {
+       dispatch(deleteReview(id))
+      }
+
+}
+
 
 
 const reviewReducer = (state = {}, action) => {
@@ -55,6 +74,10 @@ const reviewReducer = (state = {}, action) => {
     switch (action.type) {
         case GET_ALL_REVIEWS:
             return { ...state, ...normalizeObj(action.reviews) }
+        case DELETE_REVIEW:
+            let newState = {...state}
+            delete newState[action.id]
+            return newState
         default:
             return state
     }
