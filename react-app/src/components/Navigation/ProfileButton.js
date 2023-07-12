@@ -8,6 +8,7 @@ import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import './ProfileButton.css'
 import { fetchCartItemsThunk, refreshCart } from "../../store/cart";
+import { NavLink } from "react-router-dom/cjs/react-router-dom";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -63,7 +64,7 @@ function ProfileButton({ user }) {
         {user ? (
           <div className="loggedindropdown">
             <div className="profile-dropdown-items">Hello, {user.username}</div>
-            {/* <div>{user.email}</div> */}
+            <NavLink to='/reviews'><div className="profilereview"><i class="fa-regular fa-clipboard"></i> Manage your reviews</div></NavLink>
             <div>
               <button className='logoutbutton' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> Sign out</button>
             </div>

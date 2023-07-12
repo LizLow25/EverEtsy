@@ -11,6 +11,7 @@ import ShopDetails from "./components/ShopDetails";
 import ManageShop from "./components/ManageShop";
 import Cart from "./components/Cart";
 import SearchResults from "./components/SearchResults";
+import ManageReviews from "./components/ManageReviews";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route exact path="/cart">
           <Cart />
+        </Route>
+        <Route exact path="/reviews">
+          <ManageReviews />
         </Route>
       </Switch>
     </>
