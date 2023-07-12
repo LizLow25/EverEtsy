@@ -53,7 +53,7 @@ function ProfileButton({ user }) {
   };
 
 
-  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
+  const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden") ;
   const closeMenu = () => setShowMenu(false);
 
   return (
@@ -65,10 +65,8 @@ function ProfileButton({ user }) {
         {user ? (
           <div className="loggedindropdown">
             <div className="profile-dropdown-items">Hello, {user.username}</div>
-            <NavLink to='/reviews'><div className="profilereview"><i class="fa-regular fa-clipboard"></i> Manage your reviews</div></NavLink>
-            <div>
-              <button className='logoutbutton' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> Sign out</button>
-            </div>
+            <NavLink className="profilereviewnav" to='/reviews'><div className="profilereview"><i class="fa-regular fa-clipboard"></i>&nbsp; Manage your reviews</div></NavLink>
+            <button className='logoutbutton' onClick={handleLogout}><i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180"></i> &nbsp; Sign out</button>
           </div>
         ) : (
           <div className="profileButtons">

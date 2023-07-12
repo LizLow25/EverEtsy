@@ -1,9 +1,13 @@
 .profile-dropdown {
   position: absolute;
-  
+
   border-radius: 30px;
   overflow: hidden;
 
+}
+
+.user {
+  right: 30px;
 }
 
 .hidden {

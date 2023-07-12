@@ -63,10 +63,10 @@ const ProductDetails = () => {
                     <div className='imageContainerDetails'>
                         <img src={singleProduct?.main_image} alt='' className='imgDetails' />
                     </div>
-                    {sessionUser ? <><i class="fa-solid fa-feather"></i><OpenModalButton
+                    {sessionUser ? < div className='reviewButtonDetails'> <OpenModalButton
                         buttonText='Leave a product review'
                         className='reviewbutton'
-                        modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </> : ''}
+                        modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </div>  : ''}
                     {productReviews.map(review => {
                         return (
                             <div className='reviewContainer'>
