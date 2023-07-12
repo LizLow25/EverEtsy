@@ -19,6 +19,8 @@ function CreateReviewModal({ productId }) {
     const [serviceRating, setServiceRating] = useState(0)
     const [serviceStars, setServiceStars] = useState(['empty', 'empty', 'empty', 'empty', 'empty']);
 
+    const [errors, setErrors] = useState({});
+
     //items
     const mouseItem = (num) => {
         let starSettings = ['empty', 'empty', 'empty', 'empty', 'empty']
@@ -60,6 +62,20 @@ function CreateReviewModal({ productId }) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        const newErrors = {};
+        setErrors(newErrors)
+        // validate data on the frontend here
+        if (review.length < 10 || review.length > 1000) newErrors['review'] = "Review must be between 10 and 1000 characters"
+        if (review[0] == ' ') newErrors['review'] = "Please enter non-whitespace characters"
+        if (itemRating === 0) newErrors['itemRating'] = "Please provide feedback for item quality"
+        if (shipRating === 0) newErrors['shipRating'] = "Please provide feedback for shipping"
+        if (serviceRating === 0) newErrors['serviceRating'] = "Please provide feedback for service"
+
+        setErrors(newErrors);
+
+        // If we have errors, bail out
+        if (Object.keys(newErrors).length) return;
+
         const newReview = {
             product: productId,
             content: review,
@@ -90,6 +106,7 @@ function CreateReviewModal({ productId }) {
         <div className="reviewmodal">
             <h1>Let us know what you think!</h1>
             <form className='reviewformmodal' onSubmit={handleSubmit}>
+                <span className='errors'>{errors.review}</span>
                 <textarea
                     value={review}
                     onChange={(e) => setReview(e.target.value)}
@@ -97,10 +114,14 @@ function CreateReviewModal({ productId }) {
                     placeholder="Leave your review here..."
                     rows="8"
                 ></textarea>
+
+
+                <span className='errors'>{errors.itemRating}</span>
                 <div className="rating-input">
 
 
                     <p>Item Quality</p>
+
                     <div className={itemStars[0]} >
                         <i
                             className="fa-regular fa-star"
@@ -140,8 +161,10 @@ function CreateReviewModal({ productId }) {
 
                 </div>
 
+                <span className='errors'>{errors.shipRating}</span>
                 <div className="rating-input">
                     <p>Shipping</p>
+
                     <div className={shipStars[0]} >
                         <i
                             className="fa-regular fa-star"
@@ -180,8 +203,10 @@ function CreateReviewModal({ productId }) {
 
                 </div>
 
+                <span className='errors'>{errors.serviceRating}</span>
                 <div className="rating-input">
                     <p>Customer Service</p>
+
                     <div className={serviceStars[0]} >
                         <i
                             className="fa-regular fa-star"
