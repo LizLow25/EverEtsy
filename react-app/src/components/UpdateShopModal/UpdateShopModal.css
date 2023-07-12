@@ -31,9 +31,10 @@
     border: none;
     border-radius: 30px;
     height: 40px;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.862);
     color: white;
     font-size: 15px;
     margin: 10px;
+    padding: 10px;
     cursor: pointer;
 }

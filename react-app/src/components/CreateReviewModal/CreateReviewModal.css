@@ -1,3 +1,14 @@
+.reviewmodal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.862);
+}
+
+
 .filled {
     color: black;
 }
@@ -22,3 +33,13 @@
 
 }
 
+.submitreviewbutton {
+    border: none;
+    border-radius: 30px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.862);
+    color: white;
+    font-size: 15px;
+    margin: 10px;
+    cursor: pointer;
+}

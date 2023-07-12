@@ -122,7 +122,7 @@ function UpdateReviewModal({ oldReview }) {
                 <div className="rating-input">
 
 
-                    <p>Item Quality</p>
+                    <p>Item Quality &nbsp;</p>
 
                     <div className={itemStars[0]} >
                         <i
@@ -165,7 +165,7 @@ function UpdateReviewModal({ oldReview }) {
 
                 <span className='errors'>{errors.shipRating}</span>
                 <div className="rating-input">
-                    <p>Shipping</p>
+                    <p>Shipping &nbsp;</p>
 
                     <div className={shipStars[0]} >
                         <i
@@ -207,7 +207,7 @@ function UpdateReviewModal({ oldReview }) {
 
                 <span className='errors'>{errors.serviceRating}</span>
                 <div className="rating-input">
-                    <p>Customer Service</p>
+                    <p>Customer Service &nbsp;</p>
 
                     <div className={serviceStars[0]} >
                         <i
