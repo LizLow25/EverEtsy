@@ -73,7 +73,7 @@ const ProductDetails = () => {
                                 <div>
                                     <p><i className="fas fa-star"> </i>  {((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</p>
                                     <p>{review.content}</p>
-                                    <p>{review.userDetails.username}</p>
+                                    <p className='reviewuser'><i class="fa-regular fa-user"></i> {review.userDetails.username}</p>
                                 </div>
                                 <div>
                                     <p>Item quality {
