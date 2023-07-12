@@ -1,6 +1,8 @@
 .profile-dropdown {
   position: absolute;
-  /* border: 1px solid red; */
+  
+  border-radius: 30px;
+  overflow: hidden;
 
 }
 

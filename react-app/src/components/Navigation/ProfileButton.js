@@ -39,6 +39,7 @@ function ProfileButton({ user }) {
     e.preventDefault();
     dispatch(logout());
     dispatch(refreshCart())
+    setShowMenu(false);
     history.push('/')
   };
 
@@ -48,7 +49,7 @@ function ProfileButton({ user }) {
     const password = 'password'
     const data = await dispatch(login(email, password));
     dispatch(fetchCartItemsThunk())
-
+    setShowMenu(false);
   };
 
 
