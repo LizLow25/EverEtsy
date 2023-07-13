@@ -87,7 +87,16 @@ const LandingPage = () => {
                 ))
                 }
             </div>
+            <div className='person-container'>
+                <p>Created by Liz Lowry</p>
+                <div className='link-container'>
+                    <a target='_blank' href='https://www.linkedin.com/in/elizabeth-lowry-33201a14'><i class="fa-brands fa-linkedin fa-2xl"></i></a>
+                    <a target='_blank' href='https://github.com/LizLow25'><i class="fa-brands fa-square-github fa-2xl"></i></a>
+                </div>
+            </div>
         </div>
+
+
     )
 
 

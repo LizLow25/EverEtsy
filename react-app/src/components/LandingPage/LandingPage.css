@@ -84,3 +84,24 @@
     color: rgba(0, 0, 0, 0.739);
     padding-top: 20px;
 }
+
+.person-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 200px 40px 200px;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.862);
+}
+
+.person-container>p {
+    margin-right: 10px;
+}
+
+.link-container>a {
+    margin: 10px;
+}
+
+.fa-brands {
+    color: rgba(0, 0, 0, 0.862);
+}
