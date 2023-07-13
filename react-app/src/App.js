@@ -12,6 +12,7 @@ import ManageShop from "./components/ManageShop";
 import Cart from "./components/Cart";
 import SearchResults from "./components/SearchResults";
 import ManageReviews from "./components/ManageReviews";
+import ReroutePage from "./components/ReroutePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -36,6 +37,9 @@ function App() {
       <Switch>
       <Route exact path="/">
           <LandingPage />
+        </Route>
+        <Route exact path="/!">
+          <ReroutePage />
         </Route>
         <Route exact path="/products/search">
           <SearchResults />
