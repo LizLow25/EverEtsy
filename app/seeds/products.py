@@ -591,30 +591,51 @@ def seed_products():
         main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product37.png',
         category = 'Jewelry & Accessories'
     )
-    # product1 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product1 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product1 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
+    product38 = Product(
+        name = 'Gold Boho Earrings',
+        shop_id = 2,
+        details = """Make a statement with our beautiful bohemian tree earrings. These earrings feature a unique and intricate design that is sure to turn heads.
+
+        The tree design is inspired by bohemian culture and adds a touch of earthy charm to any outfit. The stamped gold finish adds a touch of elegance and sophistication to the earrings, making them perfect for any occasion.
+
+        The lightweight design of these earrings ensures comfortable wear all day long, while the sturdy hooks keep them securely in place.
+
+        These earrings are a perfect gift for anyone who loves bohemian or nature-inspired jewelry. They also make a great addition to your own jewelry collection and are perfect for adding a touch of style to any outfit.
+
+        Don't miss out on the chance to own these beautiful and unique earrings. Order now and add a touch of bohemian charm to your jewelry collection! """,
+        price = 22.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product38.png',
+        category = 'Jewelry & Accessories'
+    )
+    product39 = Product(
+        name = 'Bat Hanging Bookshelf',
+        shop_id = 1,
+        details = """Introducing our Bat Hanging Bookshelf, a unique and functional piece of bohemian home decor that doubles as a book storage solution. Perfect for kids' rooms or as a gift for teachers, this witchy room decor item is also ideal for book lovers seeking a mid-century modern or gothic touch. Its versatile design fits well in boho nurseries and makes for a great addition to any kid's wall bookshelf collection. Order now and add a touch of whimsy to your home!
+
+        This Macrame Hanging Bookshelf is handcrafted/ hand woven with Natural Friendly Cotton Cord.
+
+        DETAIL:
+        - Dimensions:
+        - Length: 24.8"W ~ 62cm
+        - Width (without book):
+        + 6 books: 16" ~ 40cm
+        + 8 books: 20" ~ 50cm
+        + 10 books: 24" ~ 60cm
+        + 12 books: 28" ~ 70cm """,
+        price = 38.10,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product39.png',
+        category = 'Home & Living'
+    )
+    product40 = Product(
+        name = 'Florals and Butterfly Wall Decor ',
+        shop_id = 1,
+        details = """Introducing our stunning Florals and Butterfly Wall Decor, a captivating addition to your living space that effortlessly blends the beauty of nature with eclectic charm. This 14" x 22" framed art print features an enchanting composition of vibrant flowers and delicate butterflies, creating a whimsical atmosphere that will delight any observer.
+
+        Crafted with meticulous attention to detail, this bohemian-inspired wall hanging showcases the intricate patterns and vivid colors found in nature. The blossoming flowers, each petal carefully depicted, bring a sense of life and vitality to your walls. The graceful butterflies, with their delicate wings, add an ethereal touch, evoking a feeling of lightness and freedom. """,
+        price = 82.35,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product40.png',
+        category = 'Home & Living'
+    )
     # product1 = Product(
     #     name = '',
     #     shop_id = '',
@@ -719,7 +740,10 @@ def seed_products():
                 product34,
                 product35,
                 product36,
-                product37]
+                product37,
+                product38,
+                product39,
+                product40]
     [db.session.add(product) for product in products]
     db.session.commit()
 
