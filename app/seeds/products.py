@@ -311,7 +311,287 @@ def seed_products():
         main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product16.png',
         category = 'Art & Collectibles'
     )
-    # product17 = Product(
+    product17 = Product(
+        name = 'Cotton Linen Tank Top',
+        shop_id = 3,
+        details = """This outfit is versatile and can be worn on various occasions, such as spring/summer days, vacation, casual or working days, and even formal events. Pair it with sneakers or a lovely jacket to complete the look. The tank tops have a sleeveless design, which allows for maximum ventilation and freedom of movement. The tank tops are easy to care for and can be machine washed and dried, making them low maintenance and convenient for everyday wear.""",
+        price = 24.75,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product17.png',
+        category = 'Clothing & Shoes'
+    )
+    product18 = Product(
+        name = 'Linen slip dress / Summer linen dress',
+        shop_id = 3,
+        details = """Rush orders:
+        Please contact us if your situation requires shorter production times; we will do our best to help you.
+
+        Please note that there is an extra charge for sizes over EU 44—only to cover the additional fabric cost.
+
+        The fabric texture may slightly vary depending on the fabric available.
+
+        Please note: all dresses are made-to-order and are non-returnable.
+
+        CARE INSTRUCTIONS
+        Cold hand washed
+        Do not bleach
+        Cold iron
+        Do not dry clean
+        """,
+        price = 129.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product18.png',
+        category = 'Clothing & Shoes'
+    )
+    product19 = Product(
+        name = 'Linen Wedding Dress',
+        shop_id = 3,
+        details = """Introducing our exquisite Linen Wedding Dress, a captivating blend of timeless elegance and bohemian allure. This bridal gown is meticulously crafted to celebrate the essence of romance and natural beauty on your special day.
+
+        Designed with a boho-inspired aesthetic, this ethically made dress embraces the charm of relaxed, flowing lines and delicate details. The soft, breathable linen fabric gracefully drapes over your figure, ensuring a comfortable and effortless fit throughout your wedding festivities.
+
+        The highlight of this enchanting gown lies in its intricate floral embroidery, meticulously handcrafted with care. The floral motifs cascade delicately across the bodice, adding a touch of whimsy and femininity to the overall design. Each stitch is a testament to our commitment to craftsmanship and attention to detail.
+
+        The silhouette of the dress features a flattering V-neckline, accentuating your natural beauty and framing your face with elegance. The gentle A-line skirt gracefully sweeps the floor, creating a captivating movement with every step you take. The back of the dress reveals a low, open back, adorned with ethereal embroidered lace, adding a hint of allure and charm.
+
+        Our Linen Wedding Dress is more than just a stunning garment; it embodies our dedication to ethical fashion. Each dress is meticulously handmade by skilled artisans who are treated with respect and paid fair wages. We strive to create beautiful clothing while making a positive impact on the lives of those who help bring our designs to life. """,
+        price = 340.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product19.png',
+        category = 'Clothing & Shoes'
+    )
+    product20 = Product(
+        name = '6 Strap Rope Sandals',
+        shop_id = 3,
+        details = """Crafted with attention to detail, these sandals feature six straps meticulously woven from soft, durable ropes. The intricate pattern of the straps adds an artistic touch to your feet, giving them a unique and eye-catching appeal. Each strap is thoughtfully placed to ensure a secure fit while allowing your feet to breathe on those warm summer days.
+
+        Designed with comfort in mind, our 6-Strap Rope Sandals provide a gentle embrace for your feet. The soft ropes conform to your foot's natural contours, providing a snug and supportive fit that allows you to walk with ease and grace. The lightweight construction ensures that you can wear them all day long without any discomfort.
+
+        Embracing the bohemian spirit, these sandals effortlessly blend versatility and style. They pair perfectly with flowing maxi dresses, denim shorts, or breezy skirts, allowing you to create a multitude of boho-chic looks. Whether you're strolling through a festival, exploring a vibrant market, or simply enjoying a sunny day by the beach, these sandals will be your go-to choice. """,
+        price = 35.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/project20.png',
+        category = 'Clothing & Shoes'
+    )
+    product21 = Product(
+        name = 'Crescent Moon Necklace with Star and Birthstone',
+        shop_id = 2,
+        details = """The centerpiece of this necklace is a stunning crescent moon pendant. Its delicate curves and intricate etchings capture the mystique and allure of the moon, symbolizing intuition, femininity, and the ever-changing cycles of life. Atop the crescent moon sits a dainty star, representing dreams, guidance, and the pursuit of aspirations.
+
+        What truly makes this necklace special is the inclusion of a birthstone of your choice. With a range of vibrant gemstones available, you can personalize this piece to reflect your own birth month or that of a loved one. The birthstone adds a touch of color and significance, infusing the necklace with personalized meaning and sentiment.
+
+        The pendant is expertly crafted from high-quality sterling silver, known for its durability and timeless beauty. The lustrous silver complements any outfit, from casual to formal, and is sure to catch the eye of admirers. The pendant is suspended from a delicate yet sturdy chain, allowing it to rest gracefully on the neckline. """,
+        price = 29.82,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product21.png',
+        category = 'Jewelry & Accessories'
+    )
+    product22 = Product(
+        name = 'Foliage Necklace',
+        shop_id = 2,
+        details = """Plant this symbolic piece in your collection—a delicate daily reminder of our connection to the natural world.
+
+        Which foliage speaks to you?
+
+        WILLOW: symbolizes enchantment, imagination, protection & softness
+        MONSTERA: symbolizes energy, artistry, joy & abundance
+        OLIVE BRANCH: symbolizes peace, hope, courage & forgiveness""",
+        price = 51.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product22.png',
+        category = 'Jewelry & Accessories'
+    )
+    product23 = Product(
+        name = 'Pearl Droplet Anklet',
+        shop_id = 2,
+        details = """In the forecast: a soft shower of pearls.
+
+        Illuminate every step with tiny freshwater pearls dropped from our daintiest chain—a touch of mesmerizing movement for your wedding day, every day or a pearls' night out. ………………………………….
+        D E T A I L S
+
+        • Materials: 100 percent sterling silver, 14k gold fill
+        • Chain: sturdy cable, 1.5mm wide, adjustable by 1"
+        • Charms: Five 3.75mm pearls""",
+        price = 75.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product23.png',
+        category = 'Jewelry & Accessories'
+    )
+    product24 = Product(
+        name = 'Diamond Twist Ring',
+        shop_id = 2,
+        details = """Crafted with utmost precision and care, this minimalist stacking ring features a delicate band in a luxurious gold finish. Its sleek and slender profile adds a modern touch, making it perfect for everyday wear or as an accent piece for special occasions.
+
+        At the heart of this mesmerizing ring, you'll find a sparkling diamond that adds a captivating touch of brilliance. This carefully selected gemstone is a symbol of love, strength, and endurance, making it an ideal choice for an anniversary gift or to commemorate a special milestone in your relationship.
+
+        The Diamond Twist Ring is more than just a piece of jewelry. It is a reflection of your unique style and personality, effortlessly elevating any outfit and leaving a lasting impression. Its versatile design allows for easy stacking with other rings, giving you the freedom to create your own personalized look. """,
+        price = 270.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product24.png',
+        category = 'Jewelry & Accessories'
+    )
+    product25 = Product(
+        name = 'Mid Century Modern Colorful Bohemian Art Print',
+        shop_id = 1,
+        details = """Inspired by the artistic movements of the mid-20th century, this print perfectly captures the essence of the era's iconic design and combines it with a contemporary twist. The abstract faces are intricately designed, showcasing a fusion of geometric shapes, bold lines, and expressive forms. Each face exudes its own unique personality, inviting viewers to interpret and appreciate the art in their own way.
+
+        The explosion of colors featured in this print adds a touch of vivacity to any room. The carefully chosen color swatches, ranging from deep blues and vibrant yellows to rich reds and lush greens, create a harmonious blend that injects energy and liveliness into your living space. Whether you hang it in your bedroom, living room, or office, this art print effortlessly becomes the focal point of any room, sparking conversations and inspiring creativity.
+
+        Crafted with meticulous attention to detail, this art print is made using high-quality materials to ensure longevity and durability. The vivid colors are printed on archival-grade paper, guaranteeing that the artwork remains vibrant and true to its original form for years to come. Its standard size allows for easy framing, giving you the freedom to choose a frame that complements your personal style and interior decor. """,
+        price = 30.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product25.png',
+        category = 'Home & Living'
+    )
+    product26 = Product(
+        name = 'Bonnet Wood Stool (Blue)',
+        shop_id = 1,
+        details = """The Bonnet Stool is a hardy, solid-wood functional object for the home or office that can function as an end table, side table, stool, or plant stand and will look dynamite in combination with just about any thoughtfully decorated space. It is Handmade in Indianapolis, Indiana with 2.5" round Douglas Fir legs and a Sycamore top accented with Oak Dowels. The Bonnet Stool is hand finished with three coats of wipe on poly-oil wax finish for a durable, water-resistant satin glow. It's available in two sizes and a variety of colors. """,
+        price = 139.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product26.png',
+        category = 'Home & Living'
+    )
+    product27 = Product(
+        name = 'Clip Shaped Side Table',
+        shop_id = 1,
+        details = """Material】 ABS Plastic
+        【Style】 Modern / Nordic
+        【Applicable space】 living room / bedroom / study / balcony / Garden / courtyard
+        【Applicable scenario】: Home / Office / hotel / Cafe
+        【Usage】: living room furniture / bedroom furniture / balcony furniture
+        【Function】 dining chair / dressing chair / shoe changing stool/Footstool/Coffee stool/benches
+        【Size】 : Length 30 * width 30, height 120cm, measured manually, subject to the real object, with an error of 2 cm
+        【Excellence】 shoe changing stool is especially suitable for home scenes such as porch, study, TV cabinet and bedroom to instantly improve family taste
+        【Space】 beautiful and creative decoration can instantly improve the taste and style of home decoration. No matter what kind of home style and space, it can match the creative decoration.
+        【Note】 during manual manufacturing, wrinkles and scratches on the surface are normal, according to the color and ambient light, the product may have slight color difference, and the size measured manually is only for reference """,
+        price = 356.71,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product27.png',
+        category = 'Home & Living'
+    )
+    product28 = Product(
+        name = 'Linen Dinner Napkins',
+        shop_id = 1,
+        details = """This set features my hand-carved, block printed Sardines pattern. Every piece has been hand-printed in non-toxic fabric inks with my original illustrations.
+
+        Linen is a great, eco-friendly material that softens & becomes better with age. This larger size is perfect as a luxuriously oversized napkin, or can be used as a placemat in your tablescape.
+        These turn even the most boring Tuesday night dinner into a classy affair - and are packaged in sets to make a perfect hostess/housewarming gift!
+
+        - 55 Linen / 45% Cotton
+        - Oversized 18" x 20"
+        - Finished hemmed edges
+        - Machine wash cold & tumble dry low - iron as needed
+        - Packaged with belly band
+        - All orders are wrapped in Julie Peach Palm Sunset tissue paper & sticker - ready for gifting!
+        - Ships in compostable mailer """,
+        price = 28.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product28.png',
+        category = 'Home & Living'
+    )
+    product29 = Product(
+        name = 'Large Green Leaves Headboard',
+        shop_id = 1,
+        details = """Crafted with meticulous attention to detail, this headboard features a vibrant array of large green leaves intricately designed to mimic the lush foliage found in the heart of the jungle. The lifelike textures and rich shades of green create a visually striking and immersive experience, making you feel like you're waking up in the midst of a botanical paradise every day.
+
+        Designed to blend seamlessly with various interior styles, from boho to contemporary, this headboard is a versatile choice that complements any room. Whether you're looking to revitalize your bedroom sanctuary or add an enchanting touch to your living room, this headboard promises to transform your space into a haven of tranquility and natural beauty.
+
+        Not only is this headboard a stylish and unique decor piece, but it also makes an exceptional gift for plant lovers and nature enthusiasts alike. Surprise your loved ones with this enchanting Safari-inspired addition to their nursery, allowing them to create a jungle-themed haven for their little one. Moreover, it's an excellent choice for a Mother's Day gift, providing a thoughtful and eye-catching present that celebrates the nurturing spirit of moms everywhere.""",
+        price = 59.09,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product29.png',
+        category = 'Art & Collectibles'
+    )
+    product30 = Product(
+        name = 'Sleeping Hare',
+        shop_id = 4,
+        details = """The Sleeping Hare print showcases the artistry and skill of the linocut technique, where the image is painstakingly carved into a linoleum block and then pressed onto high-quality paper. This process ensures that each print is unique, with subtle variations that add character and charm.
+
+        Measuring [dimensions], this print is the perfect size to adorn any wall in your home or office. Its timeless appeal and neutral color palette make it a versatile addition to any decor style. Whether hung alone as a focal point or paired with other nature-inspired art, the Sleeping Hare print will create an atmosphere of tranquility and harmony.
+
+        The image of the sleeping hare exudes a sense of calmness and peace, making it an ideal choice for bedrooms, meditation spaces, or any area where you seek relaxation. The hare, often associated with intuition and sensitivity, symbolizes connection with the natural world and reminds us to find balance in our lives. """,
+        price = 18.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product30.png',
+        category = 'Art & Collectibles'
+    )
+    product31 = Product(
+        name = 'Reggie',
+        shop_id = 4,
+        details = """Reggie is hand-carved from a linoleum block, showcasing the skillful artistry and attention to detail of the artist. The bold black silhouette of this majestic cat stands out against a contrasting background, creating a striking visual impact that will enhance any space.
+
+        Reggie is perfectly sized to fit into a variety of settings, whether it be a cozy living room, a stylish office, or a trendy cafe. Hang it on a wall or display it on a shelf to add a touch of elegance and sophistication to your surroundings.
+
+        The linocut technique used in creating Reggie lends a distinct texture to the artwork, adding depth and character. Every print is a unique piece, with slight variations in ink saturation and texture, making each Reggie print truly one-of-a-kind.
+
+        Crafted with exceptional quality, Reggie is printed on high-quality archival paper using fade-resistant inks. This ensures that the print will retain its vibrant colors and sharp details for years to come, allowing you to enjoy the enigmatic presence of Reggie in all his splendor.
+
+        Whether you are a cat lover, an art collector, or simply someone who appreciates the beauty of handcrafted creations, Reggie, the Black Cat Linocut Print, is a striking addition to any art collection. Bring the captivating allure of this magnificent feline into your space and let Reggie enchant you with his mysterious charm.""",
+        price = 20.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product31.png',
+        category = 'Art & Collectibles'
+    )
+    product32 = Product(
+        name = 'Botanical Textile Print On Hanging Canvas',
+        shop_id = 4,
+        details = """Featuring a large wall art design, this modern wall hanging measures 175 centimeters in length, making it a striking focal point for your home or office. The canvas is carefully crafted from high-quality materials, ensuring durability and longevity, so you can enjoy its beauty for years to come.
+
+        The botanical print showcases intricate details of various plant species, highlighting their delicate petals, vibrant colors, and graceful foliage. Each element is skillfully rendered, giving the artwork a lifelike appearance that will captivate any observer. The vintage-inspired style adds a nostalgic charm, evoking a sense of timeless elegance and sophistication.
+
+        This botanical textile print comes with a convenient hanging system, allowing for easy installation and positioning. Whether you choose to display it in your living room, bedroom, or even a home office, it will instantly elevate the aesthetic appeal of your space. The large size ensures that it becomes a statement piece that draws attention and sparks conversations.""",
+        price = 61.50,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product32.png',
+        category = 'Art & Collectibles'
+    )
+    product33 = Product(
+        name = 'Opossum Bandana',
+        shop_id = 3,
+        details = """Immerse yourself in a world of whimsy and adventure with this enchanting accessory that beautifully combines literature, nature, and style. Inspired by storybooks and adorned with delightful animal motifs, lush jungle leaves, and a vibrant green color palette, this bandana is a must-have for book lovers and nature enthusiasts alike.
+
+        Crafted from high-quality cotton, this 24" bandana is not only soft and comfortable to wear but also durable and long-lasting. Its generous size allows for versatile styling options, whether you choose to wear it around your neck, tie it on your bag, or even sport it as a headband. The Opossum Bandana adds a touch of literary charm to any outfit, instantly transforming your look from ordinary to extraordinary.
+
+        Designed with attention to detail, the Opossum Bandana features an adorable opossum illustration, surrounded by a captivating array of leaves and jungle foliage. This whimsical design captures the essence of an untamed world where imagination knows no bounds. Whether you're a fan of classic tales, adventure stories, or simply enjoy getting lost in the pages of a book, this bandana serves as a subtle yet striking statement piece that proudly showcases your love for literature. """,
+        price = 16.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product33.png',
+        category = 'Clothing & Shoes'
+    )
+    product34 = Product(
+        name = 'Campfire Bandana',
+        shop_id = 3,
+        details = """Dusk nears as our lone camper warms by a crackling fire in "Great Pines". Mellow blue skies pop through the dark silhouettes of picturesque pines. Enjoy nature to its fullest with this wistful bandana.
+        .
+        Inspiration: In The Oregon Country, 1915
+
+        ∙ Soft, 100% natural cotton
+        ∙ Fan-favorite 24” size
+        ∙ Durable and breathable
+        ∙ Made to last a lifetime
+        ∙ Designed in Portland, Maine
+        ∙ A community-chosen design """,
+        price = 16.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product34.png',
+        category = 'Clothing & Shoes'
+    )
+    product35 = Product(
+        name = 'Teeny Tiny Frog Necklace',
+        shop_id = 2,
+        details = """Introducing the Teeny Tiny Frog Necklace, a delightful and charming piece of jewelry that is sure to capture the hearts of frog lovers everywhere. This necklace showcases a colorful ceramic frog charm that exudes whimsy and personality.
+
+        The Teeny Tiny Frog Necklace is the perfect accessory for those who appreciate the beauty and playfulness of these enchanting creatures. Crafted with great attention to detail, the ceramic charm captures the essence of a tiny frog, complete with intricate features and vibrant colors that bring it to life.""",
+        price = 44.00,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product35.png',
+        category = 'Jewelry & Accessories'
+    )
+    product36 = Product(
+        name = '2-Pieces Branch Bobby Pins',
+        shop_id = 2,
+        details = """Each bobby pin features a delicate branch design, intricately molded and plated with a radiant gold and silver finish. The organic contours of the branches mimic the natural grace of twigs, lending a captivating and ethereal aura to your hair. These pins effortlessly blend sophistication with a touch of nature, creating a unique and eye-catching accessory that will enhance any hairdo.
+
+        Not only do these hair pins exude charm and elegance, but they also provide exceptional functionality. The sturdy construction ensures a secure hold, keeping your hair flawlessly in place throughout the day or night. Whether you opt for an updo, half-up hairstyle, or any other creative arrangement, these bobby pins are versatile enough to complement a wide range of looks, from casual to formal.""",
+        price = 4.99,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product36.png',
+        category = 'Jewelry & Accessories'
+    )
+    product37 = Product(
+        name = 'Crystal Bee Chain Bracelet',
+        shop_id = 2,
+        details = """Made from premium 925 sterling silver, this bracelet showcases the highest standards of craftsmanship, ensuring both durability and a radiant finish that will last for years to come. The lustrous gold or silver plating adds a touch of opulence, enhancing the bracelet's beauty and sophistication.
+
+        The centerpiece of this bracelet is the intricate bee design, expertly crafted with precision. The bee, a symbol of industriousness and harmony with nature, adds a touch of whimsy and grace to your ensemble. The bee's body is adorned with dazzling crystals that catch the light with every movement, creating an enchanting sparkle that will surely turn heads.
+
+        The delicate chain complements the bee pendant perfectly, adding an elegant and refined touch to the overall design. With its adjustable length, this bracelet offers a comfortable fit for most wrist sizes, ensuring that you can wear it with confidence and ease. """,
+        price = 42.66,
+        main_image = 'https://everetsybucket.s3.us-west-1.amazonaws.com/product37.png',
+        category = 'Jewelry & Accessories'
+    )
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -319,7 +599,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product18 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -327,7 +607,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product19 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -335,7 +615,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product20 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -343,7 +623,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product21 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -351,7 +631,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product22 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -359,7 +639,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product23 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -367,7 +647,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product24 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -375,7 +655,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product25 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -383,47 +663,7 @@ def seed_products():
     #     main_image = '',
     #     category = ''
     # )
-    # product26 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product27 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product28 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product29 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product30 = Product(
-    #     name = '',
-    #     shop_id = '',
-    #     details = '',
-    #     price = '',
-    #     main_image = '',
-    #     category = ''
-    # )
-    # product31 = Product(
+    # product1 = Product(
     #     name = '',
     #     shop_id = '',
     #     details = '',
@@ -442,6 +682,7 @@ def seed_products():
 
 
 
+
     products = [product1,
                 product2,
                 product3,
@@ -457,7 +698,28 @@ def seed_products():
                 product13,
                 product14,
                 product15,
-                product16]
+                product16,
+                product17,
+                product18,
+                product19,
+                product20,
+                product21,
+                product22,
+                product23,
+                product24,
+                product25,
+                product26,
+                product27,
+                product28,
+                product29,
+                product30,
+                product31,
+                product32,
+                product33,
+                product34,
+                product35,
+                product36,
+                product37]
     [db.session.add(product) for product in products]
     db.session.commit()
 
