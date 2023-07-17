@@ -174,54 +174,54 @@ def seed_reviews():
         shipping_rating=5,
         customer_service_rating=5
     )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
+    review21 = Review (
+        user=5,
+        product=1,
+        content="""I recently purchased the Vintage Style Farmhouse Vase with Tulips, and I must say it has brought a touch of elegance and rustic charm to my home. While it may seem a little expensive at first glance, I can assure you that this delightful piece is worth every penny. """,
+        item_quality_rating=5,
+        shipping_rating=3,
+        customer_service_rating=5
+    )
+    review22 = Review (
+        user=2,
+        product=2,
+        content="""I know it's just a jug but when I fill this up at my kitchen sink I feel like a greek goddess! I like to fill it with fresh sunflowers 🌻""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review23 = Review (
+        user=2,
+        product=3,
+        content="""This is one of those products you don't think you need until you buy it and then my god. How did I ever bathe in anything other than a handmade wooden bathtub that looks suspiciously like a salad bowl.""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review24 = Review (
+        user=4,
+        product=4,
+        content="""Well these showed up smashed to smithereens. However, I got them replaced and now they look quite nice on my antique side tables but I could have dealt with less of a shipping fiasco.""",
+        item_quality_rating=4,
+        shipping_rating=1,
+        customer_service_rating=5
+    )
+    review25 = Review (
+        user=2,
+        product=5,
+        content="""I love how unique this dress is!! It fits like a dream. Everybody asks where I got it from.""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review26 = Review (
+        user=4,
+        product=6,
+        content="""These rings are PERFECT. Chic and not too subtle, not too flashy, and the price is right.""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
     # review1 = Review (
     #     user='',
     #     product='',
@@ -233,7 +233,7 @@ def seed_reviews():
 
 
 
-    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20]
+    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26]
     [db.session.add(review) for review in reviews]
     db.session.commit()
 
