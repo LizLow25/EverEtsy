@@ -66,8 +66,40 @@ def seed_reviews():
         content=""" I bought this ring because I'm a fan of Wilkie Collins and let me tell you, that man was onto something. When I wear these out and about I feel like a 19th century murder victim. Fabulous! 🌙""",
         item_quality_rating=5,
         shipping_rating=5,
-        customer_service_rating=''
+        customer_service_rating=4
     )
+    # review9 = Review (
+    #     user=2,
+    #     product=9,
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review10 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review11 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review12 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
     # review1 = Review (
     #     user='',
     #     product='',
