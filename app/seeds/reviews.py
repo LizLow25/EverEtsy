@@ -26,54 +26,54 @@ def seed_reviews():
         shipping_rating=5,
         customer_service_rating=5
     )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
-    review1 = Review (
-        user='',
-        product='',
-        content='',
-        item_quality_rating='',
-        shipping_rating='',
-        customer_service_rating=''
-    )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
 
     reviews = [ review1, review2, review3]
     [db.session.add(review) for review in reviews]
