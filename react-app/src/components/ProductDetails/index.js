@@ -70,17 +70,20 @@ const ProductDetails = () => {
                     {productReviews.map(review => {
                         return (
                             <div className='reviewContainer'>
-                                <div>
-                                    <p><i className="fas fa-star"> </i>  {((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</p>
-                                    <p>{review.content}</p>
+                                <div className='reviewtextproductdetails'>
+                                    <div className='cumulativestarrating'><i className="fas fa-star"> </i>  {((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3).toFixed(1)}</div>
+                                    <div >{review.content}</div>
                                     <p className='reviewuser'><i class="fa-regular fa-user"></i> {review.userDetails.username}</p>
                                 </div>
-                                <div>
-                                    <p>Item quality {
+                                <div className='starratingreviewcontainer'>
+                                    <div className='reviewcatname'>Item quality </div>
+                                    <div>{
                                         [...Array(review.item_quality_rating).keys()].map(item=><i className="fas fa-star"></i>)
-                                        }</p>
-                                    <p>Shipping {[...Array(review.shipping_rating).keys()].map(item=><i className="fas fa-star"></i>)}</p>
-                                    <p>Customer service {[...Array(review.customer_service_rating).keys()].map(item=><i className="fas fa-star"></i>)}</p>
+                                        }</div>
+                                    <div className='reviewcatname'>Shipping </div>
+                                    <div>{[...Array(review.shipping_rating).keys()].map(item=><i className="fas fa-star"></i>)}</div>
+                                    <div className='reviewcatname'>Customer service </div>
+                                    <div>{[...Array(review.customer_service_rating).keys()].map(item=><i className="fas fa-star"></i>)}</div>
                                 </div>
                             </div>
                         )
