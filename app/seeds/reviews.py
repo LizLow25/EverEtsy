@@ -240,46 +240,46 @@ def seed_reviews():
         shipping_rating=4,
         customer_service_rating=4
     )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review1 = Review (
-    #     user='',
-    #     product='',
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
+    review29 = Review (
+        user=4,
+        product=21,
+        content="""This necklace was a gift from my astronomy guru and I think it perfectly encapsulates the delicate and mysterious nature of the celestial bodies 🌙 ✨""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=4
+    )
+    review30 = Review (
+        user=5,
+        product=22,
+        content="""I love plants and I love gold so these necklaces send me 🌱 🌿 🌞 💫 . I do wish the chain was longer though. """,
+        item_quality_rating=4,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review31 = Review (
+        user=4,
+        product=23,
+        content="""Wearing this anklet makes me feel like a mermaid. Except, it's on my ankle, which mermaids don't have. So a mermaid with ankles.""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review32 = Review (
+        user=5,
+        product=23,
+        content="""I checked with the seller and these diamonds are lab grown! Yay for ethical gem consumption 💎""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=3
+    )
+    review33 = Review (
+        user=2,
+        product=24,
+        content="""I live alone so having these faces on the wall gives me someone to talk to! Sometimes they talk back.""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=4
+    )
     # review1 = Review (
     #     user='',
     #     product='',
@@ -307,7 +307,7 @@ def seed_reviews():
 
 
 
-    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26]
+    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26, review27, review28, review29, review30, review31, review32, review33]
     [db.session.add(review) for review in reviews]
     db.session.commit()
 
