@@ -266,7 +266,7 @@ def seed_reviews():
     )
     review32 = Review (
         user=5,
-        product=23,
+        product=24,
         content="""I checked with the seller and these diamonds are lab grown! Yay for ethical gem consumption 💎""",
         item_quality_rating=5,
         shipping_rating=5,
@@ -274,7 +274,7 @@ def seed_reviews():
     )
     review33 = Review (
         user=2,
-        product=24,
+        product=25,
         content="""I live alone so having these faces on the wall gives me someone to talk to! Sometimes they talk back.""",
         item_quality_rating=5,
         shipping_rating=5,
