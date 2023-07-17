@@ -55,7 +55,7 @@ def seed_reviews():
     review7 = Review (
         user=2,
         product=7,
-        content="""If Mary Poppins pulled pieces of the sky down from the heavens and put it on a golden chain, that would be this elegant necklace. I love how delicate and basic it is and I wear it on every Starbucks run. """,
+        content="""If Zeus pulled pieces of the sky down from the heavens and put them on a golden chain, that would be this elegant necklace. I love how delicate and basic it is and I wear it on every Starbucks run. """,
         item_quality_rating=5,
         shipping_rating=4,
         customer_service_rating=4
@@ -63,20 +63,118 @@ def seed_reviews():
     review8 = Review (
         user=4,
         product=8,
-        content=""" I bought this ring because I'm a fan of Wilkie Collins and let me tell you, that man was onto something. When I wear these out and about I feel like a 19th century murder victim. Fabulous! 🌙""",
+        content="""I bought this ring because I'm a fan of Wilkie Collins and let me tell you, that man was onto something. When I wear these out and about I feel like a 19th century murder victim. Fabulous! 🌙""",
         item_quality_rating=5,
         shipping_rating=5,
         customer_service_rating=4
     )
-    # review9 = Review (
-    #     user=2,
-    #     product=9,
-    #     content='',
-    #     item_quality_rating='',
-    #     shipping_rating='',
-    #     customer_service_rating=''
-    # )
-    # review10 = Review (
+    review9 = Review (
+        user=2,
+        product=9,
+        content="""These are the perfect accessory to wear to a garden party. It rained the whole time but these just sparkled through the night 🌱✨🌧️🌙 """,
+        item_quality_rating=4,
+        shipping_rating=5,
+        customer_service_rating=4
+    )
+    review10 = Review (
+        user=5,
+        product=10,
+        content="""I recently purchased the Girls Oversized Colorado T-Shirt for my daughter, and I must say, we are both thrilled with it! This shirt is a fantastic addition to her wardrobe and has quickly become one of her favorites.
+
+        First and foremost, the comfort of this shirt is outstanding. It is made from high-quality, soft cotton fabric that feels gentle against the skin. The oversized fit adds an extra level of coziness, allowing for plenty of movement and breathability. My daughter can wear it all day long without any discomfort, whether she's playing outside or lounging around the house.
+
+        """,
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=4
+    )
+    review11 = Review (
+        user=4,
+        product=11,
+        content="""I recently purchased the Vintage Denim Dress/Duster, and I must say, it has quickly become one of my favorite wardrobe pieces. The moment I laid eyes on it, I knew it was something special. This dress exudes a timeless charm that perfectly captures the essence of vintage fashion. """,
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review12 = Review (
+        user=5,
+        product=12,
+        content="""This dress is great because it is warm in the winter and cool in the summer. I think linen is my favorite fabric as long as I have a steamer within arms reach. I especially like to wear this dress when fossil hunting in Utah. 🦕""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review13 = Review (
+        user=3,
+        product=13,
+        content="""I bought this rug for my study because I'm going for a greenhouse aesthetic. I truly believe there is no such thing as too much color and if you also believe that, you should purchase this rug!""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review14 = Review (
+        user=3,
+        product=14,
+        content="""I recently purchased the Large Fiber Tapestry, and I must say it has exceeded my expectations in every way possible. This tapestry has added a touch of magic and elegance to my living space, transforming it into a serene oasis that never fails to captivate anyone who enters.
+
+        The first thing that struck me about this tapestry is its sheer size. As the name suggests, it truly is large and commands attention. The dimensions are generous, allowing it to cover a substantial portion of my wall. The intricate details and patterns are brought to life on this large canvas, creating an impressive visual impact that draws you in.""",
+        item_quality_rating=4,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review15 = Review (
+        user=5,
+        product=15,
+        content="""This magical piece goes perfectly with my forest witch aesthetic. Moths are quite creepy. This moth, however, manages to be beautiful. I like how there are many phases of the moon here 🌗  """,
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review16 = Review (
+        user=3,
+        product=16,
+        content="""As an avid lover of nature and art, I recently had the pleasure of acquiring the King Silk Art handmade embroidery landscape depicting a mesmerizing winter forest. To say that I am delighted with this masterpiece would be an understatement. This enchanting artwork has effortlessly transformed my living space into a serene and tranquil retreat.""",
+        item_quality_rating=5,
+        shipping_rating=3,
+        customer_service_rating=3
+    )
+    review17 = Review (
+        user=4,
+        product=17,
+        content="""I recently purchased the Cotton Linen Tank Top in Lilac, and let me tell you, it's been a game-changer for surviving the scorching summers here in New Orleans. As a resident of this vibrant city, I can't stress enough how important it is to have comfortable and breathable clothing during the hot and humid months, and this tank top delivers on all fronts.""",
+        item_quality_rating=5,
+        shipping_rating=3,
+        customer_service_rating=5
+    )
+    review18 = Review (
+        user=5,
+        product=18,
+        content="""I recently purchased the Linen Slip Dress for my much-anticipated Bali vacation, and I must say it was the perfect choice for the tropical paradise. From the moment I laid eyes on it, I knew I made the right decision. The dress exudes elegance and comfort, making it an absolute delight to wear.""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review19 = Review (
+        user=4,
+        product=19,
+        content="""I recently purchased the Linen Wedding Dress for my destination wedding in Italy, and I couldn't be happier with my choice! From start to finish, this dress was an absolute dream.
+
+        First and foremost, the quality of the linen fabric was outstanding. It felt incredibly soft against my skin and had a luxurious drape that perfectly captured the essence of a romantic Italian wedding. Not only did it look stunning, but it was also comfortable to wear throughout the entire day. I received so many compliments on how effortlessly elegant I looked in this dress.
+
+        """,
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=4
+    )
+    review20 = Review (
+        user=3,
+        product=20,
+        content="""I recently purchased a set of 6 Strap Rope Sandals from EverEtsy, and I must say, they have exceeded my expectations in both style and functionality. As a passionate adventurer who idolizes the legendary Johnny Appleseed, these sandals have truly allowed me to embrace his spirit and explore the world with newfound comfort.""",
+        item_quality_rating=4,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -84,7 +182,7 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-    # review11 = Review (
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -92,7 +190,31 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-    # review12 = Review (
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -109,7 +231,9 @@ def seed_reviews():
     #     customer_service_rating=''
     # )
 
-    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8]
+
+
+    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20]
     [db.session.add(review) for review in reviews]
     db.session.commit()
 

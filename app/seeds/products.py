@@ -289,7 +289,7 @@ def seed_products():
 
         The back is left open and you can see the stitching.
 
-        Because hoops are made from bamboo. Some slight variations may 0ccur.
+        Because hoops are made from bamboo. Some slight variations may occur.
 
         Please ask all questions before.""",
         price = 25.00,
