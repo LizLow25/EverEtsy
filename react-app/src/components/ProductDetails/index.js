@@ -53,8 +53,17 @@ const ProductDetails = () => {
 
     }
 
+    let overAllReviewSum = []
 
+    productReviews.map(review => overAllReviewSum.push((review.item_quality_rating + review.shipping_rating + review.customer_service_rating) / 3))
 
+    let overAllReviewAvg
+
+    if (overAllReviewSum.length) {
+        let sum = overAllReviewSum.reduce((accumulator, currentValue) => accumulator + currentValue)
+        overAllReviewAvg = sum / overAllReviewSum.length
+    }
+    console.log('overallreviewavg', overAllReviewAvg)
 
     return (
         <>
@@ -63,10 +72,15 @@ const ProductDetails = () => {
                     <div className='imageContainerDetails'>
                         <img src={singleProduct?.main_image} alt='' className='imgDetails' />
                     </div>
-                    {sessionUser ? < div className='reviewButtonDetails'> <OpenModalButton
-                        buttonText='Leave a product review'
-                        className='reviewbutton'
-                        modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </div>  : ''}
+                    <div className='reviewsumcontainer'>
+
+                        {sessionUser ? < div className='reviewButtonDetails'> <OpenModalButton
+                            buttonText='Leave a product review'
+                            className='reviewbutton'
+                            modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </div> : ''}
+                        {overAllReviewSum.length ? <div><i className="fas fa-star"> </i> {overAllReviewAvg.toFixed(1)}</div> : ''}
+
+                    </div>
                     {productReviews.map(review => {
                         return (
                             <div className='reviewContainer'>
@@ -78,12 +92,12 @@ const ProductDetails = () => {
                                 <div className='starratingreviewcontainer'>
                                     <div className='reviewcatname'>Item quality </div>
                                     <div>{
-                                        [...Array(review.item_quality_rating).keys()].map(item=><i className="fas fa-star"></i>)
-                                        }</div>
+                                        [...Array(review.item_quality_rating).keys()].map(item => <i className="fas fa-star"></i>)
+                                    }</div>
                                     <div className='reviewcatname'>Shipping </div>
-                                    <div>{[...Array(review.shipping_rating).keys()].map(item=><i className="fas fa-star"></i>)}</div>
+                                    <div>{[...Array(review.shipping_rating).keys()].map(item => <i className="fas fa-star"></i>)}</div>
                                     <div className='reviewcatname'>Customer service </div>
-                                    <div>{[...Array(review.customer_service_rating).keys()].map(item=><i className="fas fa-star"></i>)}</div>
+                                    <div>{[...Array(review.customer_service_rating).keys()].map(item => <i className="fas fa-star"></i>)}</div>
                                 </div>
                             </div>
                         )

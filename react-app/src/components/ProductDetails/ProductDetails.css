@@ -91,3 +91,8 @@
 .cumulativestarrating {
     margin-bottom: 16px;
 }
+
+.reviewsumcontainer {
+    display: flex;
+    align-items: center;
+}

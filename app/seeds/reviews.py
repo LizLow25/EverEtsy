@@ -222,6 +222,80 @@ def seed_reviews():
         shipping_rating=5,
         customer_service_rating=5
     )
+    review27 = Review (
+        user=5,
+        product=7,
+        content="""I recently had the pleasure of wearing the Dainty Blue Floral Necklace on a special occasion: my first date with my now husband. This delicate piece of jewelry not only captured my heart but also became a cherished symbol of the love we share. Allow me to share my heartfelt review of this beautiful necklace.
+
+        From the moment I laid eyes on the Dainty Blue Floral Necklace, I was captivated by its elegant design. The intricate floral pendant, adorned with delicate blue petals, exuded a sense of grace and femininity. The silver chain complemented the pendant perfectly, adding a touch of understated sophistication to the overall look. Its craftsmanship was impeccable, showcasing the attention to detail and quality of materials used.""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review28 = Review (
+        user=2,
+        product=8,
+        content="""I recently received the most enchanting gift from my sister for my birthday, a Citrine Raw Ring, and I must say, it has completely stolen my heart. Every time I gaze at this magnificent piece, it transports me back to the ethereal beauty of crystal caves, capturing the essence of nature's wonders in a tiny, wearable form.""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=4
+    )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+    # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
     # review1 = Review (
     #     user='',
     #     product='',
