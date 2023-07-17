@@ -357,7 +357,55 @@ def seed_reviews():
         shipping_rating=5,
         customer_service_rating=3
     )
-     # review1 = Review (
+    review43 = Review (
+        user=4,
+        product=35,
+        content="""These are so cute! Arrived on time and with some frog facts. Love love love. 💕 🐸""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review44 = Review (
+        user=5,
+        product=36,
+        content="""I recently stumbled upon the 2-Pieces Branch Bobby Pins, a stunning woodland hairpiece that has quickly become my go-to accessory for cosplaying Lord of the Rings (LotR) characters. As an avid cosplayer and fan of J.R.R. Tolkien's fantasy world, I can confidently say that these bobby pins are an absolute must-have for any LotR enthusiast.""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review45 = Review (
+        user=4,
+        product=37,
+        content="""As a professional beekeeper and model, it can be difficult to find accessories that let me live my personal truth. This bracelet is the perfect addition to my beekeper wardrobe. Also, a percent of the proceeds go towards investigating hive collapse (it's the fungicides!) 🐝! """,
+        item_quality_rating=5,
+        shipping_rating=2,
+        customer_service_rating=5
+    )
+    review46 = Review (
+        user=5,
+        product=38,
+        content="""I bought these to wear during firefighting season and, though they are cute, they are not sturdy enough to wear under my helmet. Love the design though 🌲 🌙 ✨""",
+        item_quality_rating=3,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review47 = Review (
+        user=4,
+        product=39,
+        content="""Bats 🦇 are my favorite animal and my favorite hobby is reading 📚 ! This is PERFECT for me, thank goodness I found it. """,
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review48 = Review (
+        user=5,
+        product=40,
+        content="""I thought this was stained glass but actually it's fabric? I think I need new glasses.""",
+        item_quality_rating=3,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -365,7 +413,7 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-     # review1 = Review (
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -373,7 +421,7 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-     # review1 = Review (
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -381,7 +429,7 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-     # review1 = Review (
+    # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -392,7 +440,7 @@ def seed_reviews():
 
 
 
-    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26, review27, review28, review29, review30, review31, review32, review33, review34, review35, review36, review37, review38, review39, review40, review41, review42]
+    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26, review27, review28, review29, review30, review31, review32, review33, review34, review35, review36, review37, review38, review39, review40, review41, review42, review43, review44, review45, review46, review47, review48]
     [db.session.add(review) for review in reviews]
     db.session.commit()
 
