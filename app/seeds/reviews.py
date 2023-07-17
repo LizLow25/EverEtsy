@@ -280,7 +280,84 @@ def seed_reviews():
         shipping_rating=5,
         customer_service_rating=4
     )
-    # review1 = Review (
+    review34 = Review (
+        user=3,
+        product=26,
+        content="""I know what you're thinking, this is a stool. But, is it not compelling? It compelled me to spend $139 and now I show it off to all my friends.""",
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review35 = Review (
+        user=3,
+        product=27,
+        content="""Talk about a statement piece with evocative undertones of the industrial revolution, baroque Constantinople, and Camus. Perfect for displaying my bonsai collection!""",
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review36 = Review (
+        user=4,
+        product=28,
+        content="""I hate actual sardines but I LOVE these napkins 🐟""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review37 = Review (
+        user=5,
+        product=29,
+        content="""I took off a star because, though these are beyond gorgeous, how do I clean them?? They gather a lot of dust and my cat sometimes climbs them. Bad kitty 🐈‍⬛ 🌿 """,
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review38 = Review (
+        user=4,
+        product=30,
+        content="""I am completely obsessed with this print! There is such sweetness and whimsy in this little bunny. I love the different plant shapes and the mushrooms 🍄 🌿 🌙""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=5
+    )
+    review39 = Review (
+        user=2,
+        product=31,
+        content="""WHY IS REGGIE SO PERFECT!!! So cute and funny 💕""",
+        item_quality_rating=5,
+        shipping_rating=4,
+        customer_service_rating=4
+    )
+    review40 = Review (
+        user=5,
+        product=32,
+        content="""I recently purchased the Botanical Textile Print On Hanging Canvas for my chateau, which I rent out on Airbnb, and I couldn't be happier with this beautiful addition to my space. This unique piece of artwork has elevated the ambiance of my rental property, bringing a touch of natural beauty that enchants both myself and my guests.""",
+        item_quality_rating=4,
+        shipping_rating=4,
+        customer_service_rating=5
+    )
+    review41 = Review (
+        user=4,
+        product=33,
+        content="""I got this specifically to wear to Lester's Possum Park and it was perfection.
+        "Well, don't ya wanna be (mm-hmm)
+        A-hangin' from a tree (uh-huh)
+        We're mighty glad to see ya
+        And the parking's always free
+        Here at Lester's Po-Po-Po-Possum Park" """,
+        item_quality_rating=5,
+        shipping_rating=3,
+        customer_service_rating=5
+    )
+    review42 = Review (
+        user=5,
+        product=34,
+        content="""I bought this for my Sasquatch guided tour because we stay several days in the bush and I wanted a stylish accessory to escape from the Yellowknife mosquitos. I got so many compliments! We didn't see Sasquatch though 😔""",
+        item_quality_rating=5,
+        shipping_rating=5,
+        customer_service_rating=3
+    )
+     # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -288,7 +365,7 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-    # review1 = Review (
+     # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -296,7 +373,15 @@ def seed_reviews():
     #     shipping_rating='',
     #     customer_service_rating=''
     # )
-    # review1 = Review (
+     # review1 = Review (
+    #     user='',
+    #     product='',
+    #     content='',
+    #     item_quality_rating='',
+    #     shipping_rating='',
+    #     customer_service_rating=''
+    # )
+     # review1 = Review (
     #     user='',
     #     product='',
     #     content='',
@@ -307,7 +392,7 @@ def seed_reviews():
 
 
 
-    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26, review27, review28, review29, review30, review31, review32, review33]
+    reviews = [ review1, review2, review3, review4, review5, review6, review7, review8, review9, review10, review11, review12, review13, review14, review15, review16, review17, review18, review19, review20, review21, review22, review23, review24, review25, review26, review27, review28, review29, review30, review31, review32, review33, review34, review35, review36, review37, review38, review39, review40, review41, review42]
     [db.session.add(review) for review in reviews]
     db.session.commit()
 

@@ -495,7 +495,7 @@ def seed_products():
         shop_id = 4,
         details = """The Sleeping Hare print showcases the artistry and skill of the linocut technique, where the image is painstakingly carved into a linoleum block and then pressed onto high-quality paper. This process ensures that each print is unique, with subtle variations that add character and charm.
 
-        Measuring [dimensions], this print is the perfect size to adorn any wall in your home or office. Its timeless appeal and neutral color palette make it a versatile addition to any decor style. Whether hung alone as a focal point or paired with other nature-inspired art, the Sleeping Hare print will create an atmosphere of tranquility and harmony.
+        Measuring 5 x 8, this print is the perfect size to adorn any wall in your home or office. Its timeless appeal and neutral color palette make it a versatile addition to any decor style. Whether hung alone as a focal point or paired with other nature-inspired art, the Sleeping Hare print will create an atmosphere of tranquility and harmony.
 
         The image of the sleeping hare exudes a sense of calmness and peace, making it an ideal choice for bedrooms, meditation spaces, or any area where you seek relaxation. The hare, often associated with intuition and sensitivity, symbolizes connection with the natural world and reminds us to find balance in our lives. """,
         price = 18.00,
