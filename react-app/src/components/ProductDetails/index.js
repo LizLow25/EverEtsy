@@ -78,7 +78,7 @@ const ProductDetails = () => {
                             buttonText='Leave a product review'
                             className='reviewbutton'
                             modalComponent={<CreateReviewModal productId={singleProduct?.id} />} /> </div> : ''}
-                        {overAllReviewSum.length ? <div><i className="fas fa-star"> </i> {overAllReviewAvg.toFixed(1)}</div> : ''}
+                        {overAllReviewSum.length ? <div className='reviewstarscumulative'><i className="fas fa-star"> </i> {overAllReviewAvg.toFixed(1)} { overAllReviewSum.length === 1 ? ` · ${overAllReviewSum.length} Review` : ` · ${overAllReviewSum.length} Reviews`}</div> : ''}
 
                     </div>
                     {productReviews.map(review => {
